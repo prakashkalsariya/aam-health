@@ -8,11 +8,6 @@ import Link from "next/link";
 
 import { useRouter } from "next/router";
 
-
-
-
-
-
 const Home: NextPage = () => {
   return (
     <div className={styles.container}>
@@ -77,8 +72,8 @@ const Home: NextPage = () => {
             <Image
               src="/images/banner.jpg"
               alt="banner"
-              width={1600}
-              height={920}
+              width={2000}
+              height={1200}
             />
           </div>
 
@@ -201,38 +196,102 @@ const Home: NextPage = () => {
             </div>
           </div>
 
-          {/* <div className={styles.services_container}>
-            <div className={styles.blue}>
+          <div className={styles.move_in_container}>
+            <div className={styles.move_in_top_contain}>
+              <h1>We're movin' in!</h1>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
-                adipisci soluta cumque unde amet laborum sunt suscipit
-                praesentium aut provident.
+                Modern clinics, designed from the ground up, with patient
+                experience in mind. Check out our new locations.
               </p>
-              <div className={styles.blue_contain}>
-                <h2>position care</h2>
-              </div>
             </div>
 
-
-
-
-            <div className={styles.yellow}>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
-                adipisci soluta cumque unde amet laborum sunt suscipit
-                praesentium aut provident.
-              </p>
-              <div className={styles.yellow_contain}>
-                <h2>position care</h2>
+            <div className={styles.move_in_img_contain_container}>
+              <div className={styles.move_in_img}>
+                <Image
+                  src="/images/home-img.jpg"
+                  alt="location"
+                  width={600}
+                  height={500}
+                />
               </div>
-            </div> */}
 
+              <div className={styles.move_in_location_container}>
+                <div className={styles.santa_clara_square_location}>
+                  <h2>Santa Clara Square</h2>
+                  <p>2712 Augustine Dr. Santa Clara, CA 95054</p>
+                  <button>View Location</button>
+                </div>
 
+                <div className={styles.san_pedro_square_location}>
+                  <h2>San Pedro Square</h2>
+                  <p>28 N. Almaden Avenue, San Jose, CA 95110</p>
+                  <button>View Location</button>
+                </div>
 
+                <div className={styles.almaden_ranch_location}>
+                  <h2>Almaden Ranch</h2>
+                  <p>5120 Cherry Ave, San Jose, CA 95118</p>
+                  <button>View Location</button>
+                </div>
 
+                <div className={styles.hillsdale_mall_location}>
+                  <h2>Hillsdale Mall</h2>
+                  <p>70 31st Ave, San Mateo, CA 94403</p>
+                  <button>View Location</button>
+                </div>
 
+                <div className={styles.redwood_plaza_location}>
+                  <h2>Redwood Plaza</h2>
+                  <p>784 Admiral Callaghan Ln, Vallejo, CA 94591</p>
+                  <button>View Location</button>
+                </div>
 
-         
+                <div className={styles.grand_plaza_location}>
+                  <h2>Grand Plaza</h2>
+                  <p>109 S. Las Posas Rd, San Marcos, CA 92078</p>
+                  <button>View Location</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.phone_app_container}>
+            <div className={styles.phone_app_img}>
+              <Image
+                src="/images/mobile-img.jpg"
+                alt="app-data"
+                width={650}
+                height={1000}
+              />
+            </div>
+
+            <div className={styles.phone_app_contain_container}>
+              <div className={styles.phone_app_top_contain}>
+                <h1>Get treated right from your phone.</h1>
+                <div className={styles.mobile_no_contain}>
+                  <input type="number" placeholder="Phone Number" />
+                  <button>Text Me The App</button>
+                </div>
+                <p>AVAILABLE IN THE APP STORE AND GOOGLE PLAY</p>
+              </div>
+
+              <div className={styles.phone_app_bottom_contain}>
+                <p>
+                  {" "}
+                  <span>»</span> Book same-day appointments
+                </p>
+                <p>
+                  <span>»</span>Talk to a provider in real time
+                </p>
+                <p>
+                  <span>»</span>Get care from the comfort of home
+                </p>
+                <p>
+                  <span>»</span>Most insurance accepted
+                </p>
+              </div>
+            </div>
+          </div>
         </main>
       </div>
     </div>
