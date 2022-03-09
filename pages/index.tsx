@@ -7,6 +7,8 @@ import styles from "../styles/Home.module.scss";
 import Link from "next/link";
 
 import { useRouter } from "next/router";
+import Header from "../component/Header";
+import Footer from "../component/Footer";
 
 const Home: NextPage = () => {
   return (
@@ -18,62 +20,15 @@ const Home: NextPage = () => {
       </Head>
 
       <div className={styles.main_layout_container}>
-        <header className={styles.header}>
-          <nav className={styles.navbar}>
-            <div className={styles.logo}>
-              <ul>
-                <li>
-                  <Link href="/">
-                    <a>
-                      <h1>Aam Health</h1>
-                    </a>
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div className={styles.menubar}>
-              <ul>
-                <li>
-                  <Link href="">
-                    <a>COVID-19</a>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="">
-                    <a>Get Care</a>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="">
-                    <a>Insurance & Pricing</a>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="">
-                    <a>Location </a>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="">
-                    <a>Company</a>
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            <div className={styles.login_btn}>
-              <button>Log In</button>
-            </div>
-          </nav>
-        </header>
+        <Header />
 
         <div className={styles.banner_container}>
           <div className={styles.banner_img}>
             <Image
               src="/images/banner.jpg"
               alt="banner"
-              width={2000}
-              height={1200}
+              layout="fill"
+              objectFit={"cover"}
             />
           </div>
 
@@ -135,31 +90,36 @@ const Home: NextPage = () => {
         <main className={styles.main}>
           <div className={styles.main_top_contain}>
             <h1>
-              A friendlier healthcare experience,{" "}
-              <span> without the membership fees.</span>{" "}
+              A friendlier healthcare experience,
+              <span> without the membership fees.</span>
             </h1>
             <button>Book In Appointment</button>
           </div>
 
           <div className={styles.information_item_container}>
             <div className={styles.appointments_item_container}>
-              <Image
-                src="/images/appointments.svg"
-                alt="item"
-                width={200}
-                height={200}
-              />
+              <div className={styles.item_img}>
+                <Image
+                  src="/images/appointments.svg"
+                  alt="item"
+                  layout="fill"
+                  // objectFit={"cover"}
+                />
+              </div>
+
               <h1>Book same day appointments</h1>
               <p>Primary, urgent, and virtual care visits on YOUR schedule.</p>
             </div>
 
             <div className={styles.team_item_container}>
-              <Image
-                src="/images/team.svg"
-                alt="item"
-                width={200}
-                height={200}
-              />
+              <div className={styles.item_img}>
+                <Image
+                  src="/images/team.svg"
+                  alt="item"
+                  layout="fill"
+                  // objectFit={"cover"}
+                />
+              </div>
               <h1>Chat with your health team</h1>
               <p>
                 Get treated for a range of symptoms & conditions right from your
@@ -168,12 +128,14 @@ const Home: NextPage = () => {
             </div>
 
             <div className={styles.doorstep_item_container}>
-              <Image
-                src="/images/doorstep.svg"
-                alt="item"
-                width={200}
-                height={200}
-              />
+              <div className={styles.item_img}>
+                <Image
+                  src="/images/doorstep.svg"
+                  alt="item"
+                  layout="fill"
+                  // objectFit={"cover"}
+                />
+              </div>
               <h1>Prescriptions at your doorstep</h1>
               <p>
                 Get your medications sent straight to your chosen pharmacy or to
@@ -182,12 +144,14 @@ const Home: NextPage = () => {
             </div>
 
             <div className={styles.place_item_container}>
-              <Image
-                src="/images/place.svg"
-                alt="item"
-                width={200}
-                height={200}
-              />
+              <div className={styles.item_img}>
+                <Image
+                  src="/images/place.svg"
+                  alt="item"
+                  layout="fill"
+                  // objectFit={"cover"}
+                />
+              </div>
               <h1>All your health in one place</h1>
               <p>
                 Access your medical charts, complete records, and test results
@@ -207,12 +171,16 @@ const Home: NextPage = () => {
 
             <div className={styles.move_in_img_contain_container}>
               <div className={styles.move_in_img}>
+                
+                
                 <Image
                   src="/images/home-img.jpg"
                   alt="location"
-                  width={600}
-                  height={500}
+                  objectFit="cover"
+                  layout="fill"
                 />
+              
+               
               </div>
 
               <div className={styles.move_in_location_container}>
@@ -255,15 +223,15 @@ const Home: NextPage = () => {
             </div>
           </div>
 
-          <div className={styles.phone_app_container}>
-            <div className={styles.phone_app_img}>
+            <div className={styles.phone_app_container}>
+             <div className={styles.phone_app_img}>
               <Image
                 src="/images/mobile-img.jpg"
                 alt="app-data"
-                width={650}
-                height={1000}
+                objectFit="cover"
+                  layout="fill"
               />
-            </div>
+            </div> 
 
             <div className={styles.phone_app_contain_container}>
               <div className={styles.phone_app_top_contain}>
@@ -276,8 +244,19 @@ const Home: NextPage = () => {
               </div>
 
               <div className={styles.phone_app_bottom_contain}>
+                
+<div className={styles.mobile_phone_used_img}>
+<Image
+                src="/images/mobile-phone-used-img.jpeg"
+                alt="app-data"
+                // objectFit="cover"
+                  layout="fill"
+              />
+</div>
+
+              <div className={styles.mobile_point}>
                 <p>
-                  <span>»</span> Book same-day appointments
+                <span>»</span> Book same-day appointments
                 </p>
                 <p>
                   <span>»</span>Talk to a provider in real time
@@ -288,17 +267,18 @@ const Home: NextPage = () => {
                 <p>
                   <span>»</span>Most insurance accepted
                 </p>
+                </div>
               </div>
             </div>
-          </div>
+          </div>  
 
-          <div className={styles.covid_container}>
+           <div className={styles.covid_container}>
             <div className={styles.covid_img}>
               <Image
                 src="/images/covid-img.jpg"
                 alt="app-data"
-                width={2000}
-                height={1500}
+                objectFit={"cover"}
+                layout ="fill"
               />
             </div>
 
@@ -329,101 +309,12 @@ const Home: NextPage = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </div> 
 
-
-<footer className={styles.footer_container}>
-<div className={styles.footer_top_contain_container}>
-<div className={styles.footer_top_contain_logo}>
-  <h2>Aam Health</h2>
-  <p>All your healthcare,
-in one place.</p>
-
-  
-  </div>
-<div  className={styles.footer_top_contain_button}> 
- <button>Get the App</button>
- <button>Find a Clinic</button>
-
-</div>
-</div>
-
-<div className={styles.footer_center_contain_container}>
- <div className={styles.footer_center_services}>
-   <p>SERVICES</p>
-<ul>
-<li><Link  href=""><a>Primary Care</a></Link></li>
-<li><Link  href=""><a>Urgent Care</a></Link></li>
-<li><Link  href=""><a>Virtual Care</a></Link></li>
-<li><Link  href=""><a>Mental Health Care</a></Link></li>
-<li><Link  href=""><a>Insurance & Pricing</a></Link></li>
-<li><Link  href=""><a>Popular Reasons</a></Link></li>
-<li><Link  href=""><a>COVID-19</a></Link></li>
-</ul>
-
- </div>
- <div className={styles.footer_center_company}>
-   <p>COMPANY</p>
- <ul>
-   
-   <li><Link  href=""><a>Locations</a></Link></li>
-   <li><Link  href=""><a>About Us</a></Link></li>
-   <li><Link  href=""><a>Careers</a></Link></li>
-   <li><Link  href=""><a>Press</a></Link></li>
-   <li><Link  href=""><a>Blog</a></Link></li>
- 
- </ul>
- </div>
- <div className={styles.footer_center_for_business}>
-   <p>FOR BUSINESS</p>
- <ul>
-   <li><Link  href=""><a>Partners</a></Link></li>
-   <li><Link  href=""><a>Carbon for Campus</a></Link></li>
-   <li><Link  href=""><a>Occupational Health</a></Link></li>
-   <li><Link  href=""><a>COVID Employer Program</a></Link></li>
-   </ul>
- </div>
- <div className={styles.footer_center_follow}>
-   <p>FOLLOW</p>
- <ul>
-   <li><Link  href=""><a>Instagram</a></Link></li>
-   <li><Link  href=""><a>Twitter</a></Link></li>
-   <li><Link  href=""><a>Facebook</a></Link></li>
-   <li><Link  href=""><a>LinkedIn</a></Link></li>
-   </ul>
- 
- </div>
- <div className={styles.footer_center_get_support}>
- <ul>
-   <p>GET SUPPORT</p>
-   <li><Link  href=""><a>support@aamhealth.com</a></Link></li>
-   <li><Link  href=""><a>Support Center</a></Link></li>
-   </ul>
- </div>
-</div>
-
-
-<div className={styles.footer_bottom_contain_container}>
-<div className={styles.footer_bottom_logo}>
-<h2>Aam Health</h2>
-<p>© 2022</p>
-  </div>
-
-  <div className={styles.footer_bottom_policy}>
-    <ul>
-      <li><Link href=""><a>Privacy Policy</a></Link></li>
-      <li><Link href=""><a>Terms of Service</a></Link></li>
-    </ul>
-  </div>
-
-</div>
-
-
-</footer>
-
-
-
+         
         </main>
+
+         <Footer /> 
       </div>
     </div>
   );

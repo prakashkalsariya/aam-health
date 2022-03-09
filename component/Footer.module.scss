@@ -1,0 +1,120 @@
+
+
+
+
+
+.footer_container {
+    margin-top:80px;
+    @media only screen and (min-width: 1450px) {
+        margin-top:150px;
+      }
+  }
+  
+  .footer_top_contain_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+    .footer_top_contain_logo {
+      margin-left: 170px;
+      margin-bottom: 30px;
+      @media only screen and (min-width: 1800px) {
+        margin-left:210px;
+      }
+
+      h2 {
+        color: orange;
+        margin: 0px;
+        margin-bottom: 20px;
+      }
+      p {
+        font-size: 30px;
+        font-weight: 500;
+        width: 80%;
+        margin: 0px;
+      }
+    }
+  
+    .footer_top_contain_button {
+      margin-right: 160px;
+
+  
+      button {
+        width: 125px;
+        height: 55px;
+        background-color: black;
+        color: white;
+        border-radius: 30px;
+        border: 2px solid black;
+        margin-right: 20px;
+      }
+    }
+  }
+  
+  .footer_center_contain_container {
+    display: flex;
+    justify-content: space-around;
+    margin: 0px 90px 10px 90px;
+  
+    p {
+      padding-left: 40px;
+      font-weight: 500;
+    }
+  }
+  
+  .footer_center_get_support {
+    p {
+      margin-left: -40px;
+    }
+  }
+  
+  .footer_center_contain_container ul li {
+    margin-bottom: 15px;
+  }
+  
+  .footer_center_services ul li a:hover {
+    font-weight: 500;
+  }
+  .footer_center_company ul li a:hover {
+    font-weight: 500;
+  }
+  .footer_center_for_business ul li a:hover {
+    font-weight: 500;
+  }
+  .footer_center_follow ul li a:hover {
+    font-weight: 500;
+  }
+  .footer_center_get_support ul li a:hover {
+    font-weight: 500;
+  }
+  
+  
+  .footer_bottom_contain_container{
+    display: flex;
+    background-color: lightgray;
+  
+    .footer_bottom_logo{
+      display: flex;
+      align-items: center;
+      margin: 0px 0px 0px 180px;
+      
+      h2{
+        color: orange;
+  margin-right: 10px;
+      }
+      
+    }
+  
+    .footer_bottom_policy{
+      ul{
+        display: flex;
+        margin-left: 50px;
+        align-items: center;
+        margin-top: 25px;
+        a{
+          margin-left: 50px;
+        }
+      }
+    }
+  
+  }
