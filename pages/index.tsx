@@ -9,6 +9,8 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import Header from "../component/Header";
 import Footer from "../component/Footer";
+import Headerhover from "../component/HeaderHover";
+import Services from "./Services";
 
 const Home: NextPage = () => {
   return (
@@ -20,7 +22,7 @@ const Home: NextPage = () => {
       </Head>
 
       <div className={styles.main_layout_container}>
-        <Header />
+        <Headerhover/>
 
         <div className={styles.banner_container}>
           <div className={styles.banner_img}>
@@ -35,7 +37,7 @@ const Home: NextPage = () => {
           <div className={styles.banner_contain_container}>
             <div className={styles.contain_text_area_container}>
               <h1>
-                Making good health accessible <span>to all.</span>{" "}
+                Making good health accessible <span>to all.</span>
               </h1>
               <p>Book same day appointments. No subscriptions.</p>
             </div>
@@ -159,7 +161,9 @@ const Home: NextPage = () => {
               </p>
             </div>
           </div>
+      
 
+     
           <div className={styles.move_in_container}>
             <div className={styles.move_in_top_contain}>
               <h1>We're movin' in!</h1>
@@ -171,16 +175,12 @@ const Home: NextPage = () => {
 
             <div className={styles.move_in_img_contain_container}>
               <div className={styles.move_in_img}>
-                
-                
                 <Image
                   src="/images/home-img.jpg"
                   alt="location"
                   objectFit="cover"
                   layout="fill"
                 />
-              
-               
               </div>
 
               <div className={styles.move_in_location_container}>
@@ -223,15 +223,15 @@ const Home: NextPage = () => {
             </div>
           </div>
 
-            <div className={styles.phone_app_container}>
-             <div className={styles.phone_app_img}>
+          <div className={styles.phone_app_container}>
+            <div className={styles.phone_app_img}>
               <Image
                 src="/images/mobile-img.jpg"
                 alt="app-data"
                 objectFit="cover"
-                  layout="fill"
+                layout="fill"
               />
-            </div> 
+            </div>
 
             <div className={styles.phone_app_contain_container}>
               <div className={styles.phone_app_top_contain}>
@@ -244,41 +244,40 @@ const Home: NextPage = () => {
               </div>
 
               <div className={styles.phone_app_bottom_contain}>
-                
-<div className={styles.mobile_phone_used_img}>
-<Image
-                src="/images/mobile-phone-used-img.jpeg"
-                alt="app-data"
-                // objectFit="cover"
-                  layout="fill"
-              />
-</div>
+                <div className={styles.mobile_phone_used_img}>
+                  <Image
+                    src="/images/mobile-phone-used-img.jpeg"
+                    alt="app-data"
+                    // objectFit="cover"
+                    layout="fill"
+                  />
+                </div>
 
-              <div className={styles.mobile_point}>
-                <p>
-                <span>»</span> Book same-day appointments
-                </p>
-                <p>
-                  <span>»</span>Talk to a provider in real time
-                </p>
-                <p>
-                  <span>»</span>Get care from the comfort of home
-                </p>
-                <p>
-                  <span>»</span>Most insurance accepted
-                </p>
+                <div className={styles.mobile_point}>
+                  <p>
+                    <span>»</span> Book same-day appointments
+                  </p>
+                  <p>
+                    <span>»</span>Talk to a provider in real time
+                  </p>
+                  <p>
+                    <span>»</span>Get care from the comfort of home
+                  </p>
+                  <p>
+                    <span>»</span>Most insurance accepted
+                  </p>
                 </div>
               </div>
             </div>
-          </div>  
+          </div>
 
-           <div className={styles.covid_container}>
+          <div className={styles.covid_container}>
             <div className={styles.covid_img}>
               <Image
                 src="/images/covid-img.jpg"
                 alt="app-data"
                 objectFit={"cover"}
-                layout ="fill"
+                layout="fill"
               />
             </div>
 
@@ -309,12 +308,10 @@ const Home: NextPage = () => {
                 </div>
               </div>
             </div>
-          </div> 
-
-         
+          </div>
         </main>
 
-         <Footer /> 
+        <Footer /> 
       </div>
     </div>
   );

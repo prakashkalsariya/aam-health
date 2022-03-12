@@ -7,7 +7,7 @@
   height: 800px;
 
   @media only screen and (max-width: 600px) {
-    height: 700px;
+    height: 500px;
   }
 }
 
@@ -932,6 +932,7 @@ margin-top: 10px;
   position: absolute;
   height: 200px;
   margin-left: 0px;
+  // margin-bottom: 10px;
   visibility: hidden;
   @media only screen and (max-width: 600px) {
     visibility: visible;
@@ -1018,6 +1019,7 @@ margin-top: 10px;
     display: flex;
     align-items: center;
     // justify-content: center;
+    height: 280px;
     
     }
   span {
@@ -1036,6 +1038,7 @@ margin-top: 10px;
     @media only screen and (max-width: 600px) {
       font-size: 15px;
       text-align: start;
+      
       border-bottom: 1px dotted black;
       // width: 50%;
     // border: 2px solid red;
@@ -1071,11 +1074,7 @@ margin-top: 10px;
   width: 45%;
   
   
-  @media only screen and (max-width: 1500px) {
-    width: 50%;
-    padding: 100px 0px 0px 100px;
-
-  }
+ 
 
   @media only screen and (max-width: 600px) {
     width: 100%;
@@ -1119,9 +1118,7 @@ margin-top: 10px;
   justify-content: space-around;
   color: white;
   margin-top: 350px;
-  @media only screen and (max-width: 1800px) {
-    margin-top: 150px;
-  }
+  
   @media only screen and (max-width: 600px) {
   flex-direction: column;
   padding: 0px 20px 0px 30px;

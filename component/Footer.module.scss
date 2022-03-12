@@ -4,10 +4,9 @@
 
 
 .footer_container {
-    margin-top:80px;
-    @media only screen and (min-width: 1450px) {
-        margin-top:150px;
-      }
+    margin-top:150px;
+    // height: 500px;
+   
   }
   
   .footer_top_contain_container {
@@ -18,9 +17,7 @@
     .footer_top_contain_logo {
       margin-left: 170px;
       margin-bottom: 30px;
-      @media only screen and (min-width: 1800px) {
-        margin-left:210px;
-      }
+     
 
       h2 {
         color: orange;

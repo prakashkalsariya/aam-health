@@ -1,6 +1,6 @@
 import styles from "./Footer.module.scss";
  import Link from "next/link";
-
+import Logo from "./Logo";
 
  function Footer(){
      return(
@@ -8,7 +8,7 @@ import styles from "./Footer.module.scss";
 <footer className={styles.footer_container}>
 <div className={styles.footer_top_contain_container}>
 <div className={styles.footer_top_contain_logo}>
-  <h2>Aam Health</h2>
+  <Logo/>
   <p>All your healthcare,
 in one place.</p>
 
