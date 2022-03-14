@@ -302,6 +302,7 @@ margin-top: 100px;
  padding-left:20px ;
  padding-right:20px ;
  margin-top: 50px;
+ align-items: flex-start;
   }h1{
   margin-bottom: 6px;
 }
@@ -319,6 +320,9 @@ p{
   align-items: center;
   justify-content: center;
   margin-top: 100px;
+  @media only screen and (max-width: 600px) {
+    margin-top: 50px;
+   }
   p{
     width: 50%;
     border-top: 1px solid rgba(114, 115, 118, 0.5);
@@ -331,6 +335,10 @@ p{
 height: 50px;
 border-radius: 50px;
     border: 1px solid rgba(114, 115, 118, 0.5);
+    @media only screen and (max-width: 600px) {
+      width: 325px;
+height: 50px;
+     }
   }
 }
 
