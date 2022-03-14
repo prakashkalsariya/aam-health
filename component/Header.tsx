@@ -1,7 +1,7 @@
 
  import styles from "./Header.module.scss";
  import Link from "next/link";
-
+ import Logo from "./Logo";
 function Header(){
     return(
         <header className={styles.header}>
@@ -11,44 +11,47 @@ function Header(){
                 <li>
                   <Link href="/">
                     <a>
-                      <h1>Aam Health</h1>
+                     <Logo/>
                     </a>
                   </Link>
                 </li>
               </ul>
             </div>
+            <div className={styles.menubar_btn_container}>
             <div className={styles.menubar}>
-              <ul>
+              <ul className="font-400">
                 <li>
                   <Link href="">
-                    <a>COVID-19</a>
+                    <a>Home</a>
                   </Link>
                 </li>
                 <li>
                   <Link href="">
-                    <a>Get Care</a>
+                    <a>About us</a>
                   </Link>
                 </li>
                 <li>
                   <Link href="">
-                    <a>Insurance & Pricing</a>
+                    <a>Medical Services</a>
                   </Link>
                 </li>
                 <li>
                   <Link href="">
-                    <a>Location </a>
+                    <a>Blog </a>
                   </Link>
                 </li>
                 <li>
                   <Link href="">
-                    <a>Company</a>
+                    <a>Doctors</a>
                   </Link>
                 </li>
               </ul>
             </div>
 
             <div className={styles.login_btn}>
-              <button>Log In</button>
+              <button className="font-400">Log In</button>
+            </div>
+
             </div>
           </nav>
         </header>

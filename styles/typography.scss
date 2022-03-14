@@ -1,0 +1,55 @@
+.title {
+  font-family: "poppinsbold", -apple-system, BlinkMacSystemFont, Segoe UI,
+    Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+    sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 3rem;
+  line-height: 130%;
+  color: var(--dark-gray);
+  @media (max-width: 1150px) {
+    font-size: 2.5rem;
+  }
+  @media (max-width: 600px) {
+    font-size: 30px;
+  }
+}
+
+.sub-text {
+  font-family: "poppinsregular", -apple-system, BlinkMacSystemFont, Segoe UI,
+    Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+    sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1rem;
+  line-height: 120%;
+  color: var(--light-gray);
+}
+
+.font-400 {
+  font-family: "poppinsregular", -apple-system, BlinkMacSystemFont, Segoe UI,
+    Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+    sans-serif;
+  font-weight: 400;
+}
+
+.font-500 {
+  font-family: "poppinsmedium", -apple-system, BlinkMacSystemFont, Segoe UI,
+    Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+    sans-serif;
+  font-weight: 500;
+}
+
+.font-600 {
+  font-family: "poppinssemibold", -apple-system, BlinkMacSystemFont, Segoe UI,
+    Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+    sans-serif;
+  font-weight: 600;
+}
+
+.font-700 {
+  font-family: "poppinsbold", -apple-system, BlinkMacSystemFont, Segoe UI,
+    Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+    sans-serif;
+  font-weight: 700;
+}

@@ -4,13 +4,9 @@ import React from "react";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.scss";
-import Link from "next/link";
-
-import { useRouter } from "next/router";
 import Header from "../component/Header";
 import Footer from "../component/Footer";
-import Headerhover from "../component/HeaderHover";
-import Services from "./Services";
+import Specialities from "../component/Specialities";
 
 const Home: NextPage = () => {
   return (
@@ -22,148 +18,135 @@ const Home: NextPage = () => {
       </Head>
 
       <div className={styles.main_layout_container}>
-        <Headerhover/>
+        <Header />
 
         <div className={styles.banner_container}>
           <div className={styles.banner_img}>
             <Image
-              src="/images/banner.jpg"
+              src="/images/banner-img.png"
               alt="banner"
               layout="fill"
               objectFit={"cover"}
             />
           </div>
-
           <div className={styles.banner_contain_container}>
-            <div className={styles.contain_text_area_container}>
-              <h1>
-                Making good health accessible <span>to all.</span>
-              </h1>
-              <p>Book same day appointments. No subscriptions.</p>
-            </div>
-
-            <div className={styles.contain_box_container}>
-              <div className={styles.box_heading}>
-                <p>Book an Appointment</p>
-              </div>
-
-              <div className={styles.box_item_container}>
-                <div className={styles.box_primary_care_container}>
-                  <div className={styles.box_circle}> </div>
-                  <div className={styles.box_contain}>
-                    <h3>Primary Care</h3>
-                    <p>Ideal for preventive Care </p>
-                  </div>
-                  <div className={styles.box_date}>
-                    <p>Next: Today 10pm</p>
-                  </div>
-                </div>
-
-                <div className={styles.box_urgent_care_container}>
-                  <div className={styles.box_circle}> </div>
-                  <div className={styles.box_contain}>
-                    <h3>Urgent Care</h3>
-                    <p>Ideal for immediate medical attention</p>
-                  </div>
-                  <div className={styles.box_date}>
-                    <p>Next: Today 6pm</p>
-                  </div>
-                </div>
-
-                <div className={styles.box_virtual_care_container}>
-                  <div className={styles.box_circle}> </div>
-                  <div className={styles.box_contain}>
-                    <h3>Virtual Care</h3>
-                    <p>Video with your health team</p>
-                  </div>
-                  <div className={styles.box_date}>
-                    <p>Next: Today 7pm</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className={styles.box_btn}>
-                <button>Book In Appointment</button>
-              </div>
-            </div>
+            <h1 className="font-700">We care about <br/>your health</h1>
+            <p className="font-400">
+              Book a same day appointment with, <br/>our specialized doctors
+            </p>
+            <button className="font-600">Book an Appointment Now</button>
           </div>
         </div>
 
         <main className={styles.main}>
-          <div className={styles.main_top_contain}>
-            <h1>
-              A friendlier healthcare experience,
-              <span> without the membership fees.</span>
-            </h1>
-            <button>Book In Appointment</button>
-          </div>
-
           <div className={styles.information_item_container}>
-            <div className={styles.appointments_item_container}>
+            <div className={styles.appointment_item}>
               <div className={styles.item_img}>
                 <Image
-                  src="/images/appointments.svg"
-                  alt="item"
+                  src="/images/appointment-item-img.png"
+                  alt="banner"
                   layout="fill"
-                  // objectFit={"cover"}
+                  objectFit={"cover"}
                 />
               </div>
-
-              <h1>Book same day appointments</h1>
-              <p>Primary, urgent, and virtual care visits on YOUR schedule.</p>
+              <div className={styles.item_contain}>
+                <h1 className="font-700">Book a same day appointment</h1>
+                <p className="font-400">
+                  Primary, urgent, and virtual care visits on YOUR schedule.
+                </p>
+              </div>
             </div>
 
-            <div className={styles.team_item_container}>
+            <div className={styles.team_item}>
+              <div className={styles.item_contain}>
+                <h1 className="font-700">Chat with your health team</h1>
+                <p className="font-400">
+                  Get treated for a range of symptoms & conditions right from
+                  your smartphone.
+                </p>
+              </div>
+
               <div className={styles.item_img}>
                 <Image
-                  src="/images/team.svg"
-                  alt="item"
+                  src="/images/team-item-img.png"
+                  alt="banner"
                   layout="fill"
-                  // objectFit={"cover"}
+                  objectFit={"cover"}
                 />
               </div>
-              <h1>Chat with your health team</h1>
-              <p>
-                Get treated for a range of symptoms & conditions right from your
-                smartphone.
-              </p>
             </div>
 
-            <div className={styles.doorstep_item_container}>
+            <div className={styles.doorstep_item}>
               <div className={styles.item_img}>
                 <Image
-                  src="/images/doorstep.svg"
-                  alt="item"
+                  src="/images/doorstep-item-img.png"
+                  alt="banner"
                   layout="fill"
-                  // objectFit={"cover"}
+                  objectFit={"cover"}
                 />
               </div>
-              <h1>Prescriptions at your doorstep</h1>
-              <p>
-                Get your medications sent straight to your chosen pharmacy or to
-                your door—whatever works for you.
-              </p>
+              <div className={styles.item_contain}>
+                <h1 className="font-700">Prescriptions at your doorstep</h1>
+                <p className="font-400">
+                  Get your medications sent straight to your chosen pharmacy or
+                  to your door whatever works for you.
+                </p>
+              </div>
             </div>
+          
 
-            <div className={styles.place_item_container}>
-              <div className={styles.item_img}>
-                <Image
-                  src="/images/place.svg"
-                  alt="item"
-                  layout="fill"
-                  // objectFit={"cover"}
-                />
-              </div>
-              <h1>All your health in one place</h1>
-              <p>
+          <div className={styles.place_item}>
+            <div className={styles.item_contain}>
+              <h1 className="font-700">All your health in one place</h1>
+              <p className="font-400">
                 Access your medical charts, complete records, and test results
                 immediately.
               </p>
             </div>
+            <div className={styles.item_img}>
+              <Image
+                src="/images/place-item-img.png"
+                alt="banner"
+                layout="fill"
+                objectFit={"cover"}
+              />
+            </div>
           </div>
-      
 
-     
+          </div>
+
+          <div className={styles.specialities_heading}>
+            <h1 className="font-700">Doctors of various specialities </h1>
+            <p className="font-400">
+              Find doctors of all specializations suitable to treat your medical
+              conditions
+            </p>
+          </div>
+
+          <div>
+          <Specialities/>
+          </div>
+
+
+
+<div className={styles.specialities_btn}>
+  <p></p>
+<button className="font-400">View More</button>
+<p></p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+{/* 
           <div className={styles.move_in_container}>
             <div className={styles.move_in_top_contain}>
               <h1>We're movin' in!</h1>
@@ -308,10 +291,10 @@ const Home: NextPage = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </div>  */}
         </main>
 
-        <Footer /> 
+        {/* <Footer />  */}
       </div>
     </div>
   );

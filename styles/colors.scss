@@ -1,0 +1,32 @@
+:root {
+  --primary: #F0B01B;
+  --light-blue:#63C8F2;
+  --orange-red:#EB451B;
+  --light-gray: #727376;
+  --dark-gray: #313131;
+  --primary-button-gradient: linear-gradient(
+    180deg,
+    var(--primary) 0%,
+    #e4a00b 100%
+  );
+  --white: #ffffff;
+  --home-banner-circle-gradient: linear-gradient(
+    180deg,
+    var(--primary) 0%,
+    #b87e00 100%
+  );
+  --buttonSecondary: #ffffff;
+  --button-border-light-gray: #dcdcdc;
+}
+
+.primary {
+  color: var(--primary);
+}
+
+.secondary {
+  color: var(--dark-gray);
+}
+
+.secondary-light {
+  color: var(--light-gray);
+}
