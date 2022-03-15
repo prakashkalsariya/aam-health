@@ -7,6 +7,7 @@ import styles from "../styles/Home.module.scss";
 import Header from "../component/Header";
 import Footer from "../component/Footer";
 import Specialities from "../component/Specialities";
+import AppHeader from "../component/header/AppHeader";
 
 const Home: NextPage = () => {
   return (
@@ -18,8 +19,8 @@ const Home: NextPage = () => {
       </Head>
 
       <div className={styles.main_layout_container}>
-        <Header />
-
+        {/* <Header /> */}
+        <AppHeader/>
         <div className={styles.banner_container}>
           <div className={styles.banner_img}>
             <Image
@@ -146,7 +147,7 @@ const Home: NextPage = () => {
 
 
 
-{/* 
+
           <div className={styles.move_in_container}>
             <div className={styles.move_in_top_contain}>
               <h1>We're movin' in!</h1>
@@ -291,10 +292,10 @@ const Home: NextPage = () => {
                 </div>
               </div>
             </div>
-          </div>  */}
+          </div>  
         </main>
 
-        {/* <Footer />  */}
+        <Footer />  
       </div>
     </div>
   );
