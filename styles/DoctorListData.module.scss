@@ -1,0 +1,108 @@
+.doctor_data_list_container_1440{
+    max-width: 1440px;
+    // height: 1200px;
+    margin: auto;
+    // border: 2px solid red;
+    .doctor_data_list_container_1240 {
+       
+width: 1280px;
+margin: 0 auto;
+// display: flex;
+// height: 500px;
+border: 2px solid black;
+display: flex;
+flex-direction: row;
+    }
+}
+
+
+
+.doctor_data_list_container{
+    
+    width: 621px;
+    height: 320px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
+    // border-radius: 10px;
+    // border: 2px solid red;
+}
+
+.list_img{
+    position: relative;
+    width: 250px;
+height: 250px;
+border-radius: 10px 0px 0px 0px;
+// border: 2px solid red;
+}
+
+.list_img_contain_container{
+display: flex;
+
+}
+
+.list_contain{
+margin: 16px 0px 0px 20px;
+
+.contain_name{
+    font-size: 16px;
+}
+.contain_speciality{
+    font-size: 16px;
+    margin-top: 6px;
+    color: orange;
+}
+
+.contain_languages_icon{
+    margin-top: 28px;
+    display: flex;
+    align-items: center;
+    // justify-content: center;
+    .icon{
+        position: relative;
+        width: 20px;
+        height: 20px;
+    }
+    .contain_languages{
+        margin-top: -5px;
+        margin-left: 10px;
+        font-size: 14px;
+        color: var(--light-gray);
+    } 
+}
+
+.contain_experience_icon{
+    margin-top: 13px;
+    display: flex;
+    .icon{
+        position: relative;
+        width: 20px;
+        height: 20px;
+    }
+    .contain_experience{
+        // margin-top: -5px;
+        margin-left: 10px;
+        font-size: 14px;
+        color: var(--light-gray)
+    }
+}
+
+.contain_fees{
+    font-size: 14px;
+    margin-top: 25px;
+    color: var(--light-gray)
+}
+}
+
+
+
+
+
+.list_btn button{
+    width: 621px;
+height: 70px;
+background: var(--light-blue);
+border-radius: 0px 0px 10px 10px;
+color: white;
+// font-weight: bold;
+border: 0px;
+}
