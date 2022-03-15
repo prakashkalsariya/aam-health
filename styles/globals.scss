@@ -1,4 +1,3 @@
-
 @import url("/static/fonts/fonts.css");
 @import "./typography.scss";
 @import "./colors.scss";
@@ -15,8 +14,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
   color: var(--dark-gray);
-  
-
 }
 
 a {
@@ -33,6 +30,6 @@ a {
   box-sizing: border-box;
 }
 
-li{
+li {
   list-style: none;
 }
