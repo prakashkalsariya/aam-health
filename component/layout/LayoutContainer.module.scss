@@ -1,0 +1,15 @@
+.layout_container {
+  width: 100%;
+  margin: auto;
+  max-width: 1440px;
+  padding-right: 100px;
+  padding-left: 100px;
+  @media (max-width: 1350px) {
+    padding-right: 50px;
+    padding-left: 50px;
+  }
+  @media (max-width: 600px) {
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+}

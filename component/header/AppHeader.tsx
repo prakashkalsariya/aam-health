@@ -1,8 +1,8 @@
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
+import { ClientRoutes } from "../../constants/pages";
 import PrimaryButton from "../buttons/PrimaryButton";
 import styles from "./AppHeader.module.scss";
-import Logo from "../Logo";
 
 const navigationLinks = [
   {
@@ -11,28 +11,46 @@ const navigationLinks = [
     id: "home",
   },
   {
-    title: "About us",
+    title: "Our Services",
     href: "#",
     id: "our_services",
   },
   {
-    title: "Medical Services",
+    title: "Testimonials",
     href: "#",
     id: "testimonials",
   },
   {
-    title: "Blog",
+    title: "Calculators",
     href: "#",
     id: "calculators",
   },
   {
-    title: "Doctors",
+    title: "Contact",
     href: "#",
     id: "contact",
   },
 ];
 
-const AppHeader = () => {
+export interface IAppHeader {
+  hideNavlinks?: boolean;
+  hideAuthButtons?: boolean;
+  showMobileNavBar?: boolean;
+  classes?: {
+    header: string;
+    navbar: string;
+  };
+}
+
+const AppHeader = ({
+  hideNavlinks = false,
+  hideAuthButtons = false,
+  showMobileNavBar = false,
+  classes = {
+    header: "",
+    navbar: "",
+  },
+}: IAppHeader) => {
   const [activeNavLink, setActiveNavLink] = useState("home");
   const [mobileNavBar, setMobileNavBar] = useState(false);
 
@@ -60,13 +78,17 @@ const AppHeader = () => {
   }, []);
 
   return (
-    <header className={styles.head}>
-      <nav className={styles.navbar}>
+    <header className={`${styles.head} ${classes.header}`}>
+      <nav className={`${styles.navbar} ${classes.navbar}`}>
         <div className={styles.logo}>
-          <h1 className="font-700"><Logo/></h1>
+          <h1 className="font-700">Healthy.How</h1>
         </div>
         <div className={styles.headerLeftContent}>
-          <ul className={styles.manu}>
+          <ul
+            className={`${styles.manu} ${
+              hideNavlinks ? styles.display_none : ""
+            }`}
+          >
             {navigationLinks.map((link, idx) => (
               <li key={idx}>
                 <Link href={link.href}>
@@ -82,14 +104,28 @@ const AppHeader = () => {
               </li>
             ))}
           </ul>
-          <div className={`${styles.btn} ${styles.buttonContainer}`}>
-            <button className={styles.login_btn}>Login</button>
-            <button className={styles.signup_btn}>Sign Up</button>
+          <div
+            className={`${styles.btn} ${styles.buttonContainer} ${
+              hideAuthButtons ? styles.display_none : ""
+            }`}
+          >
+            <Link href={`${ClientRoutes.login}`} passHref>
+              <a>
+                {" "}
+                <button className={styles.login_btn}>Login</button>
+              </a>
+            </Link>{" "}
+            <Link href={`${ClientRoutes.register}`} passHref>
+              <a>
+                {" "}
+                <button className={styles.signup_btn}>Sign Up</button>
+              </a>
+            </Link>
           </div>
           <div
             className={`close-button ${styles.menuButtonContainer} ${
               mobileNavBar ? styles.mobileMenuCloseButton : ""
-            }`}
+            } ${showMobileNavBar ? styles.mobieButtonActive : ""}`}
             onClick={handleMobileNavBar}
           >
             <div className={styles.menuButtonTopLine}></div>
@@ -126,16 +162,26 @@ const AppHeader = () => {
               <div
                 className={`${styles.mobileNavButtons} ${styles.buttonContainer}`}
               >
-                <PrimaryButton
-                  className={styles.login_btn}
-                  color="secondary"
-                  outlined={true}
-                >
-                  Login
-                </PrimaryButton>
-                <PrimaryButton className={styles.signup_btn}>
-                  Sign Up
-                </PrimaryButton>
+                <Link href={`${ClientRoutes.login}`} passHref>
+                  <a>
+                    {" "}
+                    <PrimaryButton
+                      className={styles.login_btn}
+                      color="secondary"
+                      outlined={true}
+                    >
+                      Login
+                    </PrimaryButton>
+                  </a>
+                </Link>{" "}
+                <Link href={`${ClientRoutes.register}`} passHref>
+                  <a>
+                    {" "}
+                    <PrimaryButton className={styles.signup_btn}>
+                      Sign Up
+                    </PrimaryButton>
+                  </a>
+                </Link>{" "}
               </div>
             </div>
           </div>

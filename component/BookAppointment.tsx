@@ -8,7 +8,7 @@ import {
 } from "@material-ui/pickers";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const useStyles = makeStyles((theme: Theme) => ({
   dialogueContainer: {
@@ -388,7 +388,26 @@ const appointmentTypes = [
   },
 ];
 
-const BookAppointment = () => {
+export interface IDoctorDetails {
+  name: string;
+  speciality: string;
+  speciality_id: string;
+  city: string;
+  city_id: string;
+  image: string;
+  languages: string;
+  experience: string;
+  fees: {
+    clinic_visit: number;
+    video_consultation: number;
+  };
+}
+
+interface IBookAppointment {
+  doctorDetails: IDoctorDetails | null;
+}
+
+const BookAppointment = ({ doctorDetails }: IBookAppointment) => {
   const styles = useStyles();
   const [formState, setFormState] = useState({
     appointment_type: "",
@@ -401,19 +420,9 @@ const BookAppointment = () => {
       duration: "",
     },
     session_id: "",
-    doctor: {
-      name: "Avinash Kumar Dubey",
-      speciality: "PEDIATRICS",
-      city: " RANCHI",
-      image: "/static/doctors/dubey-ranchi-img.jpg",
-      languages: "English, Hindi",
-      experience: "15 Yrs",
-      fees: {
-        clinic_visit: 1600,
-        video_consultation: 1300,
-      },
-    },
+    doctor: doctorDetails || {},
     conformed: false,
+    isDialougueOpen: false,
   });
 
   const handleTypeChange = (type: string) => {
@@ -423,16 +432,50 @@ const BookAppointment = () => {
     });
   };
 
+  useEffect(() => {
+    if (doctorDetails?.name) {
+      setFormState({
+        ...formState,
+        doctor: doctorDetails,
+        isDialougueOpen: true,
+      });
+    } else {
+      setFormState({
+        ...formState,
+        doctor: {},
+        isDialougueOpen: false,
+      });
+    }
+  }, [doctorDetails]);
+
+  const handleClose = () => {
+    setFormState({
+      ...formState,
+      doctor: {},
+      isDialougueOpen: false,
+      appointment_type: "",
+      date: new Date(),
+      slot: {
+        session_id: "",
+        id: "",
+        title: "",
+        timing: "",
+        duration: "",
+      },
+      session_id: "",
+      conformed: false,
+    });
+  };
+
   return (
     <div>
-      BookAppointment
       <Dialog
-        open={true}
+        open={formState.isDialougueOpen}
         fullWidth
         maxWidth={"md"}
         className={styles.dialogueContainer}
         scroll="body"
-        // disablePortal
+        onClose={handleClose}
       >
         {formState.conformed ? (
           <DialogContent>
@@ -448,26 +491,29 @@ const BookAppointment = () => {
               <div className="text-content">
                 <h5 className="font-600 title-text">Your Appointment</h5>
                 <p className="font-400 subtext">with</p>
-                <h3 className="font-700 dr-name">{formState.doctor.name}</h3>
+                <h3 className="font-700 dr-name">
+                  {(formState?.doctor as any)?.name ?? ""}
+                </h3>
                 <p className="font-400 subtext">has been</p>
                 <h5 className="font-600 title-text">Conformed</h5>
               </div>
 
               <div className="button-content">
-                <Link href={"/"} passHref>
-                  <a>
-                    <button className="details-button font-400">
-                      View Details
-                    </button>
-                  </a>
-                </Link>
-                <Link href={"/"} passHref>
-                  <a>
-                    <button className="home-button font-400">
-                      Back to home
-                    </button>
-                  </a>
-                </Link>
+                <button
+                  className="details-button font-400"
+                  onClick={() => {
+                    setFormState({
+                      ...formState,
+                      conformed: false,
+                    });
+                  }}
+                >
+                  View Details
+                </button>
+
+                <button className="home-button font-400" onClick={handleClose}>
+                  Ok
+                </button>
               </div>
             </div>
           </DialogContent>
@@ -580,7 +626,9 @@ const BookAppointment = () => {
             </div>
 
             <div className={styles.bottomContent}>
-              <button className="cancel-button font-400">Cancel</button>
+              <button className="cancel-button font-400" onClick={handleClose}>
+                Cancel
+              </button>
               <button
                 className="conform-button font-400"
                 onClick={() => {
