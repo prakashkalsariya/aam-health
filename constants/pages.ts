@@ -2,6 +2,7 @@ export class ClientRoutes {
   static questionnaireWizard = "questionnaire-wizard";
   static login = "login";
   static register = "register";
+  static sheduleAppointments = "appointments";
 }
 
 export class QueryParams {

@@ -1,7 +1,7 @@
 :root {
-  --primary: #F0B01B;
-  --light-blue:#63C8F2;
-  --orange-red:#EB451B;
+  --primary: #f0b01b;
+  --light-blue: #63c8f2;
+  --orange-red: #eb451b;
   --light-gray: #727376;
   --dark-gray: #313131;
   --primary-button-gradient: linear-gradient(
@@ -17,6 +17,7 @@
   );
   --buttonSecondary: #ffffff;
   --button-border-light-gray: #dcdcdc;
+  --error-primary: #ff3636;
 }
 
 .primary {

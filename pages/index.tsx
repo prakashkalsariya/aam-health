@@ -20,7 +20,7 @@ const Home: NextPage = () => {
 
       <div className={styles.main_layout_container}>
         {/* <Header /> */}
-        <AppHeader/>
+        <AppHeader />
         <div className={styles.banner_container}>
           <div className={styles.banner_img}>
             <Image
@@ -31,9 +31,13 @@ const Home: NextPage = () => {
             />
           </div>
           <div className={styles.banner_contain_container}>
-            <h1 className="font-700">We care about <br/>your health</h1>
+            <h1 className="font-700">
+              We care about <br />
+              your health
+            </h1>
             <p className="font-400">
-              Book a same day appointment with, <br/>our specialized doctors
+              Book a same day appointment with, <br />
+              our specialized doctors
             </p>
             <button className="font-600">Book an Appointment Now</button>
           </div>
@@ -94,26 +98,24 @@ const Home: NextPage = () => {
                 </p>
               </div>
             </div>
-          
 
-          <div className={styles.place_item}>
-            <div className={styles.item_contain}>
-              <h1 className="font-700">All your health in one place</h1>
-              <p className="font-400">
-                Access your medical charts, complete records, and test results
-                immediately.
-              </p>
+            <div className={styles.place_item}>
+              <div className={styles.item_contain}>
+                <h1 className="font-700">All your health in one place</h1>
+                <p className="font-400">
+                  Access your medical charts, complete records, and test results
+                  immediately.
+                </p>
+              </div>
+              <div className={styles.item_img}>
+                <Image
+                  src="/images/place-item-img.png"
+                  alt="banner"
+                  layout="fill"
+                  objectFit={"cover"}
+                />
+              </div>
             </div>
-            <div className={styles.item_img}>
-              <Image
-                src="/images/place-item-img.png"
-                alt="banner"
-                layout="fill"
-                objectFit={"cover"}
-              />
-            </div>
-          </div>
-
           </div>
 
           <div className={styles.specialities_heading}>
@@ -125,32 +127,18 @@ const Home: NextPage = () => {
           </div>
 
           <div>
-          <Specialities/>
+            <Specialities />
           </div>
 
-
-
-<div className={styles.specialities_btn}>
-  <p></p>
-<button className="font-400">View More</button>
-<p></p>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
+          <div className={styles.specialities_btn}>
+            <p></p>
+            <button className="font-400">View More</button>
+            <p></p>
+          </div>
 
           <div className={styles.move_in_container}>
             <div className={styles.move_in_top_contain}>
-              <h1>We're movin' in!</h1>
+              <h1>We&apos;re movin&apos;in!</h1>
               <p>
                 Modern clinics, designed from the ground up, with patient
                 experience in mind. Check out our new locations.
@@ -292,10 +280,10 @@ const Home: NextPage = () => {
                 </div>
               </div>
             </div>
-          </div>  
+          </div>
         </main>
 
-        <Footer />  
+        <Footer />
       </div>
     </div>
   );

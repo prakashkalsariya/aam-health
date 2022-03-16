@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import apiServices from "../services/api/api";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import AppHeader from "../component/header/AppHeader";
@@ -12,6 +11,8 @@ import { ILoginValues } from "../interfaces/api/IAuth";
 import CloseIcon from "../component/icons/CloseIcon";
 import { ClientRoutes, QueryParams } from "../constants/pages";
 import { CircularProgress } from "@material-ui/core";
+import { LocalStorageService } from "../services/localStorage";
+import { MessageCodes } from "../constants/message-codes";
 
 const LoginSchema = Yup.object().shape({
   email: Yup.string()
@@ -38,23 +39,23 @@ function Loginpage() {
     if (errors.length) {
       setErrors([]);
     }
-    const reponse = await apiServices.auth.login(values);
+    const reponse = await LocalStorageService.auth.loginUser(values);
 
     if (reponse) {
       setIsSubmitting(false);
 
       let _errors: string[] = [];
       if (!reponse.success) {
-        // switch (reponse.message_code) {
-        //   case MessageCodes.user_not_found_with_email_address:
-        //     _errors.push("User not found!");
-        //     break;
-        //   case MessageCodes.wrong_password:
-        //     _errors.push("You enterd wrong password!");
-        //     break;
-        //   default:
-        //     _errors.push("");
-        // }
+        switch (reponse.message_code) {
+          case MessageCodes.user_not_found_with_email_address:
+            _errors.push("User not found!");
+            break;
+          case MessageCodes.wrong_password:
+            _errors.push("You enterd wrong password!");
+            break;
+          default:
+            _errors.push("");
+        }
 
         setErrors(_errors);
         setIsSubmitting(false);
@@ -199,7 +200,7 @@ function Loginpage() {
           </div>
 
           <p className={`${styles.contin_register}`}>
-            Don't have an account?{" "}
+            Don&apos;t have an account?{" "}
             <Link href={registerLink} passHref>
               <a>
                 <span className="font-500 primary">Register now</span>

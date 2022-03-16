@@ -3,4 +3,5 @@ export class LocalStorageKeys {
   static user = "user";
   static accessToken = "access_token";
   static refreshToken = "refresh_token";
+  static users = "users";
 }

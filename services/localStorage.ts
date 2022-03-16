@@ -1,5 +1,7 @@
 import { LocalStorageKeys } from "../constants/local-storage";
-import { IUserData } from "../interfaces/api/IAuth";
+import { MessageCodes } from "../constants/message-codes";
+import { IResponse } from "../interfaces/api/api";
+import { ILoginValues, IUserData } from "../interfaces/api/IAuth";
 
 export class LocalStorageService {
   static concernType = {
@@ -16,20 +18,8 @@ export class LocalStorageService {
   };
 
   static auth = {
-    setTokens: (data: IUserData) => {
-      localStorage.setItem(
-        LocalStorageKeys.accessToken,
-        data.access_token as string
-      );
-      localStorage.setItem(
-        LocalStorageKeys.refreshToken,
-        data.refresh_token as string
-      );
-    },
-
     setUserData: (userData: IUserData) => {
       localStorage.setItem(LocalStorageKeys.user, JSON.stringify(userData));
-      this.auth.setTokens(userData);
     },
 
     getUserDetails: (): IUserData | null => {
@@ -41,12 +31,120 @@ export class LocalStorageService {
       return null;
     },
 
-    getAccessToken: (): string => {
-      return localStorage.getItem(LocalStorageKeys.accessToken) as string;
+    isUserLoggedIn: (): boolean => {
+      const userDetails = this.auth.getUserDetails();
+      if (userDetails) {
+        return true;
+      }
+      return false;
     },
 
-    getRefreshToken: (): string => {
-      return localStorage.getItem(LocalStorageKeys.refreshToken) as string;
+    getUsers: (): IUserData[] | null => {
+      try {
+        if (localStorage.getItem(LocalStorageKeys.users)) {
+          return JSON.parse(
+            localStorage.getItem(LocalStorageKeys.users) as string
+          );
+        }
+        return null;
+      } catch (err) {
+        return null;
+      }
+    },
+
+    setUsers: (users: IUserData[]) => {
+      localStorage.setItem(LocalStorageKeys.users, JSON.stringify(users));
+    },
+
+    sigupUser: async (
+      values: IUserData
+    ): Promise<IResponse<IUserData | null>> => {
+      let updatedUsers: IUserData[] = [];
+      const users = this.auth.getUsers();
+
+      if (users) {
+        updatedUsers = [...updatedUsers, ...users];
+        const existingUser = updatedUsers.find(
+          (user) => user.email === values.email
+        );
+
+        if (existingUser) {
+          let msg = "User is already registered!";
+          let message_code = "";
+
+          if (existingUser.email === values.email) {
+            msg = "Email is already used!";
+            message_code = MessageCodes.email_is_used;
+          }
+
+          return {
+            success: false,
+            message: msg,
+            message_code,
+            errors: {
+              error: msg,
+            },
+            data: null,
+          };
+        }
+      }
+
+      updatedUsers.push(values);
+      localStorage.setItem(
+        LocalStorageKeys.users,
+        JSON.stringify(updatedUsers)
+      );
+      this.auth.setUserData(values);
+      return {
+        success: true,
+        message: `User created successfully`,
+        data: values,
+      };
+    },
+
+    loginUser: async (
+      values: ILoginValues
+    ): Promise<IResponse<IUserData | null>> => {
+      const users = this.auth.getUsers();
+
+      if (users) {
+        const user = users.find((user) => user.email === values.email);
+
+        if (!user) {
+          return {
+            success: false,
+            message: `User does not found with email address!`,
+            message_code: MessageCodes.user_not_found_with_email_address,
+            data: null,
+          };
+        }
+
+        if (user) {
+          const isMatch = user.password === values.password;
+
+          if (!isMatch) {
+            return {
+              success: false,
+              message: `You entered wrong password!`,
+              message_code: MessageCodes.wrong_password,
+              data: null,
+            };
+          }
+          this.auth.setUserData(user);
+          return {
+            success: true,
+            message: `Login successfully.`,
+            message_code: MessageCodes.login_success,
+            data: user,
+          };
+        }
+      }
+      return {
+        success: false,
+        message: `Somthing went wrong!`,
+        message_code: MessageCodes.user_not_found_with_email_address,
+        data: null,
+      };
     },
   };
 }

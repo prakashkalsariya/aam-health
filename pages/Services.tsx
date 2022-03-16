@@ -5,7 +5,7 @@ function Services() {
     <div>
       <div className={styles.service_section_container}>
         <div className={styles.service_color_varient_box_container}>
-           <div className={styles.service_color_varient_box_primary}>
+          <div className={styles.service_color_varient_box_primary}>
             <p>Allergy Symptoms</p>
             <p>Back Pain</p>
             <p>Cold or Flu</p>
@@ -18,11 +18,9 @@ function Services() {
             <p>Skin Rash</p>
             <p>Annual Physical</p>
             <p></p>
-          </div>  
+          </div>
 
-
-
-           {/* <div className={styles.service_color_varient_box_urgent}>
+          {/* <div className={styles.service_color_varient_box_urgent}>
             <p>UTI</p>
             <p>Headache </p>
             <p>Injuries</p>
@@ -37,10 +35,7 @@ function Services() {
             <p></p>
           </div>  */}
 
-
-
-
-{/* 
+          {/* 
            <div className={styles.service_color_varient_box_mental}>
             <p>Anxiety</p>
             <p>Depression </p>
@@ -54,12 +49,6 @@ function Services() {
             <p>Relationships </p>
             <p>Group Therapy</p>
           </div>  */}
-
-
-
-
-
-
 
           {/* <div className={styles.service_color_varient_box_women}>
             <p>UTI</p>
@@ -76,7 +65,6 @@ function Services() {
           </div> 
  */}
 
-
           {/* <div className={styles.service_color_varient_box_lgbtq}>
             <p>Annual Physical</p>
             <p>Pelvic Exam </p>
@@ -90,21 +78,6 @@ function Services() {
             <p>Behavioral Health </p>
             <p>UTI </p>
           </div> */}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         </div>
 
         <div className={styles.service_contain_container}>
@@ -166,8 +139,8 @@ function Services() {
             <div className={styles.service_contain_circle}></div>
 
             <div className={styles.service_contain_section}>
-              <h1>Women's Health</h1>
-              <p>Women's health and wellness</p>
+              <h1>Women&apos;s Health</h1>
+              <p>Women&apos;s health and wellness</p>
               <div className={styles.service_contain_btn}>
                 <button className={styles.service_contain_appointment_btn}>
                   Book In Appointment
