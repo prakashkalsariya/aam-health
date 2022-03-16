@@ -1,0 +1,32 @@
+.input_container{
+    display:flex;
+    
+    justify-content:flex-end;
+    margin-bottom: 40px;
+    margin-top: 35px;
+    @media only screen and (max-width: 600px) {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-left: 20px;
+      }
+    input{
+    
+    width: 408px;
+    height: 57px;
+    border-radius: 10px;
+border: 1px solid #E1E1E1;
+margin-right: 25px;
+padding-left: 20px;
+@media only screen and (max-width: 600px) {
+    width: 307px;
+height: 57px;
+margin-bottom: 20px;
+  }
+    }
+}
+
+.input_container input:placeholder-shown{
+    padding-left: 20px;
+    font-size: 14px;
+}

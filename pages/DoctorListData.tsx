@@ -1,5 +1,8 @@
 import styles from "../styles/DoctorListData.module.scss";
 import Image from "next/image";
+import AppHeader from "../component/header/AppHeader";
+import Input from "../component/input/Input";
+import Link from "next/link";
 
 const doctorsList = [
   {
@@ -149,7 +152,7 @@ const doctorsList = [
     name: "Dr Archana Krishna- Ph. D",
     speciality: "CARDIOLOGY",
     city: "DELHI",
-    image: "/static/doctors/archana-delhi-img.png",
+    image: "/static/doctors/archana-delhi-img.jpg",
     languages: "English, Hindi",
     experience: "13 Yrs",
     fees: {
@@ -806,7 +809,7 @@ const doctorsList = [
     name: "Dr. Kunal Shahi- MS",
     speciality: "CARDIOLOGY",
     city: "  LUCKNOW",
-    image: "/static/doctors/kunal-lacknow-img.jpg",
+    image: "/static/doctors/kunal-lucknow-img.jpg",
     languages: "English, Hindi",
     experience: "9 Yrs",
     fees: {
@@ -819,7 +822,7 @@ const doctorsList = [
     name: "Dr. Madhukar Kapoor- DNB",
     speciality: " ENT",
     city: "  LUCKNOW",
-    image: "/static/doctors/madhukar-lacknow-img.jpg",
+    image: "/static/doctors/madhukar-lucknow-img.jpg",
     languages: "English, Hindi",
     experience: "9 Yrs",
     fees: {
@@ -832,7 +835,7 @@ const doctorsList = [
     name: "Dr. Madhuresh Kumar- MS",
     speciality: " NEPHROLOGY",
     city: "  LUCKNOW",
-    image: "/static/doctors/madhuresh-lacknow-img.jfif",
+    image: "/static/doctors/madhuresh-lucknow-img.jfif",
     languages: "English, Hindi",
     experience: "9 Yrs",
     fees: {
@@ -845,7 +848,7 @@ const doctorsList = [
     name: "Dr. Mansi Dhingra- MS",
     speciality: " NEUROLOGY",
     city: "  LUCKNOW",
-    image: "/static/doctors/mansi-lacknow-img.jfif",
+    image: "/static/doctors/mansi-lucknow-img.jfif",
     languages: "English, Hindi",
     experience: "9 Yrs",
     fees: {
@@ -858,7 +861,7 @@ const doctorsList = [
     name: "Dr. Neeraj Tandon- MD",
     speciality: " NEUROSURGERY",
     city: "  LUCKNOW",
-    image: "/static/doctors/neeraj-lacknow-img.png",
+    image: "/static/doctors/neeraj-lucknow-img.png",
     languages: "English, Hindi",
     experience: "9 Yrs",
     fees: {
@@ -871,7 +874,7 @@ const doctorsList = [
     name: "Dr. Piyush P. Singh- M. Ch",
     speciality: " PRIMARY CARE PHYSICIAN",
     city: "  LUCKNOW",
-    image: "/static/doctors/piyush-lacknow-img.jpg",
+    image: "/static/doctors/piyush-lucknow-img.jpg",
     languages: "English, Hindi",
     experience: "9 Yrs",
     fees: {
@@ -884,7 +887,7 @@ const doctorsList = [
     name: "Dr. Pragati Sharma- MS",
     speciality: " PEDIATRICS",
     city: "  LUCKNOW",
-    image: "/static/doctors/pragati-lacknow-img.jpg",
+    image: "/static/doctors/pragati-lucknow-img.jpg",
     languages: "English, Hindi",
     experience: "9 Yrs",
     fees: {
@@ -897,7 +900,7 @@ const doctorsList = [
     name: "Dr. Prarthana Saxena- M. Ch",
     speciality: " UROLOGY",
     city: "  LUCKNOW",
-    image: "/static/doctors/prarthana-lacknow-img.jfif",
+    image: "/static/doctors/prarthana-lucknow-img.jfif",
     languages: "English, Hindi",
     experience: "9 Yrs",
     fees: {
@@ -910,7 +913,7 @@ const doctorsList = [
     name: "Dr. Praveen Sharma- DNB",
     speciality: " NEPHROLOGY",
     city: "  LUCKNOW",
-    image: "/static/doctors/praveen-lacknow-img.jpg",
+    image: "/static/doctors/praveen-lucknow-img.jpg",
     languages: "English, Hindi",
     experience: "9 Yrs",
     fees: {
@@ -962,10 +965,16 @@ const doctorsList = [
 function Doctorlistdata() {
   return (
     <div className={styles.doctor_data_list_container_1440}>
-      <div className={styles.doctor_data_list_container_1240}>
-        <div className={styles.main}>
+<AppHeader/>
 
-       
+      <div className={styles.doctor_data_list_container_1240}>
+        <div className={styles.input}> 
+      <Input/>
+      </div>
+      <div className={styles.filter_list}>
+        <ul><li><Link href="/FilterList"><a>Filter list</a></Link></li></ul>
+      </div>
+     <div className={styles.main_container}>
        {
       doctorsList.map( (value)=> (
          
