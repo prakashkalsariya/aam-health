@@ -12,5 +12,5 @@ export const handleBookAppointmentNavigation = () => {
     window.location.href = `/login?${QueryParams.redirectTo}=${url}`;
     return;
   }
-  window.location.href = `/login`;
+  window.location.href = url;
 };

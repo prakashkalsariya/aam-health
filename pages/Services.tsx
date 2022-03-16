@@ -142,8 +142,8 @@ function Services() {
             <div className={styles.service_contain_circle}></div>
 
             <div className={styles.service_contain_section}>
-              <h1>Women's Health</h1>
-              <p>Women's health and wellness</p>
+              <h1>Women&apos;s Health</h1>
+              <p>Women&apos;s health and wellness</p>
               <div className={styles.service_contain_btn}>
                 <button className={styles.service_contain_appointment_btn}>
                   Book In Appointment

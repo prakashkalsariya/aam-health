@@ -30,7 +30,7 @@ const doctorsList = [
     city: "DELHI",
     city_id: "Delhi",
 
-    image: "/static/doctors/neha-delhi--img.png",
+    image: "/static/doctors/neha-delhi-img.png",
     languages: "English, Hindi",
     experience: "16 Yrs",
     fees: {
@@ -291,7 +291,7 @@ const doctorsList = [
     city: "DELHI",
     city_id: "Delhi",
 
-    image: "/static/doctors/Sunita-delhi-img.png",
+    image: "/static/doctors/sunita-delhi-img.png",
     languages: "English, Hindi",
     experience: "16 Yrs",
     fees: {

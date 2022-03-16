@@ -97,15 +97,18 @@ function Loginpage() {
 
   return (
     <div className={styles.login_page_container}>
-      <div className={styles.login_page_img}>
-        <Image
-          src="/images/login-background-img.webp"
-          alt="Intro Model"
-          layout="fill"
-          objectFit={"cover"}
-          // unoptimized
-          // quality={100}
-        />
+      <div className={styles.image_container}>
+        <div className={styles.backdrop_layer}></div>
+        <div className={styles.login_page_img}>
+          <Image
+            src="/images/login-background-img.webp"
+            alt="Intro Model"
+            layout="fill"
+            objectFit={"cover"}
+            // unoptimized
+            // quality={100}
+          />
+        </div>
       </div>
       <div className={styles.header}>
         <AppHeader
