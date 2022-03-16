@@ -52,6 +52,12 @@ export class LocalStorageService {
       }
     },
 
+    logout: () => {
+      if (localStorage.getItem(LocalStorageKeys.user)) {
+        localStorage.removeItem(LocalStorageKeys.user);
+      }
+    },
+
     setUsers: (users: IUserData[]) => {
       localStorage.setItem(LocalStorageKeys.users, JSON.stringify(users));
     },

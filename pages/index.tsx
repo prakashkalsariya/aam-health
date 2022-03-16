@@ -4,10 +4,10 @@ import React from "react";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.scss";
-import Header from "../component/Header";
 import Footer from "../component/Footer";
 import Specialities from "../component/Specialities";
 import AppHeader from "../component/header/AppHeader";
+import LayoutContainer from "../component/layout/LayoutContainer";
 
 const Home: NextPage = () => {
   return (
@@ -24,10 +24,11 @@ const Home: NextPage = () => {
         <div className={styles.banner_container}>
           <div className={styles.banner_img}>
             <Image
-              src="/images/banner-img.png"
+              src="/images/banner-img.webp"
               alt="banner"
               layout="fill"
               objectFit={"cover"}
+              quality={100}
             />
           </div>
           <div className={styles.banner_contain_container}>
@@ -35,15 +36,17 @@ const Home: NextPage = () => {
               We care about <br />
               your health
             </h1>
-            <p className="font-400">
+            <p className="font-400 sub-text">
               Book a same day appointment with, <br />
               our specialized doctors
             </p>
-            <button className="font-600">Book an Appointment Now</button>
+            <button className={`font-600 ${styles.banner_button}`}>
+              Book an Appointment Now
+            </button>
           </div>
         </div>
 
-        <main className={styles.main}>
+        <LayoutContainer>
           <div className={styles.information_item_container}>
             <div className={styles.appointment_item}>
               <div className={styles.item_img}>
@@ -52,10 +55,14 @@ const Home: NextPage = () => {
                   alt="banner"
                   layout="fill"
                   objectFit={"cover"}
+                  quality={100}
                 />
               </div>
               <div className={styles.item_contain}>
-                <h1 className="font-700">Book a same day appointment</h1>
+                <h1 className="font-700">
+                  Book a same day
+                  <br /> appointment
+                </h1>
                 <p className="font-400">
                   Primary, urgent, and virtual care visits on YOUR schedule.
                 </p>
@@ -64,7 +71,9 @@ const Home: NextPage = () => {
 
             <div className={styles.team_item}>
               <div className={styles.item_contain}>
-                <h1 className="font-700">Chat with your health team</h1>
+                <h1 className="font-700">
+                  Chat with your <br /> health team
+                </h1>
                 <p className="font-400">
                   Get treated for a range of symptoms & conditions right from
                   your smartphone.
@@ -77,6 +86,7 @@ const Home: NextPage = () => {
                   alt="banner"
                   layout="fill"
                   objectFit={"cover"}
+                  quality={100}
                 />
               </div>
             </div>
@@ -88,10 +98,13 @@ const Home: NextPage = () => {
                   alt="banner"
                   layout="fill"
                   objectFit={"cover"}
+                  quality={100}
                 />
               </div>
               <div className={styles.item_contain}>
-                <h1 className="font-700">Prescriptions at your doorstep</h1>
+                <h1 className="font-700">
+                  Prescriptions at your <br /> doorstep
+                </h1>
                 <p className="font-400">
                   Get your medications sent straight to your chosen pharmacy or
                   to your door whatever works for you.
@@ -101,7 +114,9 @@ const Home: NextPage = () => {
 
             <div className={styles.place_item}>
               <div className={styles.item_contain}>
-                <h1 className="font-700">All your health in one place</h1>
+                <h1 className="font-700">
+                  All your health in <br /> one place
+                </h1>
                 <p className="font-400">
                   Access your medical charts, complete records, and test results
                   immediately.
@@ -113,23 +128,28 @@ const Home: NextPage = () => {
                   alt="banner"
                   layout="fill"
                   objectFit={"cover"}
+                  quality={100}
                 />
               </div>
             </div>
           </div>
+        </LayoutContainer>
 
+        <LayoutContainer>
           <div className={styles.specialities_heading}>
             <h1 className="font-700">Doctors of various specialities </h1>
             <p className="font-400">
-              Find doctors of all specializations suitable to treat your medical
-              conditions
+              Find doctors of all specializations suitable to treat your <br />{" "}
+              medical conditions
             </p>
           </div>
 
           <div>
             <Specialities />
           </div>
+        </LayoutContainer>
 
+        <main className={styles.main}>
           <div className={styles.specialities_btn}>
             <p></p>
             <button className="font-400">View More</button>

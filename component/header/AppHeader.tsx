@@ -4,6 +4,8 @@ import { ClientRoutes } from "../../constants/pages";
 import PrimaryButton from "../buttons/PrimaryButton";
 import styles from "./AppHeader.module.scss";
 import Logo from "../Logo";
+import { Person } from "@material-ui/icons";
+import { LocalStorageService } from "../../services/localStorage";
 
 const navigationLinks = [
   {
@@ -54,6 +56,7 @@ const AppHeader = ({
 }: IAppHeader) => {
   const [activeNavLink, setActiveNavLink] = useState("home");
   const [mobileNavBar, setMobileNavBar] = useState(false);
+  const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
 
   useEffect(() => {
     // let activeLink = "home";
@@ -66,6 +69,11 @@ const AppHeader = ({
   };
 
   useEffect(() => {
+    const isUserLoggedIn = LocalStorageService.auth.isUserLoggedIn();
+
+    if (isUserLoggedIn) {
+      setIsUserLoggedIn(true);
+    }
     const mobileDropdown = document.querySelector(".mobile-navbar");
     const closeButton = document.querySelector(".close-button");
     document.addEventListener("click", (e) => {
@@ -78,11 +86,18 @@ const AppHeader = ({
     });
   }, []);
 
+  const handleLogout = () => {
+    LocalStorageService.auth.logout();
+    window.location.reload();
+  };
+
   return (
     <header className={`${styles.head} ${classes.header}`}>
       <nav className={`${styles.navbar} ${classes.navbar}`}>
         <div className={styles.logo}>
-          <h1 className="font-700"><Logo/></h1>
+          <h1 className="font-700">
+            <Logo />
+          </h1>
         </div>
         <div className={styles.headerLeftContent}>
           <ul
@@ -94,7 +109,7 @@ const AppHeader = ({
               <li key={idx}>
                 <Link href={link.href}>
                   <a
-                    className={`font-500 ${styles.menuLink} ${
+                    className={`font-400 ${styles.menuLink} ${
                       activeNavLink === link.id ? styles.activeLink : ""
                     }`}
                     onClick={handleMobileNavBar}
@@ -110,18 +125,32 @@ const AppHeader = ({
               hideAuthButtons ? styles.display_none : ""
             }`}
           >
-            <Link href={`${ClientRoutes.login}`} passHref>
-              <a>
-                {" "}
-                <button className={styles.login_btn}>Login</button>
-              </a>
-            </Link>{" "}
-            <Link href={`${ClientRoutes.register}`} passHref>
-              <a>
-                {" "}
-                <button className={styles.signup_btn}>Sign Up</button>
-              </a>
-            </Link>
+            {isUserLoggedIn ? (
+              <div className={styles.user_container}>
+                <div
+                  className={styles.circle}
+                  title="click to Logout"
+                  onClick={() => handleLogout()}
+                >
+                  <Person className={styles.icon} />
+                </div>
+              </div>
+            ) : (
+              <div>
+                <Link href={`${ClientRoutes.login}`} passHref>
+                  <a>
+                    {" "}
+                    <button className={styles.login_btn}>Login</button>
+                  </a>
+                </Link>{" "}
+                <Link href={`${ClientRoutes.register}`} passHref>
+                  <a>
+                    {" "}
+                    <button className={styles.signup_btn}>Sign Up</button>
+                  </a>
+                </Link>
+              </div>
+            )}
           </div>
           <div
             className={`close-button ${styles.menuButtonContainer} ${
@@ -163,26 +192,39 @@ const AppHeader = ({
               <div
                 className={`${styles.mobileNavButtons} ${styles.buttonContainer}`}
               >
-                <Link href={`${ClientRoutes.login}`} passHref>
-                  <a>
-                    {" "}
-                    <PrimaryButton
-                      className={styles.login_btn}
-                      color="secondary"
-                      outlined={true}
+                {isUserLoggedIn ? (
+                  <div className={styles.user_container}>
+                    <div
+                      className={styles.circle}
+                      onClick={() => handleLogout()}
                     >
-                      Login
-                    </PrimaryButton>
-                  </a>
-                </Link>{" "}
-                <Link href={`${ClientRoutes.register}`} passHref>
-                  <a>
-                    {" "}
-                    <PrimaryButton className={styles.signup_btn}>
-                      Sign Up
-                    </PrimaryButton>
-                  </a>
-                </Link>{" "}
+                      <Person className={styles.icon} />
+                    </div>
+                  </div>
+                ) : (
+                  <div>
+                    <Link href={`${ClientRoutes.login}`} passHref>
+                      <a>
+                        {" "}
+                        <PrimaryButton
+                          className={styles.login_btn}
+                          color="secondary"
+                          outlined={true}
+                        >
+                          Login
+                        </PrimaryButton>
+                      </a>
+                    </Link>{" "}
+                    <Link href={`${ClientRoutes.register}`} passHref>
+                      <a>
+                        {" "}
+                        <PrimaryButton className={styles.signup_btn}>
+                          Sign Up
+                        </PrimaryButton>
+                      </a>
+                    </Link>{" "}
+                  </div>
+                )}
               </div>
             </div>
           </div>
