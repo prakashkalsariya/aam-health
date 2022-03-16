@@ -1,50 +1,43 @@
 .doctor_data_list_container_1440 {
   max-width: 1440px;
+  // height: 1200px;
   margin: auto;
   // border: 2px solid red;
-  @media only screen and (max-width: 600px) {
-   
-    width: 100%;
-  }
-
   .doctor_data_list_container_1240 {
     width: 1280px;
     margin: 0 auto;
-    @media only screen and (max-width: 600px) {
-      
-        width: 100%;
-      }
-   
-  }
-}
-
-
-.main_container{
-    padding: 20px 20px 20px 20px;
-    // border: 2px solid red;
+    // display: flex;
+    // height: 500px;
+    border: 2px solid black;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    @media only screen and (max-width: 600px) {
-        flex-direction: column;
-        flex-wrap: nowrap;
-        align-items: center;
-        width: 100%;
-      }
+    flex-direction: row;
+  }
 }
 
 .doctor_data_list_container {
   margin-bottom: 30px;
-  width: 600px;
+  width: 100%;
   height: 320px;
   background: #ffffff;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
-  // border-radius: 10px;
+  border-radius: 10px;
+  overflow: hidden;
   // border: 2px solid red;
+  transition: all 0.2s ease-in-out;
+
   @media only screen and (max-width: 600px) {
-    width: 300px;
+    width: 310px;
     height: 226px;
     border-radius: 10px;
+  }
+  cursor: pointer;
+  &:hover {
+    .list_btn {
+      .book_button {
+        background: #303030;
+        color: #ffffff;
+      }
+    }
   }
 }
 
@@ -52,8 +45,8 @@
   position: relative;
   width: 250px;
   height: 250px;
+  border-radius: 10px 0px 0px 0px;
   // border: 2px solid red;
-//   margin: 10px 0px 0px 10px;
   @media only screen and (max-width: 600px) {
     width: 100px;
     height: 100px;
@@ -71,31 +64,33 @@
     margin: 10px 0px 0px 18px;
     height: 171px;
   }
-  
+
   .contain_name {
     font-size: 16px;
     @media only screen and (max-width: 600px) {
-        font-size: 12px;
-        }
+      font-size: 12px;
+      padding-right: 5px;
+      }
   }
   .contain_speciality {
     font-size: 16px;
     margin-top: 6px;
     color: orange;
     @media only screen and (max-width: 600px) {
-        font-size: 12px;
-        line-height: 18px;
-    padding-right: 10px;
-        }
+      font-size: 12px;
+      line-height: 18px;
+  padding-right: 10px;
+      }
   }
 
   .contain_languages_icon {
     margin-top: 28px;
     display: flex;
     align-items: center;
+    // justify-content: center;
     @media only screen and (max-width: 600px) {
-        margin-top: 10px;
-        }
+      margin-top: 10px;
+      }
     .icon {
       position: relative;
       width: 20px;
@@ -116,14 +111,15 @@
     margin-top: 13px;
     display: flex;
     @media only screen and (max-width: 600px) {
-        margin-top: 11px;
-        }
+      margin-top: 11px;
+      }
     .icon {
       position: relative;
       width: 20px;
       height: 20px;
     }
     .contain_experience {
+      // margin-top: -5px;
       margin-left: 10px;
       font-size: 14px;
       color: var(--light-gray);
@@ -138,22 +134,118 @@
     margin-top: 25px;
     color: var(--light-gray);
     @media only screen and (max-width: 600px) {
-        margin-top: 12px;
-        }
+      margin-top: 12px;
+      }
   }
 }
 
 .list_btn button {
-  width: 600px;
+  width: 100%;
   height: 70px;
   background: var(--light-blue);
   border-radius: 0px 0px 10px 10px;
   color: white;
+  // font-weight: bold;
   border: 0px;
   @media only screen and (max-width: 600px) {
-    width: 300px;
+    
     height: 45px;
     }
+}
+
+.filters_containers {
+  display: flex;
+  justify-content: end;
+  @media only screen and (max-width: 600px) {
+   flex-direction: column;
+   align-items: center;
+    }
+  .specialities_filter {
+    margin-right: 30px;
+    @media only screen and (max-width: 600px) {
+      margin-right: 0px;
+       }
+  }
+  .input_container {
+    width: 350px;
+    max-width: 400px;
+    @media only screen and (max-width: 600px) {
+      width: 307px;
+      height: 57px;
+      margin-bottom: 20px;
+       }
+  }
+}
+
+.doctors_list {
+  display: grid;
+  grid-template-columns: calc(50% - 15px) calc(50% - 15px);
+  justify-content: space-between;
+  margin-top: 30px;
+  .outer_container {
+    margin-bottom: 30px;
+    opacity: 0;
+    transition: all 0.4s ease;
+    transform: translate(0px, 200px);
+    animation: bottom-in 0.4s ease-in-out 0.2s forwards;
+  }
+  @media (max-width: 600px) {
+    display: block;
+    
+    // margin: 0px auto;
+
+  }
+}
+
+// For filters
+
+.search_results_title {
+  margin-bottom: 15px;
+}
+.filters_container {
+  display: flex;
+  grid-template-columns: auto;
+  margin-bottom: 30px;
+  .filter_container {
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+    .title {
+      width: fit-content;
+      background: #303030;
+      border-radius: 0px 5px 5px 0px;
+      padding: 12px 19px;
+      color: white;
+      height: 40px;
+      font-size: 14px;
+    }
+    .filter_item {
+      background: #63c8f2;
+      color: white;
+      height: 40px;
+      padding: 12px 19px;
+      border-radius: 0px 5px 5px 0px;
+      margin-left: -5px;
+      display: flex;
+      align-items: center;
+      .filter_name {
+        font-size: 14px;
+      }
+    }
+    .icon_container {
+      .icon {
+        margin-left: 20px;
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+@keyframes bottom-in {
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px);
+  }
 }
 
 .input{

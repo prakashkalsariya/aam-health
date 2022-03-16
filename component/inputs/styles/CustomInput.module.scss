@@ -1,0 +1,42 @@
+.contain_input {
+  display: flex;
+  flex-direction: column;
+  input {
+    width: 100%;
+    border: 1px solid #c4c4c4;
+    margin-top: 10px;
+    border-radius: 10px;
+    margin-bottom: 22px;
+    padding: 18px 17px;
+    outline: none;
+    line-height: 120%;
+    &:hover {
+      border: 1px solid var(--primary);
+    }
+    &:focus {
+      border: 2px solid var(--primary);
+    }
+  }
+
+  input:placeholder-shown {
+    padding-left: 20px;
+  }
+  @media (max-width: 600px) {
+    width: 100%;
+    input {
+      width: 100%;
+    }
+  }
+}
+
+.helper_text {
+  width: 100%;
+  font-size: 14px;
+  margin-top: -10px;
+  margin-bottom: 20px;
+  color: var(--error-primary);
+}
+
+.display_none {
+  display: none !important;
+}

@@ -7,7 +7,10 @@ function Footer() {
     <footer className={styles.footer_container}>
       <div className={styles.footer_top_contain_container}>
         <div className={styles.footer_top_contain_logo}>
-         <h2> <Logo /></h2>
+          <h2>
+            {" "}
+            <Logo />
+          </h2>
           <p>All your healthcare, in one place.</p>
         </div>
         <div className={styles.footer_top_contain_button}>
@@ -153,33 +156,29 @@ function Footer() {
           </ul>
         </div>
       </div>
-<div className={styles.footer_bottom_contain_bg_color}>
-  
+      <div className={styles.footer_bottom_contain_bg_color}>
+        <div className={styles.footer_bottom_contain_container}>
+          <div className={styles.footer_bottom_logo}>
+            <h2>Aam Health</h2>
+            <p>© 2022</p>
+          </div>
 
-      <div className={styles.footer_bottom_contain_container}>
-       
-        <div className={styles.footer_bottom_logo}>
-          <h2>Aam Health</h2>
-          <p>© 2022</p>
-        </div>
-
-        <div className={styles.footer_bottom_policy}>
-          <ul>
-            <li>
-              <Link href="">
-                <a>Privacy Policy</a>
-              </Link>
-            </li>
-            <li>
-              <Link href="">
-                <a>Terms of Service</a>
-              </Link>
-            </li>
-          </ul>
+          <div className={styles.footer_bottom_policy}>
+            <ul>
+              <li>
+                <Link href="">
+                  <a>Privacy Policy</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="">
+                  <a>Terms of Service</a>
+                </Link>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-
-      </div> 
     </footer>
   );
 }
