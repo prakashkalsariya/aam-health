@@ -15,6 +15,7 @@
 }
 
 .doctor_data_list_container {
+  margin-bottom: 30px;
   width: 100%;
   height: 320px;
   background: #ffffff;
@@ -23,6 +24,12 @@
   overflow: hidden;
   // border: 2px solid red;
   transition: all 0.2s ease-in-out;
+
+  @media only screen and (max-width: 600px) {
+    width: 310px;
+    height: 226px;
+    border-radius: 10px;
+  }
   cursor: pointer;
   &:hover {
     .list_btn {
@@ -40,6 +47,11 @@
   height: 250px;
   border-radius: 10px 0px 0px 0px;
   // border: 2px solid red;
+  @media only screen and (max-width: 600px) {
+    width: 100px;
+    height: 100px;
+    margin: 10px 0px 0px 10px;
+  }
 }
 
 .list_img_contain_container {
@@ -48,14 +60,27 @@
 
 .list_contain {
   margin: 16px 0px 0px 20px;
+  @media only screen and (max-width: 600px) {
+    margin: 10px 0px 0px 18px;
+    height: 171px;
+  }
 
   .contain_name {
     font-size: 16px;
+    @media only screen and (max-width: 600px) {
+      font-size: 12px;
+      padding-right: 5px;
+      }
   }
   .contain_speciality {
     font-size: 16px;
     margin-top: 6px;
     color: orange;
+    @media only screen and (max-width: 600px) {
+      font-size: 12px;
+      line-height: 18px;
+  padding-right: 10px;
+      }
   }
 
   .contain_languages_icon {
@@ -63,6 +88,9 @@
     display: flex;
     align-items: center;
     // justify-content: center;
+    @media only screen and (max-width: 600px) {
+      margin-top: 10px;
+      }
     .icon {
       position: relative;
       width: 20px;
@@ -73,12 +101,18 @@
       margin-left: 10px;
       font-size: 14px;
       color: var(--light-gray);
+      @media only screen and (max-width: 600px) {
+        font-size: 12px;
+        }
     }
   }
 
   .contain_experience_icon {
     margin-top: 13px;
     display: flex;
+    @media only screen and (max-width: 600px) {
+      margin-top: 11px;
+      }
     .icon {
       position: relative;
       width: 20px;
@@ -89,6 +123,9 @@
       margin-left: 10px;
       font-size: 14px;
       color: var(--light-gray);
+      @media only screen and (max-width: 600px) {
+        font-size: 12px;
+        }
     }
   }
 
@@ -96,6 +133,9 @@
     font-size: 14px;
     margin-top: 25px;
     color: var(--light-gray);
+    @media only screen and (max-width: 600px) {
+      margin-top: 12px;
+      }
   }
 }
 
@@ -107,17 +147,33 @@
   color: white;
   // font-weight: bold;
   border: 0px;
+  @media only screen and (max-width: 600px) {
+    
+    height: 45px;
+    }
 }
 
 .filters_containers {
   display: flex;
   justify-content: end;
+  @media only screen and (max-width: 600px) {
+   flex-direction: column;
+   align-items: center;
+    }
   .specialities_filter {
     margin-right: 30px;
+    @media only screen and (max-width: 600px) {
+      margin-right: 0px;
+       }
   }
   .input_container {
     width: 350px;
     max-width: 400px;
+    @media only screen and (max-width: 600px) {
+      width: 307px;
+      height: 57px;
+      margin-bottom: 20px;
+       }
   }
 }
 
@@ -132,6 +188,12 @@
     transition: all 0.4s ease;
     transform: translate(0px, 200px);
     animation: bottom-in 0.4s ease-in-out 0.2s forwards;
+  }
+  @media (max-width: 600px) {
+    display: block;
+    
+    // margin: 0px auto;
+
   }
 }
 
@@ -185,3 +247,23 @@
     transform: translate(0px, 0px);
   }
 }
+
+.input{
+@media only screen and (max-width: 600px) {
+    display: none;
+        }
+
+    }
+
+
+    .filter_list{
+        margin-left: 40px;
+    }
+
+    .filter_list{
+        display: none;
+
+        @media only screen and (max-width: 600px) {
+            display: block;
+                }
+    }

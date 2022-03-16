@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { ClientRoutes } from "../../constants/pages";
 import PrimaryButton from "../buttons/PrimaryButton";
 import styles from "./AppHeader.module.scss";
+import Logo from "../Logo";
 
 const navigationLinks = [
   {
@@ -11,22 +12,22 @@ const navigationLinks = [
     id: "home",
   },
   {
-    title: "Our Services",
+    title: "About us",
     href: "#",
     id: "our_services",
   },
   {
-    title: "Testimonials",
+    title: "Medical Services",
     href: "#",
     id: "testimonials",
   },
   {
-    title: "Calculators",
+    title: "Blog",
     href: "#",
     id: "calculators",
   },
   {
-    title: "Contact",
+    title: "Doctors",
     href: "#",
     id: "contact",
   },
@@ -81,7 +82,7 @@ const AppHeader = ({
     <header className={`${styles.head} ${classes.header}`}>
       <nav className={`${styles.navbar} ${classes.navbar}`}>
         <div className={styles.logo}>
-          <h1 className="font-700">Healthy.How</h1>
+          <h1 className="font-700"><Logo/></h1>
         </div>
         <div className={styles.headerLeftContent}>
           <ul
