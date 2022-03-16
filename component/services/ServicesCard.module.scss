@@ -1,0 +1,355 @@
+
+.services_card_main_container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.primary_care_container {
+ width: 270px;
+  height: 370px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0.5rem 1rem 0 rgb(0 0 0 / 25%);
+
+  margin: 30px 20px 30px 20px;
+
+  .contain_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 200px;
+  
+    h1 {
+      font-size: 25px;
+      margin-top: 25px;
+    }
+  
+    p {
+      font-size: 14px;
+      margin-top: 8px;
+    }
+    .contain_date {
+      margin-top: 3px;
+    }
+  
+    button {
+      width: 200px;
+      height: 40px;
+      background-color: #1c4f75;
+      color: white;
+      border-radius: 30px;
+      border: 0px;
+      margin-top: 15px;
+    }
+
+
+    button:hover{
+        background-color: #408fad; 
+    }
+  }
+  
+  .color_box {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgb(88, 179, 202);
+    color: rgba(158, 234, 239, 0.565);
+    font-weight: bold;
+    font-size: 14px;
+    height: 170px;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+  
+    p {
+      width: 50%;
+      text-align: center;
+    }
+  }
+}
+
+
+
+
+.urgent_care_container {
+    width: 270px;
+    height: 370px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0.5rem 1rem 0 rgb(0 0 0 / 25%);
+  
+    margin: 30px 20px 30px 20px;
+  
+    .contain_container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 200px;
+    
+      h1 {
+        font-size: 25px;
+        margin-top: 25px;
+      }
+    
+      p {
+        font-size: 14px;
+        margin-top: 8px;
+      }
+      .contain_date {
+        margin-top: 3px;
+      }
+    
+      button {
+        width: 200px;
+        height: 40px;
+        background-color: #88690c;
+        color: white;
+        border-radius: 30px;
+        border: 0px;
+        margin-top: 15px;
+        
+   
+    }
+
+    button:hover{
+        background-color: #caa51c; 
+      }
+    }
+    
+    .color_box {
+      display: flex;
+      flex-wrap: wrap;
+      background-color: rgb(243, 217, 90);
+      color: rgb(136, 105, 12);
+      font-weight: bold;
+      font-size: 14px;
+      height: 170px;
+      padding: 10px;
+      justify-content: space-between;
+      align-items: center;
+    
+      p {
+        width: 50%;
+        text-align: center;
+      }
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+  .mental_health_container {
+    width: 270px;
+    height: 370px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0.5rem 1rem 0 rgb(0 0 0 / 25%);
+  
+    margin: 30px 20px 30px 20px;
+  
+    .contain_container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 200px;
+    
+      h1 {
+        font-size: 25px;
+        margin-top: 25px;
+      }
+    
+      p {
+        font-size: 14px;
+        margin-top: 8px;
+      }
+      .contain_date {
+        margin-top: 3px;
+      }
+    
+      button {
+        width: 200px;
+        height: 40px;
+        background-color: #56336e;
+        color: white;
+        border-radius: 30px;
+        border: 0px;
+        margin-top: 15px;
+        
+   
+    }
+
+    button:hover{
+        background-color: #9877a4; 
+      }
+    }
+    
+    .color_box {
+      display: flex;
+      flex-wrap: wrap;
+      background-color: rgb(214, 192, 216);
+      color: rgb(152, 119, 164);
+      font-weight: bold;
+      font-size: 14px;
+      height: 170px;
+      padding: 10px;
+      justify-content: space-between;
+      align-items: center;
+    
+      p {
+        width: 50%;
+        text-align: center;
+      }
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+  .women_health_container {
+    width: 270px;
+    height: 370px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0.5rem 1rem 0 rgb(0 0 0 / 25%);
+  
+    margin: 30px 20px 30px 20px;
+  
+    .contain_container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 200px;
+    
+      h1 {
+        font-size: 25px;
+        margin-top: 25px;
+      }
+    
+      p {
+        font-size: 14px;
+        margin-top: 8px;
+      }
+      .contain_date {
+        margin-top: 3px;
+      }
+    
+      button {
+        width: 200px;
+        height: 40px;
+        background-color: #338272;
+        color: white;
+        border-radius: 30px;
+        border: 0px;
+        margin-top: 15px;
+        
+    
+    }
+
+    button:hover{
+        background-color: #77c1a3; 
+      }
+    }
+    
+    .color_box {
+      display: flex;
+      flex-wrap: wrap;
+      background-color: rgb(21, 133, 98);
+      color: rgb(119, 193, 163);
+      font-weight: bold;
+      font-size: 14px;
+      height: 170px;
+      padding: 10px;
+      justify-content: space-between;
+      align-items: center;
+    
+      p {
+        width: 50%;
+        text-align: center;
+      }
+    }
+  }
+
+
+
+
+
+  .lgbtq_health_container{
+    width: 270px;
+    height: 370px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0.5rem 1rem 0 rgb(0 0 0 / 25%);
+  
+    margin: 30px 20px 30px 20px;
+  
+    .contain_container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 200px;
+    
+      h1 {
+        font-size: 25px;
+        margin-top: 25px;
+      }
+    
+      p {
+        font-size: 14px;
+        margin-top: 8px;
+      }
+      .contain_date {
+        margin-top: 3px;
+      }
+    
+      button {
+        width: 200px;
+        height: 40px;
+        background-color: rgb(241, 115, 65);
+        color: white;
+        border-radius: 30px;
+        border: 0px;
+        margin-top: 15px;
+        
+   
+      }
+
+      button:hover{
+        background-color: rgb(248, 180, 153); 
+    }
+    }
+    
+    .color_box {
+      display: flex;
+      flex-wrap: wrap;
+      background-color: lightsalmon;
+      color: rgb(255, 203, 183);
+      font-weight: bold;
+      font-size: 14px;
+      height: 170px;
+      padding: 10px;
+      justify-content: space-between;
+      align-items: center;
+    
+      p {
+        width: 50%;
+        text-align: center;
+      }
+    }
+  }
+
+
+

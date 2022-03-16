@@ -4,7 +4,7 @@
   }
   
   .service_color_varient_box_primary {
-    background-color: lightblue;
+    background-color: rgb(88, 179, 202);
     width: 700px;
     height: 1000px;
     
@@ -14,7 +14,7 @@
     p {
       font-size: 50px;
       font-weight: bold;
-      color: rgb(145, 145, 145);
+      color: rgba(158, 234, 239, 0.565);
       margin: 0px;
       padding-bottom: 20px;
       // width: 100%;
@@ -23,7 +23,7 @@
   
   
   .service_color_varient_box_urgent {
-      background-color: lightsalmon;
+      background-color: rgb(243, 217, 90);
       width: 700px;
       height: 1000px;
       padding-top: 40px;
@@ -33,7 +33,7 @@
       p {
         font-size: 50px;
         font-weight: bold;
-        color: rgb(145, 145, 145);
+        color: rgb(136, 105, 12);
         margin: 0px;
         padding-bottom: 20px;
         // width: 100%;
@@ -45,7 +45,7 @@
   
   
     .service_color_varient_box_mental {
-      background-color: blueviolet;
+      background-color: rgb(214, 192, 216);
       width: 700px;
       height: 1000px;
       padding-top: 40px;
@@ -54,7 +54,7 @@
       p {
         font-size: 50px;
         font-weight: bold;
-        color: rgb(145, 145, 145);
+        color: rgb(152, 119, 164);
         margin: 0px;
         padding-bottom: 20px;
         // width: 100%;
@@ -63,7 +63,7 @@
   
   
     .service_color_varient_box_women {
-      background-color: lightgreen;
+      background-color: rgb(21, 133, 98);
       width: 700px;
       height: 1000px;
       padding-top: 40px;
@@ -72,7 +72,7 @@
       p {
         font-size: 50px;
         font-weight: bold;
-        color: rgb(145, 145, 145);
+        color: rgb(119, 193, 163);
         margin: 0px;
         padding-bottom: 20px;
         // width: 100%;
@@ -80,7 +80,7 @@
     }
   
     .service_color_varient_box_lgbtq {
-      background-color: orange;
+      background-color: lightsalmon;
       width: 700px;
       height: 1000px;
       padding-top: 40px;
@@ -89,7 +89,7 @@
       p {
         font-size: 50px;
         font-weight: bold;
-        color: rgb(145, 145, 145);
+        color: rgb(255, 203, 183);
         margin: 0px;
         padding-bottom: 20px;
         // width: 100%;
@@ -120,7 +120,7 @@
       width: 20px;
       height: 20px;
       border-radius: 50%;
-      background-color: lightblue;
+      background-color: #1c4f75;
       margin: 18px 30px 0px 0px;
       visibility: hidden;
     }
@@ -150,11 +150,14 @@
         .service_contain_appointment_btn {
           width: 200px;
           height: 50px;
-          background-color: lightblue;
-          border: 2px solid lightblue;
+          background-color: #1c4f75;
+          border: 0px;
           border-radius: 30px;
           color: white;
           font-weight: bold;
+        }
+        .service_contain_appointment_btn:hover{
+          background-color: #408fad;
         }
   
         .service_contain_learn_more_btn {
@@ -205,7 +208,7 @@
         width: 20px;
         height: 20px;
         border-radius: 50%;
-        background-color: lightsalmon;
+        background-color: #88690c;
         margin: 18px 30px 0px 0px;
         visibility: hidden;
       }
@@ -235,11 +238,14 @@
           .service_contain_appointment_btn {
             width: 200px;
             height: 50px;
-            background-color: lightsalmon;
-            border: 2px solid lightsalmon;
+            background-color: #88690c;
+            border: 0px;
             border-radius: 30px;
             color: white;
             font-weight: bold;
+          }
+          .service_contain_appointment_btn:hover{
+            background-color: #caa51c; 
           }
     
           .service_contain_learn_more_btn {
@@ -291,7 +297,7 @@
         width: 20px;
         height: 20px;
         border-radius: 50%;
-        background-color: blueviolet;
+        background-color: #56336e;
         margin: 18px 30px 0px 0px;
         visibility: hidden;
       }
@@ -321,11 +327,14 @@
           .service_contain_appointment_btn {
             width: 200px;
             height: 50px;
-            background-color: blueviolet;
-            border: 2px solid blueviolet;
+            background-color: #56336e;
+            border: 0px;
             border-radius: 30px;
             color: white;
             font-weight: bold;
+          }
+          .service_contain_appointment_btn:hover{
+            background-color: #9877a4; 
           }
     
           .service_contain_learn_more_btn {
@@ -375,7 +384,7 @@
         width: 20px;
         height: 20px;
         border-radius: 50%;
-        background-color: lightgreen;
+        background-color: #338272;
         margin: 18px 30px 0px 0px;
         visibility: hidden;
       }
@@ -405,11 +414,14 @@
           .service_contain_appointment_btn {
             width: 200px;
             height: 50px;
-            background-color: lightgreen;
-            border: 2px solid lightgreen;
+            background-color: #338272;
+            border: 0px;
             border-radius: 30px;
             color: white;
             font-weight: bold;
+          }
+          .service_contain_appointment_btn:hover{
+            background-color: #77c1a3; 
           }
     
           .service_contain_learn_more_btn {
@@ -458,7 +470,7 @@
         width: 20px;
         height: 20px;
         border-radius: 50%;
-        background-color: orange;
+        background-color: rgb(245, 193, 97);
         margin: 18px 30px 0px 0px;
         visibility: hidden;
       }
@@ -488,13 +500,15 @@
           .service_contain_appointment_btn {
             width: 200px;
             height: 50px;
-            background-color: orange;
-            border: 2px solid orange;
+            background-color: rgb(241, 115, 65);
+            border: 0px;
             border-radius: 30px;
             color: white;
             font-weight: bold;
           }
-    
+          .service_contain_appointment_btn:hover{
+            background-color: rgb(248, 180, 153); 
+          }
           .service_contain_learn_more_btn {
             background-color: lightgray;
             width: 100px;
