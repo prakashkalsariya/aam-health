@@ -1,10 +1,16 @@
 import styles from "./Specialities.module.scss";
 import Image from "next/image";
+import { handleBookAppointmentNavigation } from "../utils/utils";
 
 function Specialities() {
   return (
     <div className={styles.specialities_item_container}>
-      <div className={styles.specialities_item}>
+      <div
+        className={styles.specialities_item}
+        onClick={() => {
+          handleBookAppointmentNavigation();
+        }}
+      >
         <div className={styles.specialities_item_img}>
           <Image
             src="/images/births-specialities-img.svg"
@@ -21,7 +27,12 @@ function Specialities() {
         </div>
       </div>
 
-      <div className={styles.specialities_item}>
+      <div
+        className={styles.specialities_item}
+        onClick={() => {
+          handleBookAppointmentNavigation();
+        }}
+      >
         <div className={styles.specialities_item_img}>
           <Image
             src="/images/pulmonary-specialities-img.svg"
@@ -38,7 +49,12 @@ function Specialities() {
         </div>
       </div>
 
-      <div className={styles.specialities_item}>
+      <div
+        className={styles.specialities_item}
+        onClick={() => {
+          handleBookAppointmentNavigation();
+        }}
+      >
         <div className={styles.specialities_item_img}>
           <Image
             src="/images/cardiology-specialities-img.svg"
@@ -55,7 +71,12 @@ function Specialities() {
         </div>
       </div>
 
-      <div className={styles.specialities_item}>
+      <div
+        className={styles.specialities_item}
+        onClick={() => {
+          handleBookAppointmentNavigation();
+        }}
+      >
         <div className={styles.specialities_item_img}>
           <Image
             src="/images/neurology-specialities-img.svg"
@@ -72,7 +93,12 @@ function Specialities() {
         </div>
       </div>
 
-      <div className={styles.specialities_item}>
+      <div
+        className={styles.specialities_item}
+        onClick={() => {
+          handleBookAppointmentNavigation();
+        }}
+      >
         <div className={styles.specialities_item_img}>
           <Image
             src="/images/traumatology-specialities-img.svg"
@@ -89,7 +115,12 @@ function Specialities() {
         </div>
       </div>
 
-      <div className={styles.specialities_item}>
+      <div
+        className={styles.specialities_item}
+        onClick={() => {
+          handleBookAppointmentNavigation();
+        }}
+      >
         <div className={styles.specialities_item_img}>
           <Image
             src="/images/neurology-specialities-img-2.svg"
@@ -106,7 +137,12 @@ function Specialities() {
         </div>
       </div>
 
-      <div className={styles.specialities_item}>
+      <div
+        className={styles.specialities_item}
+        onClick={() => {
+          handleBookAppointmentNavigation();
+        }}
+      >
         <div className={styles.specialities_item_img}>
           <Image
             src="/images/dental-specialities-img.svg"
@@ -123,7 +159,12 @@ function Specialities() {
         </div>
       </div>
 
-      <div className={styles.specialities_item}>
+      <div
+        className={styles.specialities_item}
+        onClick={() => {
+          handleBookAppointmentNavigation();
+        }}
+      >
         <div className={styles.specialities_item_img}>
           <Image
             src="/images/pregnancy-specialities-img.svg"
@@ -140,7 +181,12 @@ function Specialities() {
         </div>
       </div>
 
-      <div className={styles.specialities_item}>
+      <div
+        className={styles.specialities_item}
+        onClick={() => {
+          handleBookAppointmentNavigation();
+        }}
+      >
         <div className={styles.specialities_item_img}>
           <Image
             src="/images/for-disabled-specialities-img.svg"
@@ -157,7 +203,12 @@ function Specialities() {
         </div>
       </div>
 
-      <div className={styles.specialities_item}>
+      <div
+        className={styles.specialities_item}
+        onClick={() => {
+          handleBookAppointmentNavigation();
+        }}
+      >
         <div className={styles.specialities_item_img}>
           <Image
             src="/images/prostheses-specialities-img.svg"

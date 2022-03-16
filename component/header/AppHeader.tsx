@@ -96,7 +96,11 @@ const AppHeader = ({
       <nav className={`${styles.navbar} ${classes.navbar}`}>
         <div className={styles.logo}>
           <h1 className="font-700">
-            <Logo />
+            <Link href="/" passHref>
+              <a>
+                <Logo />
+              </a>
+            </Link>
           </h1>
         </div>
         <div className={styles.headerLeftContent}>

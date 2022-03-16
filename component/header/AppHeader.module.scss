@@ -24,7 +24,7 @@
 
 .logo {
   margin: 2px;
-  z-index: 9999;
+  z-index: 999;
   color: var(--primary);
   h1 {
     margin: 0px;
@@ -131,7 +131,7 @@
   flex-direction: column;
   align-items: flex-end;
   justify-content: space-between;
-  z-index: 9999;
+  z-index: 999;
   @media (min-width: 1180px) {
     display: none;
   }
@@ -158,21 +158,21 @@
     .menuButtonMiddleLine {
       margin-right: 10vw !important;
       opacity: 0;
-      z-index: 9999;
+      z-index: 999;
     }
     .menuButtonTopLine {
       width: 20px;
       height: 2px;
       transform-origin: right;
       transform: rotate(-45deg) translate(0, -1px);
-      z-index: 9999;
+      z-index: 999;
     }
     .menuButtonBottomLine {
       width: 20px;
       height: 2px;
       transform-origin: right;
       transform: rotate(45deg) translate(0, 0);
-      z-index: 9999;
+      z-index: 999;
     }
   }
 }
@@ -189,7 +189,7 @@
   top: 0;
   right: 0;
   left: 0;
-  z-index: 999;
+  z-index: 900;
   background: rgba(255, 255, 255, 0.3);
   box-shadow: 0px 4px 27px rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(70px);

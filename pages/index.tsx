@@ -8,6 +8,7 @@ import Footer from "../component/Footer";
 import Specialities from "../component/Specialities";
 import AppHeader from "../component/header/AppHeader";
 import LayoutContainer from "../component/layout/LayoutContainer";
+import { handleBookAppointmentNavigation } from "../utils/utils";
 
 const Home: NextPage = () => {
   return (
@@ -40,7 +41,12 @@ const Home: NextPage = () => {
               Book a same day appointment with, <br />
               our specialized doctors
             </p>
-            <button className={`font-600 ${styles.banner_button}`}>
+            <button
+              onClick={() => {
+                handleBookAppointmentNavigation();
+              }}
+              className={`font-600 ${styles.banner_button}`}
+            >
               Book an Appointment Now
             </button>
           </div>
@@ -144,27 +150,21 @@ const Home: NextPage = () => {
             </p>
           </div>
 
-          <div>
+          <div className={styles.specialities_section}>
             <Specialities />
           </div>
         </LayoutContainer>
 
-        <main className={styles.main}>
-          <div className={styles.specialities_btn}>
-            <p></p>
-            <button className="font-400">View More</button>
-            <p></p>
+        <div className={styles.move_in_container}>
+          <div className={styles.move_in_top_contain}>
+            <h1 className="font-700">We&apos;re movin&apos;in!</h1>
+            <p className="font-400">
+              Modern clinics, designed from the ground up, with patient
+              experience in mind. Check out our new locations.
+            </p>
           </div>
 
-          <div className={styles.move_in_container}>
-            <div className={styles.move_in_top_contain}>
-              <h1>We&apos;re movin&apos;in!</h1>
-              <p>
-                Modern clinics, designed from the ground up, with patient
-                experience in mind. Check out our new locations.
-              </p>
-            </div>
-
+          <LayoutContainer>
             <div className={styles.move_in_img_contain_container}>
               <div className={styles.move_in_img}>
                 <Image
@@ -176,44 +176,79 @@ const Home: NextPage = () => {
               </div>
 
               <div className={styles.move_in_location_container}>
-                <div className={styles.santa_clara_square_location}>
-                  <h2>Santa Clara Square</h2>
-                  <p>2712 Augustine Dr. Santa Clara, CA 95054</p>
-                  <button>View Location</button>
+                <div
+                  className={`${styles.santa_clara_square_location} ${styles.move_in_content}`}
+                >
+                  <h2 className="font-500">Mumbai</h2>
+                  <p className="font-400">
+                    4, Sukan Apt, Mg Road No.3, Kandivli(w)
+                  </p>
+                  <button className="font-400">View Location</button>
                 </div>
 
-                <div className={styles.san_pedro_square_location}>
-                  <h2>San Pedro Square</h2>
-                  <p>28 N. Almaden Avenue, San Jose, CA 95110</p>
-                  <button>View Location</button>
+                <div
+                  className={`${styles.san_pedro_square_location} ${styles.move_in_content}`}
+                >
+                  <h2 className="font-500">Delhi</h2>
+                  <p className="font-400">
+                    309 Narsi Natha Street Masjid Bunder, Delhi, 400003
+                  </p>
+                  <button className="font-400">View Location</button>
                 </div>
 
-                <div className={styles.almaden_ranch_location}>
-                  <h2>Almaden Ranch</h2>
-                  <p>5120 Cherry Ave, San Jose, CA 95118</p>
-                  <button>View Location</button>
+                <div
+                  className={`${styles.almaden_ranch_location} ${styles.move_in_content}`}
+                >
+                  <h2 className="font-500">Patna</h2>
+                  <p className="font-400">
+                    11 Troop Bazar, Hyderabad, Patna, 500001
+                  </p>
+                  <button className="font-400">View Location</button>
                 </div>
 
-                <div className={styles.hillsdale_mall_location}>
-                  <h2>Hillsdale Mall</h2>
-                  <p>70 31st Ave, San Mateo, CA 94403</p>
-                  <button>View Location</button>
+                <div
+                  className={`${styles.hillsdale_mall_location} ${styles.move_in_content}`}
+                >
+                  <h2 className="font-500">Jaipur</h2>
+                  <p className="font-400">
+                    60 Hirnen Shopping Centre M.g. Road Opp Ratna Hotel
+                    Goregaon, Jaipur, 400062
+                  </p>
+                  <button className="font-400">View Location</button>
                 </div>
 
-                <div className={styles.redwood_plaza_location}>
-                  <h2>Redwood Plaza</h2>
-                  <p>784 Admiral Callaghan Ln, Vallejo, CA 94591</p>
-                  <button>View Location</button>
+                <div
+                  className={`${styles.redwood_plaza_location} ${styles.move_in_content}`}
+                >
+                  <h2 className="font-500">Ranchi</h2>
+                  <p className="font-400">
+                    Radium Rd, beside Maharaja Hotel, Ahirtoli, Ranchi,
+                    Jharkhand 834001
+                  </p>
+                  <button className="font-400">View Location</button>
                 </div>
 
-                <div className={styles.grand_plaza_location}>
-                  <h2>Grand Plaza</h2>
-                  <p>109 S. Las Posas Rd, San Marcos, CA 92078</p>
-                  <button>View Location</button>
+                <div
+                  className={`${styles.grand_plaza_location} ${styles.move_in_content}`}
+                >
+                  <h2 className="font-500">Lucknow</h2>
+                  <p className="font-400">
+                    Mody Estate L B Shastri Marg Chira Nagar Ghatkopar, Mumbai,
+                    Lucknow, 400086
+                  </p>
+                  <button className="font-400">View Location</button>
                 </div>
               </div>
             </div>
-          </div>
+          </LayoutContainer>
+        </div>
+
+        <main className={styles.main}>
+          {/* <div className={styles.specialities_btn}>
+            <p></p>
+            <button className="font-400">View More</button>
+            <p></p>
+          </div> */}
 
           <div className={styles.phone_app_container}>
             <div className={styles.phone_app_img}>

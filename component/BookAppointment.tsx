@@ -12,6 +12,10 @@ import React, { useEffect, useState } from "react";
 
 const useStyles = makeStyles((theme: Theme) => ({
   dialogueContainer: {
+    // zIndex: `13000 !important`,
+    "& .MuiBackdrop-root": {
+      backdropFilter: `blur(10px)`,
+    },
     "& .MuiDialogContent-root": {
       padding: "60px 30px",
     },
