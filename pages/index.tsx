@@ -9,6 +9,7 @@ import Specialities from "../component/Specialities";
 import AppHeader from "../component/header/AppHeader";
 import LayoutContainer from "../component/layout/LayoutContainer";
 import { handleBookAppointmentNavigation } from "../utils/utils";
+import MedicalServices from "../component/MedicalServices";
 
 const Home: NextPage = () => {
   return (
@@ -155,6 +156,8 @@ const Home: NextPage = () => {
           </div>
         </LayoutContainer>
 
+        <MedicalServices />
+
         <div className={styles.move_in_container}>
           <div className={styles.move_in_top_contain}>
             <h1 className="font-700">We&apos;re movin&apos;in!</h1>
@@ -243,60 +246,69 @@ const Home: NextPage = () => {
           </LayoutContainer>
         </div>
 
+        <div className={styles.phone_app_container}>
+          <div className={styles.phone_app_img}>
+            <Image
+              src="/images/mobile-app-demo.webp"
+              alt="app-data"
+              // objectFit="cover"
+              layout="fill"
+            />
+          </div>
+          <div className={styles.phone_app_contain_container}>
+            <div className={styles.phone_app_top_contain}>
+              <h1 className="font-700">Get treated right from your phone.</h1>
+              <div className={styles.mobile_no_contain}>
+                <input
+                  className="font-500"
+                  type="number"
+                  placeholder="Phone Number"
+                />
+                <button className="font-400">Text Me The App</button>
+              </div>
+              <p className="font-400">
+                AVAILABLE IN THE APP STORE AND GOOGLE PLAY
+              </p>
+            </div>
+
+            <div className={styles.phone_app_bottom_contain}>
+              <div className={styles.mobile_phone_used_img}>
+                <Image
+                  src="/images/mobile-phone-used-img.webp"
+                  alt="app-data"
+                  // objectFit="cover"
+                  layout="fill"
+                />
+              </div>
+
+              <div className={styles.mobile_point}>
+                <p>
+                  <span className={styles.checkmark}></span> Book same-day
+                  appointments
+                </p>
+                <p>
+                  <span className={styles.checkmark}></span> Talk to a provider
+                  in real time
+                </p>
+                <p>
+                  <span className={styles.checkmark}></span> Get care from the
+                  comfort of home
+                </p>
+                <p>
+                  <span className={styles.checkmark}></span> Most insurance
+                  accepted
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <main className={styles.main}>
           {/* <div className={styles.specialities_btn}>
             <p></p>
             <button className="font-400">View More</button>
             <p></p>
           </div> */}
-
-          <div className={styles.phone_app_container}>
-            <div className={styles.phone_app_img}>
-              <Image
-                src="/images/mobile-img.jpg"
-                alt="app-data"
-                objectFit="cover"
-                layout="fill"
-              />
-            </div>
-
-            <div className={styles.phone_app_contain_container}>
-              <div className={styles.phone_app_top_contain}>
-                <h1>Get treated right from your phone.</h1>
-                <div className={styles.mobile_no_contain}>
-                  <input type="number" placeholder="Phone Number" />
-                  <button>Text Me The App</button>
-                </div>
-                <p>AVAILABLE IN THE APP STORE AND GOOGLE PLAY</p>
-              </div>
-
-              <div className={styles.phone_app_bottom_contain}>
-                <div className={styles.mobile_phone_used_img}>
-                  <Image
-                    src="/images/mobile-phone-used-img.jpeg"
-                    alt="app-data"
-                    // objectFit="cover"
-                    layout="fill"
-                  />
-                </div>
-
-                <div className={styles.mobile_point}>
-                  <p>
-                    <span>»</span> Book same-day appointments
-                  </p>
-                  <p>
-                    <span>»</span>Talk to a provider in real time
-                  </p>
-                  <p>
-                    <span>»</span>Get care from the comfort of home
-                  </p>
-                  <p>
-                    <span>»</span>Most insurance accepted
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
 
           <div className={styles.covid_container}>
             <div className={styles.covid_img}>
@@ -308,33 +320,41 @@ const Home: NextPage = () => {
               />
             </div>
 
-            <div className={styles.covid_contain_container}>
-              <div className={styles.covid_top_contain}>
-                <p>
-                  CAPTAIN NAJERA, LA FIRE DEPT, DODGER STADIUM VACCINATION SITE:
-                </p>
-                <h1>
-                  In order to make this work well, we have a collaborative
-                  effort with Carbon Health... Without them this wouldn’t work.
-                </h1>
-                <button>See All COVID-19 Initiatives</button>
-              </div>
-              <div className={styles.covid_bottom_contain}>
-                <div className={styles.covid_bottom_left}>
-                  <p>TESTS CONDUCTED</p>
-                  <h1>1.44 million +</h1>
+            <LayoutContainer>
+              <div className={styles.covid_contain_container}>
+                <div className={styles.covid_top_contain}>
+                  <p className="font-300">
+                    CAPTAIN NAJERA, LA FIRE DEPT, DODGER STADIUM VACCINATION
+                    SITE:
+                  </p>
+                  <h1 className="font-00">
+                    In order to make this work well, we have a collaborative
+                    effort with Carbon Health... Without them this wouldn’t
+                    work.
+                  </h1>
+                  <button className="font-00">
+                    See All COVID-19 Initiatives
+                  </button>
                 </div>
-                <div className={styles.covid_bottom_center}>
-                  <p>VACCINES ADMINISTERED</p>
-                  <h1>1.55 million +</h1>
-                </div>
+                <div className={styles.covid_bottom_contain}>
+                  <div className={styles.covid_bottom_left}>
+                    <p>TESTS CONDUCTED</p>
+                    <h1>1.44 million +</h1>
+                  </div>
+                  <div className={styles.covid_bottom_center}>
+                    <p>VACCINES ADMINISTERED</p>
+                    <h1>1.55 million +</h1>
+                  </div>
 
-                <div className={styles.covid_bottom_right}>
-                  <p>UCSF DIGITAL HEALTH AWARDS</p>
-                  <h1>COVID Patriot Best Delivery & Decision Support Award</h1>
+                  <div className={styles.covid_bottom_right}>
+                    <p>UCSF DIGITAL HEALTH AWARDS</p>
+                    <h1>
+                      COVID Patriot Best Delivery & Decision Support Award
+                    </h1>
+                  </div>
                 </div>
               </div>
-            </div>
+            </LayoutContainer>
           </div>
         </main>
 

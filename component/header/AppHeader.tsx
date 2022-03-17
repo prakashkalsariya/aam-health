@@ -14,14 +14,14 @@ const navigationLinks = [
     id: "home",
   },
   {
-    title: "About us",
-    href: "#",
-    id: "our_services",
-  },
-  {
     title: "Medical Services",
     href: "#",
     id: "testimonials",
+  },
+  {
+    title: "Doctors",
+    href: "/book-appointment",
+    id: "contact",
   },
   {
     title: "Blog",
@@ -29,9 +29,9 @@ const navigationLinks = [
     id: "calculators",
   },
   {
-    title: "Doctors",
+    title: "About us",
     href: "#",
-    id: "contact",
+    id: "our_services",
   },
 ];
 
