@@ -427,6 +427,9 @@
   @media only screen and (max-width: 600px) {
     height: 820px;
   }
+  @media only screen and (max-width: 400px) {
+    height: 900px;
+  }
 }
 
 .move_in_top_contain {
@@ -460,6 +463,7 @@
     @media only screen and (max-width: 600px) {
       font-size: 18px;
       width: 90%;
+      // line-height: 30px;
     }
   }
 }
@@ -511,7 +515,7 @@
     font-weight: 600;
     font-size: 33px;
     margin: 0px;
-    margin-bottom: 3px;
+    margin-bottom: 0px;
     transition: font-size;
     transition-duration: 0.2s;
     transition: font-size 0.4s ease-in-out;
@@ -523,10 +527,12 @@
     margin: 0px;
     font-size: 17px;
     color: white;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
     visibility: hidden;
+    line-height: 21px;
     @media only screen and (max-width: 600px) {
       font-size: 15px;
+      
     }
   }
   button {
@@ -543,7 +549,7 @@
 .santa_clara_square_location:hover {
   height: 215px;
   h2 {
-    font-size: 45px;
+    font-size: 40px;
     color: white;
     font-weight: 700;
     @media only screen and (max-width: 600px) {
@@ -552,6 +558,9 @@
   }
   p {
     visibility: visible;
+    @media only screen and (max-width: 600px) {
+      font-size: 12px;
+    }
   }
 
   button {
@@ -571,7 +580,7 @@
     font-weight: 600;
     font-size: 33px;
     margin: 0px;
-    margin-bottom: 3px;
+    margin-bottom: 0px;
     transition: font-size;
     transition-duration: 0.2s;
     transition: font-size 0.4s ease-in-out;
@@ -583,8 +592,9 @@
     margin: 0px;
     font-size: 17px;
     color: white;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
     visibility: hidden;
+    line-height: 21px;
     @media only screen and (max-width: 600px) {
       font-size: 15px;
     }
@@ -603,7 +613,7 @@
 .san_pedro_square_location:hover {
   height: 215px;
   h2 {
-    font-size: 45px;
+    font-size: 40px;
     color: white;
     font-weight: 700;
     @media only screen and (max-width: 600px) {
@@ -612,6 +622,9 @@
   }
   p {
     visibility: visible;
+    @media only screen and (max-width: 600px) {
+      font-size: 12px;
+    }
   }
 
   button {
@@ -631,7 +644,7 @@
     font-weight: 600;
     font-size: 33px;
     margin: 0px;
-    margin-bottom: 3px;
+    margin-bottom:0px;
     transition: font-size;
     transition-duration: 0.2s;
     transition: font-size 0.4s ease-in-out;
@@ -643,8 +656,9 @@
     margin: 0px;
     font-size: 17px;
     color: white;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
     visibility: hidden;
+    line-height: 21px;
     @media only screen and (max-width: 600px) {
       font-size: 15px;
     }
@@ -663,7 +677,7 @@
 .almaden_ranch_location:hover {
   height: 215px;
   h2 {
-    font-size: 45px;
+    font-size: 40px;
     color: white;
     font-weight: 700;
     @media only screen and (max-width: 600px) {
@@ -672,6 +686,9 @@
   }
   p {
     visibility: visible;
+    @media only screen and (max-width: 600px) {
+      font-size: 12px;
+    }
   }
 
   button {
@@ -691,7 +708,7 @@
     font-weight: 600;
     font-size: 33px;
     margin: 0px;
-    margin-bottom: 3px;
+    margin-bottom: 0px;
     transition: font-size;
     transition-duration: 0.2s;
     transition: font-size 0.4s ease-in-out;
@@ -703,8 +720,9 @@
     margin: 0px;
     font-size: 17px;
     color: white;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
     visibility: hidden;
+    line-height: 21px;
     @media only screen and (max-width: 600px) {
       font-size: 15px;
     }
@@ -721,9 +739,9 @@
 }
 
 .hillsdale_mall_location:hover {
-  height: 215px;
+  height: 240px;
   h2 {
-    font-size: 45px;
+    font-size: 40px;
     color: white;
     font-weight: 700;
     @media only screen and (max-width: 600px) {
@@ -732,6 +750,9 @@
   }
   p {
     visibility: visible;
+    @media only screen and (max-width: 600px) {
+      font-size: 12px;
+    }
   }
 
   button {
@@ -751,7 +772,8 @@
     font-weight: 600;
     font-size: 33px;
     margin: 0px;
-    margin-bottom: 3px;
+    margin-bottom: 0px;
+    margin-top: -80px;
     transition: font-size;
     transition-duration: 0.2s;
     transition: font-size 0.4s ease-in-out;
@@ -763,8 +785,9 @@
     margin: 0px;
     font-size: 17px;
     color: white;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
     visibility: hidden;
+    line-height: 21px;
     @media only screen and (max-width: 600px) {
       font-size: 15px;
     }
@@ -781,9 +804,12 @@
 }
 
 .redwood_plaza_location:hover {
-  height: 215px;
+  height: 240px;
+  @media only screen and (max-width: 600px) {
+    height: 225px;
+  }
   h2 {
-    font-size: 45px;
+    font-size: 40px;
     color: white;
     font-weight: 700;
     @media only screen and (max-width: 600px) {
@@ -792,6 +818,9 @@
   }
   p {
     visibility: visible;
+    @media only screen and (max-width: 600px) {
+      font-size: 12px;
+    }
   }
 
   button {
@@ -811,7 +840,8 @@
     font-weight: 600;
     font-size: 33px;
     margin: 0px;
-    margin-bottom: 3px;
+    margin-top: -80px;
+    margin-bottom: 0px;
     transition: font-size;
     transition-duration: 0.2s;
     transition: font-size 0.4s ease-in-out;
@@ -823,8 +853,9 @@
     margin: 0px;
     font-size: 17px;
     color: white;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
     visibility: hidden;
+    line-height: 21px;
     @media only screen and (max-width: 600px) {
       font-size: 15px;
     }
@@ -843,7 +874,7 @@
 .grand_plaza_location:hover {
   height: 215px;
   h2 {
-    font-size: 45px;
+    font-size: 40px;
     color: white;
     font-weight: 700;
     @media only screen and (max-width: 600px) {
@@ -852,6 +883,9 @@
   }
   p {
     visibility: visible;
+    @media only screen and (max-width: 600px) {
+      font-size: 12px;
+    }
   }
 
   button {

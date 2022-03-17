@@ -1,28 +1,30 @@
 import styles from "./Footer.module.scss";
 import Link from "next/link";
 import Logo from "./Logo";
+import LayoutContainer from "./layout/LayoutContainer";
+import Image from "next/image";
 
 function Footer() {
   return (
     <footer className={styles.footer_container}>
+      <LayoutContainer>
       <div className={styles.footer_top_contain_container}>
         <div className={styles.footer_top_contain_logo}>
           <h2>
-            {" "}
             <Logo />
           </h2>
-          <p>All your healthcare, in one place.</p>
+          <p className="font-500">All your healthcare, in one place.</p>
         </div>
         <div className={styles.footer_top_contain_button}>
-          <button>Get the App</button>
-          <button>Find a Clinic</button>
+          <button className="font-400">Get the App</button>
+          <button className="font-400">Find a Clinic</button>
         </div>
       </div>
 
       <div className={styles.footer_center_contain_container}>
         <div className={styles.footer_center_services}>
-          <p>SERVICES</p>
-          <ul>
+          <p className="font-400">SERVICES</p>
+          <ul className="font-400">
             <li>
               <Link href="">
                 <a>COVID-19</a>
@@ -61,8 +63,8 @@ function Footer() {
           </ul>
         </div>
         <div className={styles.footer_center_company}>
-          <p>COMPANY</p>
-          <ul>
+          <p className="font-400">COMPANY</p>
+          <ul className="font-400">
             <li>
               <Link href="">
                 <a>Blog</a>
@@ -91,8 +93,8 @@ function Footer() {
           </ul>
         </div>
         <div className={styles.footer_center_for_business}>
-          <p>FOR BUSINESS</p>
-          <ul>
+          <p className="font-400">FOR BUSINESS</p>
+          <ul className="font-400">
             <li>
               <Link href="">
                 <a>Partners</a>
@@ -141,8 +143,9 @@ function Footer() {
           </ul>
         </div>
         <div className={styles.footer_center_get_support}>
-          <ul>
-            <p>GET SUPPORT</p>
+        <p className="font-400">GET SUPPORT</p>
+          <ul className="font-400">
+           
             <li>
               <Link href="">
                 <a> Support Center</a>
@@ -156,15 +159,26 @@ function Footer() {
           </ul>
         </div>
       </div>
+
+      </LayoutContainer>
       <div className={styles.footer_bottom_contain_bg_color}>
+        <LayoutContainer>
         <div className={styles.footer_bottom_contain_container}>
           <div className={styles.footer_bottom_logo}>
-            <h2>Aam Health</h2>
-            <p>© 2022</p>
+            <div className={styles.bottom_logo}>
+              <Image
+              src="/images/logo.webp"
+              alt="banner"
+              layout="fill"
+              objectFit={"cover"}
+              // quality={100}
+            />
+              </div>
+            <p className="font-400">© 2022</p>
           </div>
 
           <div className={styles.footer_bottom_policy}>
-            <ul>
+            <ul className="font-400">
               <li>
                 <Link href="">
                   <a>Privacy Policy</a>
@@ -178,6 +192,7 @@ function Footer() {
             </ul>
           </div>
         </div>
+        </LayoutContainer>
       </div>
     </footer>
   );
