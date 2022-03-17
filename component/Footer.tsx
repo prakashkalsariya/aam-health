@@ -17,7 +17,7 @@ function Footer() {
                 </a>
               </Link>
             </h2>
-            <p className="font-500">Togehter through life</p>
+            <p className="font-500">Together through life</p>
           </div>
           <div className={styles.footer_top_contain_button}>
             <button className="font-400">Get the App</button>
