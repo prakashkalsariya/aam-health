@@ -95,6 +95,11 @@
   font-family: var(--font-medium);
   margin-right: 0px;
   color: var(--light-blue);
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    background: var(--light-blue);
+    color: white;
+  }
 }
 .signup_btn {
   border: none;
@@ -104,6 +109,10 @@
   color: white;
   cursor: pointer;
   font-family: var(--font-medium);
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    background: var(--primary);
+  }
 }
 .activeLink {
   color: #eb451b !important;

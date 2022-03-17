@@ -35,6 +35,7 @@ const CustomInput = ({
         onChange={onChange}
         value={value}
         className={`font-400 ${styles.input}`}
+        autoComplete="off"
       />
       <div
         className={`font-400 ${styles.helper_text} ${

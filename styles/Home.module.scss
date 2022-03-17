@@ -100,8 +100,13 @@
   color: white;
   letter-spacing: 0.02em;
   cursor: pointer;
+  transition: all 0.2s ease-in-out;
   @media only screen and (max-width: 600px) {
     width: 100%;
+  }
+  &:hover {
+    background: var(--secondary);
+    color: white;
   }
 }
 
@@ -533,7 +538,6 @@
     line-height: 21px;
     @media only screen and (max-width: 600px) {
       font-size: 15px;
-      
     }
   }
   button {
@@ -645,7 +649,7 @@
     font-weight: 600;
     font-size: 33px;
     margin: 0px;
-    margin-bottom:0px;
+    margin-bottom: 0px;
     transition: font-size;
     transition-duration: 0.2s;
     transition: font-size 0.4s ease-in-out;
@@ -1163,6 +1167,9 @@
 
 .specialities_section {
   margin-bottom: 100px;
+  @media only screen and (max-width: 600px) {
+    margin-bottom: 50px;
+  }
 }
 
 .move_in_content {

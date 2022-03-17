@@ -117,6 +117,7 @@ const CustomAutoComplete = ({
           onChange={handleInputChange}
           placeholder={placeholder}
           onClick={() => handleDropdown(true)}
+          autoComplete="off"
         />
         <span className={styles.caret}>
           <Search />

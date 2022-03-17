@@ -1,546 +1,493 @@
 .service_section_container {
-    display: flex;
+  display: flex;
   //   flex-wrap: wrap;
-  }
-  
-  .service_color_varient_box_primary {
-    background-color: rgb(88, 179, 202);
-    width: 700px;
-    height: 1000px;
-    
-    padding-top: 40px;
-    padding-left: 40px;
+}
+
+.service_color_varient_box_primary {
+  background-color: rgb(88, 179, 202);
+  width: 700px;
+  height: 1000px;
+
+  padding-top: 40px;
+  padding-left: 40px;
   //   position: absolute;
-    p {
-      font-size: 50px;
-      font-weight: bold;
-      color: rgba(158, 234, 239, 0.565);
-      margin: 0px;
-      padding-bottom: 20px;
-      // width: 100%;
-    }
+  p {
+    font-size: 50px;
+    font-weight: bold;
+    color: rgba(158, 234, 239, 0.565);
+    margin: 0px;
+    padding-bottom: 20px;
+    // width: 100%;
   }
-  
-  
-  .service_color_varient_box_urgent {
-      background-color: rgb(243, 217, 90);
-      width: 700px;
-      height: 1000px;
-      padding-top: 40px;
-      padding-left: 40px;
-      
-   position: absolute;
-      p {
-        font-size: 50px;
-        font-weight: bold;
-        color: rgb(136, 105, 12);
-        margin: 0px;
-        padding-bottom: 20px;
-        // width: 100%;
-        
-      }
-    }
-  
-  
-  
-  
-    .service_color_varient_box_mental {
-      background-color: rgb(214, 192, 216);
-      width: 700px;
-      height: 1000px;
-      padding-top: 40px;
-      padding-left: 40px;
-    //   position: absolute;
-      p {
-        font-size: 50px;
-        font-weight: bold;
-        color: rgb(152, 119, 164);
-        margin: 0px;
-        padding-bottom: 20px;
-        // width: 100%;
-      }
-    }
-  
-  
-    .service_color_varient_box_women {
-      background-color: rgb(21, 133, 98);
-      width: 700px;
-      height: 1000px;
-      padding-top: 40px;
-      padding-left: 40px;
-    //   position: absolute;
-      p {
-        font-size: 50px;
-        font-weight: bold;
-        color: rgb(119, 193, 163);
-        margin: 0px;
-        padding-bottom: 20px;
-        // width: 100%;
-      }
-    }
-  
-    .service_color_varient_box_lgbtq {
-      background-color: lightsalmon;
-      width: 700px;
-      height: 1000px;
-      padding-top: 40px;
-      padding-left: 40px;
-    //   position: absolute;
-      p {
-        font-size: 50px;
-        font-weight: bold;
-        color: rgb(255, 203, 183);
-        margin: 0px;
-        padding-bottom: 20px;
-        // width: 100%;
-      }
-    }
-  
-  
-  
-    
-  
-  
-  
-  
-  
-  .service_contain_container{
-      margin-left: 150px;
-      display: flex;
-      // align-items: center;
-      justify-content: center;
-      flex-direction: column;
+}
+
+.service_color_varient_box_urgent {
+  background-color: rgb(243, 217, 90);
+  width: 700px;
+  height: 1000px;
+  padding-top: 40px;
+  padding-left: 40px;
+
+  position: absolute;
+  p {
+    font-size: 50px;
+    font-weight: bold;
+    color: rgb(136, 105, 12);
+    margin: 0px;
+    padding-bottom: 20px;
+    // width: 100%;
   }
-  
-  .service_contain_primary {
-    display: flex;
-    height: 120px;
+}
+
+.service_color_varient_box_mental {
+  background-color: rgb(214, 192, 216);
+  width: 700px;
+  height: 1000px;
+  padding-top: 40px;
+  padding-left: 40px;
+  //   position: absolute;
+  p {
+    font-size: 50px;
+    font-weight: bold;
+    color: rgb(152, 119, 164);
+    margin: 0px;
+    padding-bottom: 20px;
+    // width: 100%;
+  }
+}
+
+.service_color_varient_box_women {
+  background-color: rgb(21, 133, 98);
+  width: 700px;
+  height: 1000px;
+  padding-top: 40px;
+  padding-left: 40px;
+  //   position: absolute;
+  p {
+    font-size: 50px;
+    font-weight: bold;
+    color: rgb(119, 193, 163);
+    margin: 0px;
+    padding-bottom: 20px;
+    // width: 100%;
+  }
+}
+
+.service_color_varient_box_lgbtq {
+  background-color: lightsalmon;
+  width: 700px;
+  height: 1000px;
+  padding-top: 40px;
+  padding-left: 40px;
+  //   position: absolute;
+  p {
+    font-size: 50px;
+    font-weight: bold;
+    color: rgb(255, 203, 183);
+    margin: 0px;
+    padding-bottom: 20px;
+    // width: 100%;
+  }
+}
+
+.service_contain_container {
+  margin-left: 150px;
+  display: flex;
+  // align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.service_contain_primary {
+  display: flex;
+  height: 120px;
   transition: all 0.3s;
-    .service_contain_circle {
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      background-color: #1c4f75;
-      margin: 18px 30px 0px 0px;
+  .service_contain_circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #1c4f75;
+    margin: 18px 30px 0px 0px;
+    visibility: hidden;
+  }
+
+  .service_contain_section {
+    h1 {
+      font-size: 40px;
+      margin: 0px;
+    }
+
+    p {
+      margin: 0px;
+      padding-top: 3px;
+      font-size: 18px;
       visibility: hidden;
     }
-  
-    .service_contain_section {
-      h1 {
-        font-size: 40px;
-        margin: 0px;
-      }
-  
-      p {
-        margin: 0px;
-        padding-top: 3px;
-        font-size: 18px;
-           visibility: hidden;
-      }
-      .service_contain_date {
-        font-size: 13px;
-        padding-left: 40px;
-        visibility: hidden;
-      }
-  
-      .service_contain_btn {
-        margin-top: 15px;
-        visibility: hidden;
-  
-        .service_contain_appointment_btn {
-          width: 200px;
-          height: 50px;
-          background-color: #1c4f75;
-          border: 0px;
-          border-radius: 30px;
-          color: white;
-          font-weight: bold;
-        }
-        .service_contain_appointment_btn:hover{
-          background-color: #408fad;
-        }
-  
-        .service_contain_learn_more_btn {
-          background-color: lightgray;
-          width: 100px;
-          border: 2px solid lightgray;
-          height: 50px;
-          border-radius: 30px;
-          margin-left: 10px;
-        }
-      }
-    }
-  }
-  
-  .service_contain_primary:hover {
-    height: 220px;
-    .service_contain_circle {
-      visibility: visible;
-    }
-    .service_contain_section p {
-      visibility: visible;
-    }
-  
     .service_contain_date {
-      visibility: visible;
+      font-size: 13px;
+      padding-left: 40px;
+      visibility: hidden;
     }
-  
+
     .service_contain_btn {
-      visibility: visible;
+      margin-top: 15px;
+      visibility: hidden;
+
+      .service_contain_appointment_btn {
+        width: 200px;
+        height: 50px;
+        background-color: #1c4f75;
+        border: 0px;
+        border-radius: 30px;
+        color: white;
+        font-weight: bold;
+      }
+      .service_contain_appointment_btn:hover {
+        background-color: #408fad;
+      }
+
+      .service_contain_learn_more_btn {
+        background-color: lightgray;
+        width: 100px;
+        border: 2px solid lightgray;
+        height: 50px;
+        border-radius: 30px;
+        margin-left: 10px;
+      }
     }
   }
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  .service_contain_urgent{
-      display: flex;
-      
-      height: 120px;
-    transition: all 0.3s;
+}
+
+.service_contain_primary:hover {
+  height: 220px;
+  .service_contain_circle {
+    visibility: visible;
+  }
+  .service_contain_section p {
+    visibility: visible;
+  }
+
+  .service_contain_date {
+    visibility: visible;
+  }
+
+  .service_contain_btn {
+    visibility: visible;
+  }
+}
+
+.service_contain_urgent {
+  display: flex;
+
+  height: 120px;
+  transition: all 0.3s;
   //   margin-top: -50px;
-      .service_contain_circle {
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
+  .service_contain_circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #88690c;
+    margin: 18px 30px 0px 0px;
+    visibility: hidden;
+  }
+
+  .service_contain_section {
+    h1 {
+      font-size: 40px;
+      margin: 0px;
+    }
+
+    p {
+      margin: 0px;
+      padding-top: 3px;
+      font-size: 18px;
+      visibility: hidden;
+    }
+    .service_contain_date {
+      font-size: 13px;
+      padding-left: 40px;
+      visibility: hidden;
+    }
+
+    .service_contain_btn {
+      margin-top: 15px;
+      visibility: hidden;
+
+      .service_contain_appointment_btn {
+        width: 200px;
+        height: 50px;
         background-color: #88690c;
-        margin: 18px 30px 0px 0px;
-        visibility: hidden;
+        border: 0px;
+        border-radius: 30px;
+        color: white;
+        font-weight: bold;
       }
-    
-      .service_contain_section {
-        h1 {
-          font-size: 40px;
-          margin: 0px;
-        }
-    
-        p {
-          margin: 0px;
-          padding-top: 3px;
-          font-size: 18px;
-             visibility: hidden;
-        }
-        .service_contain_date {
-          font-size: 13px;
-          padding-left: 40px;
-          visibility: hidden;
-        }
-    
-        .service_contain_btn {
-          margin-top: 15px;
-          visibility: hidden;
-    
-          .service_contain_appointment_btn {
-            width: 200px;
-            height: 50px;
-            background-color: #88690c;
-            border: 0px;
-            border-radius: 30px;
-            color: white;
-            font-weight: bold;
-          }
-          .service_contain_appointment_btn:hover{
-            background-color: #caa51c; 
-          }
-    
-          .service_contain_learn_more_btn {
-            background-color: lightgray;
-            width: 100px;
-            border: 2px solid lightgray;
-            height: 50px;
-            border-radius: 30px;
-            margin-left: 10px;
-          }
-        }
+      .service_contain_appointment_btn:hover {
+        background-color: #caa51c;
+      }
+
+      .service_contain_learn_more_btn {
+        background-color: lightgray;
+        width: 100px;
+        border: 2px solid lightgray;
+        height: 50px;
+        border-radius: 30px;
+        margin-left: 10px;
       }
     }
-  
-  
-  
-    .service_contain_urgent:hover {
-        height: 220px;
-      .service_contain_circle {
-        visibility: visible;
-      }
-      .service_contain_section p {
-        visibility: visible;
-      }
-    
-      .service_contain_date {
-        visibility: visible;
-      }
-    
-      .service_contain_btn {
-        visibility: visible;
-      }
+  }
+}
+
+.service_contain_urgent:hover {
+  height: 220px;
+  .service_contain_circle {
+    visibility: visible;
+  }
+  .service_contain_section p {
+    visibility: visible;
+  }
+
+  .service_contain_date {
+    visibility: visible;
+  }
+
+  .service_contain_btn {
+    visibility: visible;
+  }
+}
+
+.service_contain_mental {
+  display: flex;
+  // margin-top: -50px;
+  height: 120px;
+  transition: all 0.3s;
+  .service_contain_circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #56336e;
+    margin: 18px 30px 0px 0px;
+    visibility: hidden;
+  }
+
+  .service_contain_section {
+    h1 {
+      font-size: 40px;
+      margin: 0px;
     }
-    
-  
-  
-  
-  
-  
-  
-  
-  
-    .service_contain_mental{
-      display: flex;
-      // margin-top: -50px;
-      height: 120px;
-    transition: all 0.3s;
-      .service_contain_circle {
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
+
+    p {
+      margin: 0px;
+      padding-top: 3px;
+      font-size: 18px;
+      visibility: hidden;
+    }
+    .service_contain_date {
+      font-size: 13px;
+      padding-left: 40px;
+      visibility: hidden;
+    }
+
+    .service_contain_btn {
+      margin-top: 15px;
+      visibility: hidden;
+
+      .service_contain_appointment_btn {
+        width: 200px;
+        height: 50px;
         background-color: #56336e;
-        margin: 18px 30px 0px 0px;
-        visibility: hidden;
+        border: 0px;
+        border-radius: 30px;
+        color: white;
+        font-weight: bold;
       }
-    
-      .service_contain_section {
-        h1 {
-          font-size: 40px;
-          margin: 0px;
-        }
-    
-        p {
-          margin: 0px;
-          padding-top: 3px;
-          font-size: 18px;
-             visibility: hidden;
-        }
-        .service_contain_date {
-          font-size: 13px;
-          padding-left: 40px;
-          visibility: hidden;
-        }
-    
-        .service_contain_btn {
-          margin-top: 15px;
-          visibility: hidden;
-    
-          .service_contain_appointment_btn {
-            width: 200px;
-            height: 50px;
-            background-color: #56336e;
-            border: 0px;
-            border-radius: 30px;
-            color: white;
-            font-weight: bold;
-          }
-          .service_contain_appointment_btn:hover{
-            background-color: #9877a4; 
-          }
-    
-          .service_contain_learn_more_btn {
-            background-color: lightgray;
-            width: 100px;
-            border: 2px solid lightgray;
-            height: 50px;
-            border-radius: 30px;
-            margin-left: 10px;
-          }
-        }
+      .service_contain_appointment_btn:hover {
+        background-color: #9877a4;
+      }
+
+      .service_contain_learn_more_btn {
+        background-color: lightgray;
+        width: 100px;
+        border: 2px solid lightgray;
+        height: 50px;
+        border-radius: 30px;
+        margin-left: 10px;
       }
     }
-  
-  
-  
-    .service_contain_mental:hover {
-        height: 220px;
-      .service_contain_circle {
-        visibility: visible;
-      }
-      .service_contain_section p {
-        visibility: visible;
-      }
-    
-      .service_contain_date {
-        visibility: visible;
-      }
-    
-      .service_contain_btn {
-        visibility: visible;
-      }
+  }
+}
+
+.service_contain_mental:hover {
+  height: 220px;
+  .service_contain_circle {
+    visibility: visible;
+  }
+  .service_contain_section p {
+    visibility: visible;
+  }
+
+  .service_contain_date {
+    visibility: visible;
+  }
+
+  .service_contain_btn {
+    visibility: visible;
+  }
+}
+
+.service_contain_women {
+  display: flex;
+  height: 120px;
+  transition: all 0.3s;
+  // margin-top: -50px;
+  .service_contain_circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #338272;
+    margin: 18px 30px 0px 0px;
+    visibility: hidden;
+  }
+
+  .service_contain_section {
+    h1 {
+      font-size: 40px;
+      margin: 0px;
     }
-    
-  
-  
-  
-  
-  
-  
-    .service_contain_women{
-      display: flex;
-      height: 120px;
-      transition: all 0.3s;
-      // margin-top: -50px;
-      .service_contain_circle {
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
+
+    p {
+      margin: 0px;
+      padding-top: 3px;
+      font-size: 18px;
+      visibility: hidden;
+    }
+    .service_contain_date {
+      font-size: 13px;
+      padding-left: 40px;
+      visibility: hidden;
+    }
+
+    .service_contain_btn {
+      margin-top: 15px;
+      visibility: hidden;
+
+      .service_contain_appointment_btn {
+        width: 200px;
+        height: 50px;
         background-color: #338272;
-        margin: 18px 30px 0px 0px;
-        visibility: hidden;
+        border: 0px;
+        border-radius: 30px;
+        color: white;
+        font-weight: bold;
       }
-    
-      .service_contain_section {
-        h1 {
-          font-size: 40px;
-          margin: 0px;
-        }
-    
-        p {
-          margin: 0px;
-          padding-top: 3px;
-          font-size: 18px;
-             visibility: hidden;
-        }
-        .service_contain_date {
-          font-size: 13px;
-          padding-left: 40px;
-          visibility: hidden;
-        }
-    
-        .service_contain_btn {
-          margin-top: 15px;
-          visibility: hidden;
-    
-          .service_contain_appointment_btn {
-            width: 200px;
-            height: 50px;
-            background-color: #338272;
-            border: 0px;
-            border-radius: 30px;
-            color: white;
-            font-weight: bold;
-          }
-          .service_contain_appointment_btn:hover{
-            background-color: #77c1a3; 
-          }
-    
-          .service_contain_learn_more_btn {
-            background-color: lightgray;
-            width: 100px;
-            border: 2px solid lightgray;
-            height: 50px;
-            border-radius: 30px;
-            margin-left: 10px;
-          }
-        }
+      .service_contain_appointment_btn:hover {
+        background-color: #77c1a3;
+      }
+
+      .service_contain_learn_more_btn {
+        background-color: lightgray;
+        width: 100px;
+        border: 2px solid lightgray;
+        height: 50px;
+        border-radius: 30px;
+        margin-left: 10px;
       }
     }
-  
-  
-  
-    .service_contain_women:hover {
-        height: 220px;
-      .service_contain_circle {
-        visibility: visible;
+  }
+}
+
+.service_contain_women:hover {
+  height: 220px;
+  .service_contain_circle {
+    visibility: visible;
+  }
+  .service_contain_section p {
+    visibility: visible;
+  }
+
+  .service_contain_date {
+    visibility: visible;
+  }
+
+  .service_contain_btn {
+    visibility: visible;
+  }
+}
+
+.service_contain_lgbtq {
+  display: flex;
+  height: 120px;
+  transition: all 0.3s;
+  // margin-top: -50px;
+  .service_contain_circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgb(245, 193, 97);
+    margin: 18px 30px 0px 0px;
+    visibility: hidden;
+  }
+
+  .service_contain_section {
+    h1 {
+      font-size: 40px;
+      margin: 0px;
+    }
+
+    p {
+      margin: 0px;
+      padding-top: 3px;
+      font-size: 18px;
+      visibility: hidden;
+    }
+    .service_contain_date {
+      font-size: 13px;
+      padding-left: 40px;
+      visibility: hidden;
+    }
+
+    .service_contain_btn {
+      margin-top: 15px;
+      visibility: hidden;
+
+      .service_contain_appointment_btn {
+        width: 200px;
+        height: 50px;
+        background-color: rgb(241, 115, 65);
+        border: 0px;
+        border-radius: 30px;
+        color: white;
+        font-weight: bold;
       }
-      .service_contain_section p {
-        visibility: visible;
+      .service_contain_appointment_btn:hover {
+        background-color: rgb(248, 180, 153);
       }
-    
-      .service_contain_date {
-        visibility: visible;
-      }
-    
-      .service_contain_btn {
-        visibility: visible;
+      .service_contain_learn_more_btn {
+        background-color: lightgray;
+        width: 100px;
+        border: 2px solid lightgray;
+        height: 50px;
+        border-radius: 30px;
+        margin-left: 10px;
       }
     }
-    
-  
-  
-  
-  
-  
-    .service_contain_lgbtq{
-      display: flex;
-      height: 120px;
-      transition: all 0.3s;
-      // margin-top: -50px;
-      .service_contain_circle {
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        background-color: rgb(245, 193, 97);
-        margin: 18px 30px 0px 0px;
-        visibility: hidden;
-      }
-    
-      .service_contain_section {
-        h1 {
-          font-size: 40px;
-          margin: 0px;
-        }
-    
-        p {
-          margin: 0px;
-          padding-top: 3px;
-          font-size: 18px;
-             visibility: hidden;
-        }
-        .service_contain_date {
-          font-size: 13px;
-          padding-left: 40px;
-          visibility: hidden;
-        }
-    
-        .service_contain_btn {
-          margin-top: 15px;
-          visibility: hidden;
-    
-          .service_contain_appointment_btn {
-            width: 200px;
-            height: 50px;
-            background-color: rgb(241, 115, 65);
-            border: 0px;
-            border-radius: 30px;
-            color: white;
-            font-weight: bold;
-          }
-          .service_contain_appointment_btn:hover{
-            background-color: rgb(248, 180, 153); 
-          }
-          .service_contain_learn_more_btn {
-            background-color: lightgray;
-            width: 100px;
-            border: 2px solid lightgray;
-            height: 50px;
-            border-radius: 30px;
-            margin-left: 10px;
-          }
-        }
-      }
-    }
-  
-  
-  
-    .service_contain_lgbtq:hover {
-        height: 220px;
-      .service_contain_circle {
-        visibility: visible;
-      }
-      .service_contain_section p {
-        visibility: visible;
-      }
-    
-      .service_contain_date {
-        visibility: visible;
-      }
-    
-      .service_contain_btn {
-        visibility: visible;
-      }
-    }
-    
-  
-  
-  
+  }
+}
+
+.service_contain_lgbtq:hover {
+  height: 220px;
+  .service_contain_circle {
+    visibility: visible;
+  }
+  .service_contain_section p {
+    visibility: visible;
+  }
+
+  .service_contain_date {
+    visibility: visible;
+  }
+
+  .service_contain_btn {
+    visibility: visible;
+  }
+}

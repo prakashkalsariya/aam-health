@@ -7,7 +7,6 @@ import {
   MuiPickersUtilsProvider,
 } from "@material-ui/pickers";
 import Image from "next/image";
-import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
 const useStyles = makeStyles((theme: Theme) => ({

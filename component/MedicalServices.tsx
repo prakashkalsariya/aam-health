@@ -1,6 +1,7 @@
 import styles from "./MedicalServices.module.scss";
 import Servicescard from "../component/services/ServicesCard";
 import { useState } from "react";
+import { handleBookAppointmentNavigation } from "../utils/utils";
 
 class ServicesSlides {
   static primaryCare = "primaryCare";
@@ -150,7 +151,12 @@ const MedicalServices = () => {
                 <h1 className="font-700">Primary Care</h1>
                 <p>Ideal for preventative care</p>
                 <div className={styles.service_contain_btn}>
-                  <button className={styles.service_contain_appointment_btn}>
+                  <button
+                    className={styles.service_contain_appointment_btn}
+                    onClick={() => {
+                      handleBookAppointmentNavigation();
+                    }}
+                  >
                     Book In Appointment
                   </button>
                   <button className={styles.service_contain_learn_more_btn}>
@@ -175,7 +181,12 @@ const MedicalServices = () => {
                 <h1 className="font-700">Urgent Care</h1>
                 <p>Ideal for immediate needs</p>
                 <div className={styles.service_contain_btn}>
-                  <button className={styles.service_contain_appointment_btn}>
+                  <button
+                    className={styles.service_contain_appointment_btn}
+                    onClick={() => {
+                      handleBookAppointmentNavigation();
+                    }}
+                  >
                     Book In Appointment
                   </button>
                   <button className={styles.service_contain_learn_more_btn}>
@@ -198,7 +209,12 @@ const MedicalServices = () => {
                 <h1 className="font-700">Mental Health</h1>
                 <p>Vidio call with a provider</p>
                 <div className={styles.service_contain_btn}>
-                  <button className={styles.service_contain_appointment_btn}>
+                  <button
+                    className={styles.service_contain_appointment_btn}
+                    onClick={() => {
+                      handleBookAppointmentNavigation();
+                    }}
+                  >
                     Book In Appointment
                   </button>
                   <button className={styles.service_contain_learn_more_btn}>
@@ -214,7 +230,7 @@ const MedicalServices = () => {
             <div
               className={styles.service_contain_women}
               onMouseOver={() => {
-                handleHover(ServicesSlides.mentalHealth);
+                handleHover(ServicesSlides.womansHealth);
               }}
             >
               <div className={styles.service_contain_circle}></div>
@@ -223,7 +239,12 @@ const MedicalServices = () => {
                 <h1 className="font-700">Women&apos;s Health</h1>
                 <p>Women&apos;s health and wellness</p>
                 <div className={styles.service_contain_btn}>
-                  <button className={styles.service_contain_appointment_btn}>
+                  <button
+                    className={styles.service_contain_appointment_btn}
+                    onClick={() => {
+                      handleBookAppointmentNavigation();
+                    }}
+                  >
                     Book In Appointment
                   </button>
                   <button className={styles.service_contain_learn_more_btn}>
@@ -248,7 +269,12 @@ const MedicalServices = () => {
                 <h1 className="font-700">LGBTQ + Health</h1>
                 <p>Inclusive + judgment-free</p>
                 <div className={styles.service_contain_btn}>
-                  <button className={styles.service_contain_appointment_btn}>
+                  <button
+                    className={styles.service_contain_appointment_btn}
+                    onClick={() => {
+                      handleBookAppointmentNavigation();
+                    }}
+                  >
                     Book In Appointment
                   </button>
                   <button className={styles.service_contain_learn_more_btn}>
