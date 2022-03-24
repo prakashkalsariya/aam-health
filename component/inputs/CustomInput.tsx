@@ -6,7 +6,7 @@ interface ICustomInput {
   value: any;
   helperText?: string;
   error?: boolean;
-  label: string;
+  label?: string;
   name: string;
   type: string;
   placeholder: string;

@@ -10,12 +10,13 @@ import AppHeader from "../component/header/AppHeader";
 import LayoutContainer from "../component/layout/LayoutContainer";
 import { handleBookAppointmentNavigation } from "../utils/utils";
 import MedicalServices from "../component/MedicalServices";
+import ContactUsForm from "../component/ContactUsForm";
 
 const Home: NextPage = () => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Amm Health | Together through life</title>
+        <title>Aam Health | Together through life</title>
         <meta name="description" content="Health care and dietary services" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -357,6 +358,12 @@ const Home: NextPage = () => {
             </LayoutContainer>
           </div>
         </main>
+
+        <LayoutContainer>
+          <div className={styles.contactForm}>
+            <ContactUsForm />
+          </div>
+        </LayoutContainer>
 
         <Footer />
       </div>
