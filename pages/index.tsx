@@ -11,6 +11,7 @@ import LayoutContainer from "../component/layout/LayoutContainer";
 import { handleBookAppointmentNavigation } from "../utils/utils";
 import MedicalServices from "../component/MedicalServices";
 import ContactUsForm from "../component/ContactUsForm";
+// import Headerhover from "../component/HeaderHover";
 
 const Home: NextPage = () => {
   return (
@@ -24,6 +25,7 @@ const Home: NextPage = () => {
       <div className={styles.main_layout_container}>
         {/* <Header /> */}
         <AppHeader />
+        {/* <Headerhover/> */}
         <div className={styles.banner_container}>
           <div className={styles.banner_img}>
             <Image
