@@ -6,6 +6,7 @@ import styles from "./AppHeader.module.scss";
 import Logo from "../Logo";
 import { Person } from "@material-ui/icons";
 import { LocalStorageService } from "../../services/localStorage";
+import Hoverbox from "../hover-box-manubar/HoverBox";
 
 const navigationLinks = [
   {
@@ -14,14 +15,27 @@ const navigationLinks = [
     id: "home",
   },
   {
-    title: "About us",
-    href: "#",
-    id: "our_services",
+    title: 
+
+    <div className={styles.medical_services_container}>
+              <div className={styles.medical_services_name}><p>Medical Services</p></div>
+              <div className={styles.medical_services}>
+
+         <p>Medical checkup</p>
+         <p>Purchase Medicine</p>
+         <p>Aam Health Store</p>
+         <p>Doctor Booking</p>
+         <p>Nursing Care</p>
+         <p>Register With US</p>
+              </div>
+            </div>,
+    href: "",
+    id: "testimonials",
   },
   {
-    title: "Medical Services",
-    href: "#",
-    id: "testimonials",
+    title: "Doctors",
+    href: "/book-appointment",
+    id: "contact",
   },
   {
     title: "Blog",
@@ -29,9 +43,9 @@ const navigationLinks = [
     id: "calculators",
   },
   {
-    title: "Doctors",
+    title: "About us",
     href: "#",
-    id: "contact",
+    id: "our_services",
   },
 ];
 
@@ -67,6 +81,8 @@ const AppHeader = ({
   const handleMobileNavBar = () => {
     setMobileNavBar(!mobileNavBar);
   };
+
+  
 
   useEffect(() => {
     const isUserLoggedIn = LocalStorageService.auth.isUserLoggedIn();
@@ -104,6 +120,9 @@ const AppHeader = ({
           </h1>
         </div>
         <div className={styles.headerLeftContent}>
+<div className={styles.manubar_container}>
+
+
           <ul
             className={`${styles.manu} ${
               hideNavlinks ? styles.display_none : ""
@@ -124,6 +143,13 @@ const AppHeader = ({
               </li>
             ))}
           </ul>
+          <div className={styles.manubar_hover_box}> 
+              <Hoverbox/>
+
+              </div>
+          </div>
+
+
           <div
             className={`${styles.btn} ${styles.buttonContainer} ${
               hideAuthButtons ? styles.display_none : ""

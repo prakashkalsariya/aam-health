@@ -30,343 +30,107 @@
   color: white;
 }
 
+
+
+
+
+
+
+
+
+
 .menubar {
   display: flex;
 }
 
-.manubar_covid_container:hover {
-  .covid_point {
-    p {
-      visibility: visible;
-    }
-  }
-  .manubar_covid_hover_box {
-    visibility: visible;
-  }
-}
 
-.manubar_covid_link_container {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: space-around;
-  margin: 25px;
-  .covid_point {
-    p {
-      width: 6px;
-      height: 6px;
-     
-      background-color:#63C8F2;
-      
-      display: block;
-      margin: 0px;
-      border-radius: 50%;
-      text-align: center;
-      visibility: hidden;
-    }
-  }
-
-  .manubar_covid_name {
+  .manubar_name {
     display: flex;
     color: black;
 
-    p {
-      font-weight: 500;
-      margin: 0px;
-    }
-
-    .covid_arrow {
-      margin-left: 7px;
-      color: gray;
-    }
-  }
 }
 
-.manubar_covid_hover_box {
-  // border: 2px solid red;
 
-  width: 965px;
-  height: 285px;
+
+
+
+
+
+
+
+
+.manubar_hover_box {
+  width: 100%;
+  height: 482px;
   position: absolute;
+  left: 0px;
   background-color: white;
+  // background-color: pink;
   display: flex;
   visibility: hidden;
-  margin-left: -200px;
-}
-
-.hover_box_left_contain_head {
-  p {
-    margin-left: 40px;
-    color: gray;
-  }
-}
-
-.hover_box_left_contain_container {
-  width: 70%;
-  background-color: white;
-}
-
-.hover_box_left_contain_services_container {
+  // margin-left: -200px;
+  margin-top: 29px;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+  transition: all 0.15s ease;
 }
 
-.hover_box_left_contain_service {
-  // background-color: orange;
-  padding: 0px 0px 0px 10px;
-  border-radius: 80px;
-  width: 290px;
-  height: 80px;
-  display: flex;
-  align-items: center;
-  margin-bottom: 30px;
 
-  .services_circle {
-    width: 65px;
-    height: 65px;
-    background-color: white;
-    border-radius: 50%;
-    margin-right: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.manubar_container:hover{
+  .manubar_hover_box{
+    
+    visibility: visible;
+  } 
+}
 
-  }
 
-  .services_circle_img{
-   width: 50px;
-   height: 50px;
-   position: relative;
-  //  margin-left: -8px;
-  }
 
+
+// .hover_box_left_contain_container{
+//   margin-left: 110px;
+//   p{
+//     font-size: 36px;
+//     color: #C4C4C4;
+//     padding: 7px 10px;
+//     margin-bottom: 10px;
+//   }
+//   p:hover{
+//     color: var(--light-blue);
+//   }
+// }
+
+
+// .hover_box_right_contain_container{
+//   .right_contain_shadow{
+//     position: absolute;
+//    top: 0px;
+//    z-index: 1;
+//   width: 445px;
+//   height: 480px;
+//   right:350px;
+//   background: linear-gradient(91.21deg, #FFFFFF 20.26%, rgba(196, 196, 196, 0) 98.97%);
+//   // background-color: pink;
+//   }
   
-  .services_contain {
-    h1 {
-      margin: 0px;
-      font-weight: 500;
-      font-size: 20px;
-      margin-bottom: 2px;
-    }
-    p {
-      margin: 0px;
-    }
-  }
-}
-
-.hover_box_left_contain_service:hover {
-  background-color: orange;
-}
-
-.hover_box_right_contain_container {
-  background-color: lightgray;
-  width: 30%;
-  padding-left: 50px;
-  padding-top: 30px;
-  .hover_box_right_contain_head {
-    p {
-      color: gray;
-      font-size: 18px;
-      padding-left: 16px;
-    }
-  }
-}
-
-.hover_box_right_contain_bottom_para {
-  display: flex;
-  align-items: center;
-  p {
-    margin: 0px;
-    margin-bottom: 10px;
-  }
-  .hover_box_right_contain_bottom_point {
-    width: 6px;
-    height: 6px;
-   
-    background-color: #63C8F2;
-    border-radius: 50%;
-    // border: 2px solid red;
-    visibility: hidden;
-    margin: 0px;
-    margin-right: 10px;
-    margin-top: -7px;
-  }
-}
-
-.hover_box_right_contain_bottom_para:hover {
-  .hover_box_right_contain_bottom_point {
-    visibility: visible;
-  }
-}
-
-.manubar_get_care_container:hover {
-  .get_care_point {
-    p {
-      visibility: visible;
-    }
-  }
-  .manubar_get_care_hover_box {
-    visibility: visible;
-  }
-}
-
-.manubar_get_care_link_container {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: space-around;
-  margin: 25px;
-  .get_care_point {
-    p {
-      width: 6px;
-      height: 6px;
-     
-      color: green;
-      background-color: #63C8F2;
-      // border: 2px solid red;
-      display: block;
-      margin: 0px;
-      border-radius: 50%;
-      text-align: center;
-      visibility: hidden;
-    }
-  }
-
-  .manubar_get_care_name {
-    display: flex;
-    color: black;
-
-    p {
-      font-weight: 500;
-      margin: 0px;
-    }
-
-    .get_care_arrow {
-      margin-left: 7px;
-      color: gray;
-    }
-  }
-}
-
-.manubar_get_care_hover_box {
-  width: 965px;
-  height: 285px;
-  position: absolute;
-  background-color: white;
-  display: flex;
-  visibility: hidden;
-  margin-left: -300px;
-}
-
-.manubar_company_container:hover {
-  .company_point {
-    p {
-      visibility: visible;
-    }
-  }
-  .manubar_company_hover_box {
-    visibility: visible;
-  }
-}
-
-.manubar_company_link_container {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: space-around;
-  margin: 25px;
-  .company_point {
-    p {
-      width: 6px;
-      height: 6px;
-     
-      
-      background-color: #63C8F2;
-      // border: 2px solid red;
-      display: block;
-      margin: 0px;
-      border-radius: 50%;
-      text-align: center;
-      visibility: hidden;
-    }
-  }
-
-  .manubar_company_name {
-    display: flex;
-    color: black;
-
-    p {
-      font-weight: 500;
-      margin: 0px;
-    }
-
-    .company_arrow {
-      margin-left: 7px;
-      color: gray;
-    }
-  }
-}
-
-.manubar_company_hover_box {
-  width: 965px;
-  height: 285px;
-  position: absolute;
-  background-color: white;
-  display: flex;
-  visibility: hidden;
-  margin-left: -600px;
-}
+// }
 
 
 
+// .right_contain_img{
+//   position: absolute;
+//   right: 0px;
+//   top: 0px;
+//   width: 528px;
+// height: 480px;
+// // opacity: 1;
+// }
 
 
+// .opacity{
+// opacity: 0;
+// }
 
-
-
-.manubar_insurance_location_point{
-  width: 6px;
-      height: 6px;
-     
-      
-      background-color: #63C8F2;
-     
-      display: block;
-      margin: 0px;
-      border-radius: 50%;
-      text-align: center;
-    justify-content: center;
-    text-align: center;
-    visibility: hidden;
-}
-
-
-.manubar_insurance_location_container{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  ul{
-    display: flex;
-    padding: 0px;
-    li{
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      margin-right: 40px;
-      margin-left: 10px;
-      a{
-        font-weight: 500;
-      }
-    }
-  }
-}
-
-
-.manubar_insurance_location_container ul li:hover{
-  .manubar_insurance_location_point{
-    visibility: visible;
-  }
-}
+// .opacity_active{
+//   opacity: 1;
+// }

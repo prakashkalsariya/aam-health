@@ -1,0 +1,48 @@
+
+
+.hover_box_left_contain_container {
+  margin-left: 110px;
+  p {
+    font-size: 36px;
+    color: #c4c4c4;
+    padding: 7px 10px;
+    margin-bottom: 10px;
+  }
+  p:hover {
+    color: var(--light-blue);
+  }
+}
+
+.hover_box_right_contain_container {
+  .right_contain_shadow {
+    position: absolute;
+    top: 0px;
+    z-index: 1;
+    width: 445px;
+    height: 480px;
+    right: 350px;
+    background: linear-gradient(
+      91.21deg,
+      #ffffff 20.26%,
+      rgba(196, 196, 196, 0) 98.97%
+    );
+    // background-color: pink;
+  }
+}
+
+.right_contain_img {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 528px;
+  height: 480px;
+  // opacity: 1;
+}
+
+.opacity {
+  opacity: 0;
+}
+
+.opacity_active {
+  opacity: 1;
+}

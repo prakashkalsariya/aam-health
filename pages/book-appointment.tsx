@@ -1,7 +1,7 @@
 import styles from "../styles/DoctorListData.module.scss";
 import Image from "next/image";
 import CustomAutoComplete from "../component/CustomAutoComplete";
-import { Close, Search } from "@material-ui/icons";
+import { Close } from "@material-ui/icons";
 import { useEffect, useState } from "react";
 import LayoutContainer from "../component/layout/LayoutContainer";
 import BookAppointment, { IDoctorDetails } from "../component/BookAppointment";
@@ -1291,7 +1291,7 @@ function Doctorlistdata() {
           </div>
         </div>
         {filters.city.value || filters.speciality.value ? (
-          <div>
+          <div className={styles.search_results_container}>
             <div className={`sub-text ${styles.search_results_title}`}>
               Search results
             </div>

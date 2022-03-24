@@ -6,7 +6,7 @@ interface ICustomInput {
   value: any;
   helperText?: string;
   error?: boolean;
-  label: string;
+  label?: string;
   name: string;
   type: string;
   placeholder: string;
@@ -35,6 +35,7 @@ const CustomInput = ({
         onChange={onChange}
         value={value}
         className={`font-400 ${styles.input}`}
+        autoComplete="off"
       />
       <div
         className={`font-400 ${styles.helper_text} ${
