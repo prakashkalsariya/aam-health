@@ -5,6 +5,7 @@ import styles from "./ContactUsForm.module.scss";
 import CustomInput from "./inputs/CustomInput";
 import * as Yup from "yup";
 import CloseIcon from "./icons/CloseIcon";
+import investorService from "../services/firebase/investors";
 
 const ContactUsSchema = Yup.object().shape({
   first_name: Yup.string().required("First name is required!"),
@@ -31,6 +32,13 @@ const ContactUsForm = () => {
   };
 
   const handleSubmit = () => {
+    // investorService.addInvestorDetails({
+    //   email: "jljklj",
+    //   first_name: "jkjl",
+    //   last_name: "fjdklfj",
+    //   message: "djfflkdjkl",
+    //   phone: "445454545",
+    // });
     setSuccess([
       "We received your request successfully, we will get back to you shortly thanks.",
     ]);
@@ -44,6 +52,7 @@ const ContactUsForm = () => {
     validateOnChange: false,
     onSubmit: handleSubmit,
   });
+
   const removeMessage = (index: number) => {
     let tempErrors = [...succces];
 

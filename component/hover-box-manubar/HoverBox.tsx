@@ -81,7 +81,7 @@ function Hoverbox() {
             }`}
           >
             <Image
-              src="/images/medical-checkup-manu-bar.png"
+              src="/images/medical-checkup-manu-bar.webp"
               alt="manu"
               layout="fill"
               objectFit={"cover"}
@@ -100,7 +100,7 @@ function Hoverbox() {
             }`}
           >
             <Image
-              src="/images/purchase-medicine-manu-bar.png"
+              src="/images/purchase-medicine-manu-bar.webp"
               alt="manu"
               layout="fill"
               objectFit={"cover"}
@@ -119,7 +119,7 @@ function Hoverbox() {
             }`}
           >
             <Image
-              src="/images/aam-health-manu-bar.png"
+              src="/images/aam-health-manu-bar.webp"
               alt="manu"
               layout="fill"
               objectFit={"cover"}
@@ -138,7 +138,7 @@ function Hoverbox() {
             }`}
           >
             <Image
-              src="/images/doctor-booking-manu-bar.png"
+              src="/images/doctor-booking-manu-bar.webp"
               alt="manu"
               layout="fill"
               objectFit={"cover"}
@@ -157,7 +157,7 @@ function Hoverbox() {
             }`}
           >
             <Image
-              src="/images/nursing-care-manu-bar.png"
+              src="/images/nursing-care-manu-bar.webp"
               alt="manu"
               layout="fill"
               objectFit={"cover"}
@@ -176,7 +176,7 @@ function Hoverbox() {
             }`}
           >
             <Image
-              src="/images/register-with-manu-bar.png"
+              src="/images/register-with-manu-bar.webp"
               alt="manu"
               layout="fill"
               objectFit={"cover"}
