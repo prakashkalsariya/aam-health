@@ -170,13 +170,13 @@ const AppHeader = ({
                 <Link href={`${ClientRoutes.login}`} passHref>
                   <a>
                     {" "}
-                    <button className={styles.login_btn}>Login</button>
+                    <button className={styles.login_btn}>Invest Now </button>
                   </a>
                 </Link>{" "}
                 <Link href={`${ClientRoutes.register}`} passHref>
                   <a>
                     {" "}
-                    <button className={styles.signup_btn}>Sign Up</button>
+                    <button className={styles.signup_btn}>Login</button>
                   </a>
                 </Link>
               </div>
