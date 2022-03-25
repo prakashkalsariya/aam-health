@@ -125,22 +125,22 @@ function Footer() {
             <p className={styles.footer_links_title}>FOLLOW</p>
             <ul>
               <li>
-                <Link href="">
+                <Link href="https://www.instagram.com/aamhealth/">
                   <a>Instagram</a>
                 </Link>
               </li>
               <li>
-                <Link href="">
+                <Link href="https://twitter.com/AamHealth">
                   <a>Twitter</a>
                 </Link>
               </li>
               <li>
-                <Link href="">
+                <Link href="https://www.facebook.com/Aamhealth247">
                   <a>Facebook</a>
                 </Link>
               </li>
               <li>
-                <Link href="">
+                <Link href="https://www.linkedin.com/company/aamhealth/?viewAsMember=true">
                   <a>LinkedIn</a>
                 </Link>
               </li>
