@@ -12,6 +12,7 @@ import { handleBookAppointmentNavigation } from "../utils/utils";
 import MedicalServices from "../component/MedicalServices";
 import ContactUsForm from "../component/ContactUsForm";
 // import Headerhover from "../component/HeaderHover";
+import Aamhealthbanner from "../component/aam-health-banner/AamHealthBanner";
 
 const Home: NextPage = () => {
   return (
@@ -360,8 +361,11 @@ const Home: NextPage = () => {
             </LayoutContainer>
           </div>
         </main>
-
+        <div className={styles.aam_health_banner}>
+          <Aamhealthbanner/>
+          </div>
         <LayoutContainer>
+         
           <div className={styles.contactForm}>
             <ContactUsForm />
           </div>
