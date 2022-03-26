@@ -67,11 +67,6 @@ const navigationLinks = [
     id: "contact",
   },
   {
-    title: "Doctors",
-    href: "/book-appointment",
-    id: "contact",
-  },
-  {
     title: "Blog",
     href: "#",
     id: "calculators",

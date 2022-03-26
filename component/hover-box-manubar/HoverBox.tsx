@@ -29,7 +29,7 @@ function Hoverbox() {
           }}
         >
           <Link href={ClientRoutes.bookAppointment} passHref>
-            <a>Medical checkup</a>
+            <a>Medical Checkup</a>
           </Link>
         </p>
         <p
