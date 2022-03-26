@@ -7,8 +7,16 @@
     margin-bottom: 25px;
     cursor: pointer;
   }
+  p a {
+    padding: 0px;
+    font-size: 36px;
+    color: #c4c4c4;
+    padding: 7px 10px !important;
+    margin-bottom: 25px;
+    cursor: pointer;
+  }
   p:hover {
-    color: var(--light-blue);
+    color: var(--light-blue) !important;
   }
 }
 

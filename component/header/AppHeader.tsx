@@ -24,12 +24,37 @@ const navigationLinks = [
           <Hoverbox />
         </div>
         <div className={styles.medical_services}>
-          <p>Medical checkup</p>
-          <p>Purchase Medicine</p>
-          <p>Aam Health Store</p>
-          <p>Doctor Booking</p>
-          <p>Nursing Care</p>
-          <p>Register With US</p>
+          <p>
+            <Link href={ClientRoutes.bookAppointment} passHref>
+              <a> Medical checkup</a>
+            </Link>
+          </p>
+          <p>
+            <Link href={"#"} passHref>
+              <a>Purchase Medicine</a>
+            </Link>
+          </p>
+
+          <p>
+            <Link href={"#"} passHref>
+              <a>Aam Health Store</a>
+            </Link>
+          </p>
+          <p>
+            <Link href={ClientRoutes.bookAppointment} passHref>
+              <a>Doctor Booking</a>
+            </Link>
+          </p>
+          <p>
+            <Link href={ClientRoutes.bookAppointment} passHref>
+              <a>Nursing Care</a>
+            </Link>
+          </p>
+          <p>
+            <Link href={ClientRoutes.register} passHref>
+              <a>Register With US</a>
+            </Link>
+          </p>
         </div>
       </div>
     ),

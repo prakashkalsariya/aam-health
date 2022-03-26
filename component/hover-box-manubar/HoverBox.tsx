@@ -1,6 +1,8 @@
 import styles from "./HoverBox.module.scss";
 import Image from "next/image";
 import { useState } from "react";
+import Link from "next/link";
+import { ClientRoutes } from "../../constants/pages";
 
 class ServicesSlides {
   static MedicalCheckup = "MedicalCheckup";
@@ -26,7 +28,9 @@ function Hoverbox() {
             handleHover(ServicesSlides.MedicalCheckup);
           }}
         >
-          Medical checkup
+          <Link href={ClientRoutes.bookAppointment} passHref>
+            <a>Medical checkup</a>
+          </Link>
         </p>
         <p
           className="font-700"
@@ -34,7 +38,9 @@ function Hoverbox() {
             handleHover(ServicesSlides.PurchaseMedicine);
           }}
         >
-          Purchase Medicine
+          <Link href={"#"} passHref>
+            <a>Purchase Medicine</a>
+          </Link>
         </p>
         <p
           className="font-700"
@@ -42,7 +48,9 @@ function Hoverbox() {
             handleHover(ServicesSlides.AamHealthStore);
           }}
         >
-          Aam Health Store
+          <Link href={"#"} passHref>
+            <a>Aam Health Store</a>
+          </Link>
         </p>
         <p
           className="font-700"
@@ -50,7 +58,9 @@ function Hoverbox() {
             handleHover(ServicesSlides.DoctorBooking);
           }}
         >
-          Doctor Booking
+          <Link href={ClientRoutes.bookAppointment} passHref>
+            <a>Doctor Booking</a>
+          </Link>
         </p>
         <p
           className="font-700"
@@ -58,7 +68,9 @@ function Hoverbox() {
             handleHover(ServicesSlides.NursingCare);
           }}
         >
-          Nursing Care
+          <Link href={ClientRoutes.bookAppointment} passHref>
+            <a>Nursing Care</a>
+          </Link>
         </p>
         <p
           className="font-700"
@@ -66,7 +78,9 @@ function Hoverbox() {
             handleHover(ServicesSlides.RegisterWithUS);
           }}
         >
-          Register With US
+          <Link href={ClientRoutes.register} passHref>
+            <a>Register With US</a>
+          </Link>
         </p>
       </div>
 

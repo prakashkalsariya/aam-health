@@ -322,7 +322,7 @@
 
   @media (min-width: 600px) {
     padding-top: 4px;
-    // padding-right: 30px;
+    padding-right: 30px;
   }
 }
 
@@ -335,13 +335,15 @@
   text-align: center;
   display: none;
   margin-top: 35px;
-  border-top: 2px solid var(--secondary);
+  border-top: 2px solid var(--primary);
   margin-bottom: -30px;
   @media (min-width: 600px) {
     display: none;
     margin-top: 40px;
-    padding: 15px 0px;
     // padding-bottom: -50px;
+  }
+  @media (max-width: 600px) {
+    padding: 15px 0px;
   }
   p {
     // text-align: center;
