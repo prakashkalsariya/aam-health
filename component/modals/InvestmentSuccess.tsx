@@ -10,7 +10,7 @@ function InvestmentSuccess() {
         <h1 className="font-600">We received your request</h1>
         <p className="font-400">
           We received your request and we will get back to you shorty.
-          <br />
+         
           Thanks for your support.
         </p>
         <ul>
