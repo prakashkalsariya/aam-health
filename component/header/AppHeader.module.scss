@@ -67,9 +67,6 @@
 
 .manu li a:hover {
   color: var(--primary);
-
-
-
 }
 
 .btn {
@@ -295,8 +292,57 @@
   }
 }
 
+.medical_services_name {
+  margin-bottom: -29px;
+  margin-top: -25px;
+  text-align: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  &::after {
+    content: "";
+    width: 100%;
+    height: 2px;
+    display: block;
+    opacity: 0;
+    position: absolute;
+    bottom: -30px;
+    background: var(--light-blue);
+    transition: all 0.2s ease;
+  }
 
+  @media (min-width: 600px) {
+    padding-top: 4px;
+    padding-right: 30px;
+  }
+}
 
+.medical_services {
+  // position: absolute;
+  width: 100%;
+  // left: 0px;
+  // background-color: pink;
+  background-color: transparent;
+  text-align: center;
+  display: none;
+  margin-top: 35px;
+  border-top: 2px solid gray;
+  margin-bottom: -30px;
+  @media (min-width: 600px) {
+    display: none;
+    margin-top: 20px;
+    // padding-bottom: -50px;
+  }
+  p {
+    // text-align: center;
+    color: #c4c4c4;
+    padding: 2px;
+    margin-top: 2px;
+  }
+  p:hover {
+    color: var(--light-blue);
+  }
+}
 
 .manubar_hover_box {
   width: 100%;
@@ -305,75 +351,36 @@
   left: 0px;
   background-color: white;
   // background-color: pink;
-  display: flex;
   visibility: hidden;
+  display: none;
+  top: calc(56px + 29px);
   // margin-left: -200px;
-  margin-top: 29px;
+  // margin-top: 29px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   transition: all 0.15s ease;
   @media only screen and (max-width: 600px) {
-   display: none;
-  }
-
-}
-
-
-.manubar_container:hover{
-  .manubar_hover_box{
-    
-    visibility: visible;
-  } 
-}
-
-
-.medical_services_name{
-  margin-bottom: -29px;
-  margin-top: -25px;
-  text-align: center;
-
-  @media (min-width: 600px) {
-   
-    padding-top: 4px;
-    padding-right: 30px;
-      }
-}
-
-.medical_services{
-  // position: absolute;
-  width: 100%;
-  // left: 0px;
-  // background-color: pink;
-  background-color:transparent;
-  text-align: center;
-  display: none;
-  margin-top: 35px;
-  border-top: 2px  solid gray;
-  margin-bottom: -30px;
-  @media (min-width: 600px) {
-display: none;
-margin-top: 20px;
-// padding-bottom: -50px;
-
-  }
-  p{
-    // text-align: center;
-    color: #C4C4C4;
-    padding: 2px;
-    margin-top: 2px;
-  }
-  p:hover{
-    color: var(--light-blue);
-  }
-}
-
-.medical_services_container:hover{
-  .medical_services{
-   display: block;
-
-   @media (min-width: 600px) {
     display: none;
-      }
+  }
+}
+
+.medical_services_container:hover {
+  .medical_services_name {
+    &::after {
+      opacity: 1;
+    }
+  }
+  .manubar_hover_box {
+    visibility: visible;
+    display: flex;
+  }
+
+  .medical_services {
+    display: block;
+
+    @media (min-width: 600px) {
+      display: none;
+    }
   }
 }

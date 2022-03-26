@@ -64,7 +64,7 @@ const ContactUsForm = () => {
   return (
     <div className={styles.contact_us_form}>
       <div className={styles.heading}>
-        <h1 className="primary font-700">
+        <h1 className="font-700">
           Contact <span className="secondary">Us</span>
         </h1>
       </div>

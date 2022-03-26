@@ -18,7 +18,10 @@ const navigationLinks = [
     title: (
       <div className={styles.medical_services_container}>
         <div className={styles.medical_services_name}>
-          <p>Medical Services</p>
+          <p>Our services</p>
+        </div>
+        <div className={styles.manubar_hover_box}>
+          <Hoverbox />
         </div>
         <div className={styles.medical_services}>
           <p>Medical checkup</p>
@@ -145,9 +148,6 @@ const AppHeader = ({
                 </li>
               ))}
             </ul>
-            <div className={styles.manubar_hover_box}>
-              <Hoverbox />
-            </div>
           </div>
 
           <div
@@ -167,7 +167,7 @@ const AppHeader = ({
               </div>
             ) : (
               <div>
-                <Link href={`${ClientRoutes.login}`} passHref>
+                <Link href={`${ClientRoutes.investNow}`} passHref>
                   <a>
                     {" "}
                     <button className={styles.login_btn}>Invest Now </button>

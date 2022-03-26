@@ -1,8 +1,8 @@
-import styles from "../styles/model.module.scss";
 import Link from "next/link";
 import Image from "next/image";
+import styles from "./styles/InvestmentSuccess.module.scss";
 
-function Model() {
+function InvestmentSuccess() {
   return (
     <div className={styles.model_container}>
       <div className={styles.model_contain_container}>
@@ -39,4 +39,4 @@ function Model() {
   );
 }
 
-export default Model;
+export default InvestmentSuccess;

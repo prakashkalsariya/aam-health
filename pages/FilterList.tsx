@@ -7,13 +7,13 @@ function Filterlist() {
       <div className={styles.navbar}>
         <AppHeader />
       </div>
-     
+
       <div className={styles.input}>
         <Input />
       </div>
       <div className={styles.btn}>
-        <button  className={styles.cancel_btn}>Cancel</button>
-        <button  className={styles.ok_btn}>Ok</button>
+        <button className={styles.cancel_btn}>Cancel</button>
+        <button className={styles.ok_btn}>Ok</button>
       </div>
     </div>
   );

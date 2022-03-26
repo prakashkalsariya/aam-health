@@ -8,6 +8,8 @@ import CloseIcon from "../component/icons/CloseIcon";
 import investorService from "../services/firebase/investors";
 import AppHeader from "../component/header/AppHeader";
 import LayoutContainer from "../component/layout/LayoutContainer";
+import Modal from "../component/modals/Modal";
+import InvestmentSuccess from "../component/modals/InvestmentSuccess";
 
 const ContactUsSchema = Yup.object().shape({
   first_name: Yup.string().required("First name is required!"),
@@ -64,106 +66,110 @@ const Investnow = () => {
   };
 
   return (
-
     <div className={styles.main}>
+      <AppHeader />
 
-   <AppHeader/>
-   
-<LayoutContainer>
-    <div className={styles.contact_us_form}>
-      <div className={styles.heading}>
-        <h1 className="font-700">
-        <span> Invest </span>Now
-        </h1>
-        <p className="font-400">Please fill your details in form below and we will get back to you shorty 
-<br/>Thanks for your interest</p>
-      </div>
+      <Modal open={true} handleClose={() => {}}>
+        <InvestmentSuccess />
+      </Modal>
 
-      <form className={styles.form} onSubmit={formik.handleSubmit}>
-        <div className={styles.inputs_container}>
-          <CustomInput
-            placeholder="First name *"
-            name="first_name"
-            value={formik.values.first_name}
-            onChange={formik.handleChange}
-            error={Boolean(formik.errors.first_name)}
-            helperText={formik.errors.first_name}
-            type="text"
-          />
-          <CustomInput
-            placeholder="Last name *"
-            name="last_name"
-            value={formik.values.last_name}
-            onChange={formik.handleChange}
-            error={Boolean(formik.errors.last_name)}
-            helperText={formik.errors.last_name}
-            type="text"
-          />
-          <CustomInput
-            placeholder="Email *"
-            name="email"
-            value={formik.values.email}
-            onChange={formik.handleChange}
-            error={Boolean(formik.errors.email)}
-            helperText={formik.errors.email}
-            type="email"
-          />
-          <CustomInput
-            placeholder="Mobile no. *"
-            name="phone"
-            value={formik.values.phone}
-            onChange={formik.handleChange}
-            error={Boolean(formik.errors.phone)}
-            helperText={formik.errors.phone}
-            type="text"
-          />
-        </div>
-        <textarea
-          className={styles.textArea}
-          placeholder="Message"
-          rows={4}
-          name="message"
-          value={formik.values.message}
-          onChange={formik.handleChange}
-        ></textarea>
-        <div className={styles.errors_container}>
-          {succces.map((message, idx) => (
-            <div key={idx} className={styles.message_container}>
-              <p className={`font-400`}>{message}</p>
+      <LayoutContainer>
+        <div className={styles.contact_us_form}>
+          <div className={styles.heading}>
+            <h2 className="font-700">
+              <span> Invest </span>Now
+            </h2>
+            <p className="font-400">
+              Please fill your details in form below and we will get back to you
+              shorty
+              <br />
+              Thanks for your interest
+            </p>
+          </div>
 
-              <div
-                className={styles.close_icon}
-                onClick={() => removeMessage(idx)}
+          <form className={styles.form} onSubmit={formik.handleSubmit}>
+            <div className={styles.inputs_container}>
+              <CustomInput
+                placeholder="First name *"
+                name="first_name"
+                value={formik.values.first_name}
+                onChange={formik.handleChange}
+                error={Boolean(formik.errors.first_name)}
+                helperText={formik.errors.first_name}
+                type="text"
+              />
+              <CustomInput
+                placeholder="Last name *"
+                name="last_name"
+                value={formik.values.last_name}
+                onChange={formik.handleChange}
+                error={Boolean(formik.errors.last_name)}
+                helperText={formik.errors.last_name}
+                type="text"
+              />
+              <CustomInput
+                placeholder="Email *"
+                name="email"
+                value={formik.values.email}
+                onChange={formik.handleChange}
+                error={Boolean(formik.errors.email)}
+                helperText={formik.errors.email}
+                type="email"
+              />
+              <CustomInput
+                placeholder="Mobile no. *"
+                name="phone"
+                value={formik.values.phone}
+                onChange={formik.handleChange}
+                error={Boolean(formik.errors.phone)}
+                helperText={formik.errors.phone}
+                type="text"
+              />
+            </div>
+            <textarea
+              className={styles.textArea}
+              placeholder="Message"
+              rows={4}
+              name="message"
+              value={formik.values.message}
+              onChange={formik.handleChange}
+            ></textarea>
+            <div className={styles.errors_container}>
+              {succces.map((message, idx) => (
+                <div key={idx} className={styles.message_container}>
+                  <p className={`font-400`}>{message}</p>
+
+                  <div
+                    className={styles.close_icon}
+                    onClick={() => removeMessage(idx)}
+                  >
+                    <CloseIcon />
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className={styles.button_container}>
+              <button
+                type="submit"
+                className={`font-600 ${styles.submit_button} ${
+                  isSubmitting ? styles.button_disabled : ""
+                }`}
               >
-                <CloseIcon />
-              </div>
+                <div
+                  className={`${styles.loader_container} ${
+                    isSubmitting ? "" : styles.display_none
+                  }`}
+                >
+                  <CircularProgress className={styles.loader} />
+                </div>
+                <span>Submit</span>
+              </button>
             </div>
-          ))}
+          </form>
         </div>
-        <div className={styles.button_container}>
-          <button
-            type="submit"
-            className={`font-600 ${styles.submit_button} ${
-              isSubmitting ? styles.button_disabled : ""
-            }`}
-          >
-            <div
-              className={`${styles.loader_container} ${
-                isSubmitting ? "" : styles.display_none
-              }`}
-            >
-              <CircularProgress className={styles.loader} />
-            </div>
-            <span>Submit</span>
-          </button>
-        </div>
-      </form>
-    </div>
-    </LayoutContainer>
+      </LayoutContainer>
     </div>
   );
 };
-
-
 
 export default Investnow;
