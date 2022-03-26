@@ -82,14 +82,16 @@
   left: 200px;
   background: linear-gradient(
     90.09deg,
-    #ffffff 75%,
+    #ffffff 40.99%,
     rgba(255, 255, 255, 0) 97.41%
   );
   z-index: 1;
   @media (max-width: 600px) {
     transform: rotate(270deg);
-    width: 400px;
-  top: 24px;
+    // width: 400px;
+  top: 100px;
+  // display: none;
+  left: -100px;
    }
 }
 
