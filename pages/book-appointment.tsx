@@ -7,6 +7,8 @@ import LayoutContainer from "../component/layout/LayoutContainer";
 import BookAppointment, { IDoctorDetails } from "../component/BookAppointment";
 import AppHeader from "../component/header/AppHeader";
 import Footer from "../component/Footer";
+import Aamhealthbanner from "../component/aam-health-banner/AamHealthBanner";
+import ContactUsForm from "../component/ContactUsForm";
 
 const doctorsList = [
   {
@@ -1403,6 +1405,14 @@ function Doctorlistdata() {
               </div>
             </div>
           ))}
+        </div>
+      </LayoutContainer>
+      <div className={styles.aam_health_banner}>
+        <Aamhealthbanner />
+      </div>
+      <LayoutContainer>
+        <div className={styles.contactForm}>
+          <ContactUsForm />
         </div>
       </LayoutContainer>
       <Footer />
