@@ -7,6 +7,12 @@
   overflow: hidden;
   position: relative;
   background: white;
+  @media (max-width: 600px) {
+    width: 100%;
+    top: 0px;
+    height: 100vh;
+    border-radius: 0px;
+  }
 }
 
 .model_contain_container {
@@ -16,16 +22,26 @@
   // align-items: center;
   justify-content: center;
   margin-left: 55px;
+  margin-bottom: 10px;
+  @media (max-width: 600px) {
+    margin-left: 30px;
+  }
   h2 {
     font-size: 24px;
     padding: 5px;
     margin-bottom: 10px;
+    @media (max-width: 600px) {
+      font-size: 18px;
+    }
   }
   h1 {
     font-size: 36px;
-    color: var(--light-blue);
+    color: var(--primary);
     padding: 5px;
     margin-top: 5px;
+    @media (max-width: 600px) {
+      font-size: 30px;
+    }
   }
   p {
     font-size: 14px;
@@ -33,6 +49,11 @@
     padding: 5px;
     margin-top: 10px;
     margin-bottom: 40px;
+    width: 60%;
+    @media (max-width: 600px) {
+      font-size: 14px;
+      width: 90%;
+    }
   }
   ul {
     margin-left: 5px;
@@ -42,11 +63,15 @@
     height: 50px;
 
     border: 0px;
-    background: var(--light-blue);
+    background: var(--primary);
     border-radius: 5px;
     color: white;
     &:hover {
       background: var(--secondary);
+    }
+    @media (max-width: 600px) {
+      width: 185px;
+      height: 50px;
     }
   }
 }
@@ -59,10 +84,15 @@
   left: 200px;
   background: linear-gradient(
     90.09deg,
-    #ffffff 40.99%,
+    #ffffff 75%,
     rgba(255, 255, 255, 0) 97.41%
   );
   z-index: 1;
+  @media (max-width: 600px) {
+    transform: rotate(270deg);
+    width: 400px;
+    top: 24px;
+  }
 }
 
 .img {
@@ -71,4 +101,12 @@
   height: 649px;
   top: 0px;
   right: 0px;
+}
+
+.right_tick_img {
+  position: relative;
+  width: 56px;
+  height: 56px;
+  margin-bottom: 39px;
+  margin-left: 3px;
 }
