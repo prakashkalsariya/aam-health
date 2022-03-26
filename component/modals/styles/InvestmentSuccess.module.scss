@@ -37,7 +37,7 @@
   }
   h1 {
     font-size: 36px;
-    color: var(--light-blue);
+    color: var(--primary);
     padding: 5px;
     margin-top: 5px;
     @media (max-width: 600px) {
@@ -64,7 +64,7 @@
     height: 50px;
 
     border: 0px;
-    background: var(--light-blue);
+    background: var(--primary);
     border-radius: 5px;
     color: white;
     @media (max-width: 600px) {
@@ -99,4 +99,13 @@
   height: 649px;
   top: 0px;
   right: 0px;
+}
+
+
+.right_tick_img{
+  position: relative;
+  width: 56px;
+  height: 56px;
+  margin-bottom: 39px;
+  margin-left: 3px;
 }
