@@ -70,7 +70,7 @@ const Investnow = () => {
     <div className={styles.main}>
       <AppHeader />
 
-      <Modal open={true} handleClose={() => {}}>
+      <Modal open={isModalOpen} handleClose={() => {}}>
         <InvestmentSuccess />
       </Modal>
 
