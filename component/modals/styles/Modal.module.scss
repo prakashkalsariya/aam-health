@@ -47,10 +47,9 @@
   border-radius: 5px;
   border: 1px solid var(--light-gray);
   opacity: 0;
-  transform: translate(500px, 00px) scale(0.5);
   animation: bottom-in 0.3s ease forwards;
   @media (max-width: 600px) {
-    transform: translate(0px, 200px) scale(0.8);
+    // transform: translate(0px, 200px) scale(0.8);
     // height: 100vh;
   }
   position: relative;

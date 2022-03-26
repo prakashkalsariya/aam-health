@@ -155,6 +155,12 @@ const AppHeader = ({
               hideAuthButtons ? styles.display_none : ""
             }`}
           >
+            <Link href={`${ClientRoutes.investNow}`} passHref>
+              <a>
+                {" "}
+                <button className={styles.login_btn}>Invest Now </button>
+              </a>
+            </Link>{" "}
             {isUserLoggedIn ? (
               <div className={styles.user_container}>
                 <div
@@ -167,13 +173,7 @@ const AppHeader = ({
               </div>
             ) : (
               <div>
-                <Link href={`${ClientRoutes.investNow}`} passHref>
-                  <a>
-                    {" "}
-                    <button className={styles.login_btn}>Invest Now </button>
-                  </a>
-                </Link>{" "}
-                <Link href={`${ClientRoutes.register}`} passHref>
+                <Link href={`${ClientRoutes.login}`} passHref>
                   <a>
                     {" "}
                     <button className={styles.signup_btn}>Login</button>
@@ -222,6 +222,18 @@ const AppHeader = ({
               <div
                 className={`${styles.mobileNavButtons} ${styles.buttonContainer}`}
               >
+                <Link href={`${ClientRoutes.investNow}`} passHref>
+                  <a>
+                    {" "}
+                    <PrimaryButton
+                      className={styles.login_btn}
+                      color="secondary"
+                      outlined={true}
+                    >
+                      Invest Now
+                    </PrimaryButton>
+                  </a>
+                </Link>{" "}
                 {isUserLoggedIn ? (
                   <div className={styles.user_container}>
                     <div
@@ -236,20 +248,8 @@ const AppHeader = ({
                     <Link href={`${ClientRoutes.login}`} passHref>
                       <a>
                         {" "}
-                        <PrimaryButton
-                          className={styles.login_btn}
-                          color="secondary"
-                          outlined={true}
-                        >
-                          Login
-                        </PrimaryButton>
-                      </a>
-                    </Link>{" "}
-                    <Link href={`${ClientRoutes.register}`} passHref>
-                      <a>
-                        {" "}
                         <PrimaryButton className={styles.signup_btn}>
-                          Sign Up
+                          Login
                         </PrimaryButton>
                       </a>
                     </Link>{" "}

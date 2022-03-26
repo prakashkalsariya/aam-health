@@ -45,6 +45,9 @@
     background: var(--light-blue);
     border-radius: 5px;
     color: white;
+    &:hover {
+      background: var(--secondary);
+    }
   }
 }
 

@@ -8,7 +8,7 @@ function Aamhealthbanner() {
     <div className={styles.aam_health_banner_img_container}>
       <div className={styles.img}>
         <Image
-          src="/images/aam-health-banner-bottom-img.png"
+          src="/images/aam-health-banner-bottom-img.webp"
           alt="banner"
           layout="fill"
           objectFit={"cover"}

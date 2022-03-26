@@ -10,6 +10,8 @@ import AppHeader from "../component/header/AppHeader";
 import LayoutContainer from "../component/layout/LayoutContainer";
 import Modal from "../component/modals/Modal";
 import InvestmentSuccess from "../component/modals/InvestmentSuccess";
+import { IInvestor } from "../services/firebase/models/Iinvestors";
+import Footer from "../component/Footer";
 
 const ContactUsSchema = Yup.object().shape({
   first_name: Yup.string().required("First name is required!"),
@@ -17,15 +19,14 @@ const ContactUsSchema = Yup.object().shape({
   email: Yup.string()
     .email("Please enter valid email address!")
     .required("Please enter your email address!"),
-  phone: Yup.string()
-    .min(10, "Phone number must be 10 digits long!")
-    .required("Phone number is required!"),
+  phone: Yup.string().required("Phone number is required!"),
   message: Yup.string(),
 });
 
 const Investnow = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [succces, setSuccess] = useState<string[]>([]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const initialValues = {
     first_name: "",
@@ -35,17 +36,17 @@ const Investnow = () => {
     message: "",
   };
 
-  const handleSubmit = () => {
-    // investorService.addInvestorDetails({
-    //   email: "jljklj",
-    //   first_name: "jkjl",
-    //   last_name: "fjdklfj",
-    //   message: "djfflkdjkl",
-    //   phone: "445454545",
-    // });
-    setSuccess([
-      "We received your request successfully, we will get back to you shortly thanks.",
-    ]);
+  const handleSubmit = async (values: IInvestor) => {
+    setIsSubmitting(true);
+    const response = await investorService.addInvestorDetails(values);
+
+    if (response) {
+      setIsModalOpen(true);
+      setIsSubmitting(false);
+      return;
+    }
+    setIsSubmitting(false);
+    setSuccess(["Something went wrong while saving your details!"]);
   };
 
   const formik = useFormik({
@@ -69,7 +70,7 @@ const Investnow = () => {
     <div className={styles.main}>
       <AppHeader />
 
-      <Modal open={true} handleClose={() => {}}>
+      <Modal open={isModalOpen} handleClose={() => {}}>
         <InvestmentSuccess />
       </Modal>
 
@@ -168,6 +169,8 @@ const Investnow = () => {
           </form>
         </div>
       </LayoutContainer>
+
+      <Footer />
     </div>
   );
 };

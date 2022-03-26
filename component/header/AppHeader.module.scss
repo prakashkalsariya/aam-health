@@ -134,6 +134,14 @@
   display: none !important;
 }
 
+.buttonContainer {
+  display: flex;
+  align-items: center;
+  .login_btn {
+    // margin-right: 20px;
+  }
+}
+
 .menuButtonContainer {
   width: 25px;
   height: 16px;
@@ -203,14 +211,14 @@
   background: rgba(255, 255, 255, 0.3);
   box-shadow: 0px 4px 27px rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(70px);
-  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.3s ease-in-out;
   /* Note: backdrop-filter has minimal browser support */
   border-radius: 0px 0px 15px 15px;
   &.navigationDropDownContainerActive {
     height: 300px;
     padding-top: 130px;
     @media (max-width: 700px) {
-      height: 480px;
+      height: 520px;
     }
   }
   .linksContainer {
@@ -276,6 +284,7 @@
 }
 
 .user_container {
+  margin-left: 10px;
   .circle {
     width: 50px;
     height: 50px;

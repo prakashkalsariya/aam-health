@@ -362,10 +362,9 @@ const Home: NextPage = () => {
           </div>
         </main>
         <div className={styles.aam_health_banner}>
-          <Aamhealthbanner/>
-          </div>
+          <Aamhealthbanner />
+        </div>
         <LayoutContainer>
-         
           <div className={styles.contactForm}>
             <ContactUsForm />
           </div>
