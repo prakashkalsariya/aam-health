@@ -34,7 +34,7 @@ const navigationLinks = [
       </div>
     ),
     href: "",
-    id: "testimonials",
+    id: "services",
   },
   {
     title: "Doctors",
@@ -211,7 +211,12 @@ const AppHeader = ({
                             ? styles.lastLink
                             : ""
                         }`}
-                        onClick={handleMobileNavBar}
+                        onClick={() => {
+                          if (link.id === "services") {
+                            return;
+                          }
+                          handleMobileNavBar();
+                        }}
                       >
                         {link.title}
                       </a>
