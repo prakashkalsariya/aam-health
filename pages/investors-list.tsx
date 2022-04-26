@@ -9,6 +9,7 @@ import AppHeader from "../component/header/AppHeader";
 import SearchIcon from "../component/icons/SearchIcon";
 import { useEffect, useState } from "react";
 import { IInvestments } from "../services/firebase/models/investments";
+import { CircularProgress } from "@material-ui/core";
 
 function InvesotorList() {
   const [investorsList, setInvestorsList] = useState<IInvestments[]>([]);
@@ -49,7 +50,10 @@ function InvesotorList() {
           </div>
         </div>
         <div className={styles.loader_container}>
-
+        <div className={styles.loader}>
+                    <CircularProgress className={styles.loader} />
+         </div>
+        <p className="font-500">Fetching investors data, please wait...</p>
         </div>
 
 
