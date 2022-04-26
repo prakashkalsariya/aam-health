@@ -9,4 +9,6 @@ export class QueryParams {
   static verifyPhone = "verify_phone";
   static redirectTo = "redirectTo";
   static sheduleAppointments = "sdedule_appointment";
+  static paymentSuccess = "payment_success";
+  static paymentFailure = "payment_failure";
 }

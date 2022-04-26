@@ -29,6 +29,8 @@
 
 .investment_form_content {
   margin-top: 100px;
+  opacity: 0;
+  animation: fade-in 0.4s ease forwards;
   @media (max-width: 700px) {
     margin-top: 60px;
   }
@@ -184,4 +186,86 @@
 
 .display_none {
   display: none !important;
+}
+
+.image_container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.right_tick_img {
+  position: relative;
+  width: 56px;
+  height: 56px;
+  margin-bottom: 39px;
+  margin-left: 3px;
+}
+
+.success_container {
+  opacity: 0;
+  animation: fade-in 0.4s ease 0.2s forwards;
+}
+
+.success_title {
+  font-family: var(--font-semibold);
+  text-align: center;
+  line-height: 130%;
+  color: var(--primary);
+}
+
+.payment_details {
+  max-width: 400px;
+  margin: auto;
+  margin-top: 60px;
+}
+
+.details_row {
+  display: flex;
+  justify-content: space-between;
+  p {
+    font-family: var(--font-regular);
+    color: var(--secondary);
+    margin-bottom: 15px;
+  }
+}
+
+.buttons_container {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  button {
+    font-family: var(--font-regular);
+    font-size: 16px;
+    border: none;
+    background: #ffffff;
+    border: 1px solid var(--primary);
+    border-radius: 10px;
+    padding: 15px 30px;
+    cursor: pointer;
+  }
+  .print_button {
+    margin-right: 20px;
+    color: var(--primary);
+  }
+  .back_button {
+    background: var(--primary);
+    color: white;
+  }
+  @media (max-width: 600px) {
+    flex-direction: column;
+    button {
+      width: 100%;
+      border-radius: 35px;
+    }
+    .back_button {
+      margin-top: 20px;
+    }
+  }
+}
+
+@keyframes fade-in {
+  100% {
+    opacity: 1;
+  }
 }

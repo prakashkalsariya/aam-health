@@ -7,21 +7,19 @@ function InvestmentSuccess() {
     <div className={styles.model_container}>
       <div className={styles.model_contain_container}>
         <div className={styles.right_tick_img}>
-        <Image
-              src="/images/right-img.svg"
-              alt="banner"
-              layout="fill"
-              objectFit={"cover"}
-              quality={100}
-            />
-
+          <Image
+            src="/images/right-img.svg"
+            alt="banner"
+            layout="fill"
+            objectFit={"cover"}
+            quality={100}
+          />
         </div>
         <h2 className="font-600">Thanks for your interest</h2>
         <h1 className="font-600">We received your request</h1>
         <p className="font-400">
-          We received your request and we will get back to you shorty.
-         
-          Thanks for your support.
+          We received your request and we will get back to you shorty. Thanks
+          for your support.
         </p>
         <ul>
           <li>

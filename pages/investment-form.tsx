@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import AppHeader from "../component/header/AppHeader";
 import CustomInput from "../component/inputs/CustomInput";
 import LayoutContainer from "../component/layout/LayoutContainer";
@@ -9,9 +9,10 @@ import Footer from "../component/Footer";
 import { RazorpayApiServices } from "../services/razorpay/apis";
 import { CircularProgress } from "@material-ui/core";
 import { IInvestments } from "../services/firebase/models/investments";
-import investmentService, {
-  InvestmentService,
-} from "../services/firebase/investments";
+import investmentService from "../services/firebase/investments";
+import { useRouter } from "next/router";
+import { QueryParams } from "../constants/pages";
+import Image from "next/image";
 
 const LoginSchema = Yup.object().shape({
   first_name: Yup.string().required("First name is required!"),
@@ -68,8 +69,12 @@ const initializeRazorpay = async () => {
 };
 
 const InvestmentForm = () => {
+  const router = useRouter();
   const [state, setState] = useState({
     isSubmitting: false,
+    isPaymentSuccess: false,
+    isPaymentFailure: false,
+    razorpay_payment_id: "",
   });
   const initialValues: IInvestmentFormValues = {
     first_name: "",
@@ -81,7 +86,39 @@ const InvestmentForm = () => {
     selected_amount: "",
   };
 
-  investmentService.getInvestorsList();
+  useEffect(() => {
+    const isPaymentSuccess = router.query[QueryParams.paymentSuccess];
+    const isPaymentFailure = router.query[QueryParams.paymentFailure];
+    let _isPaymentSuccess = false;
+    let _isPaymentFailure = false;
+    if (isPaymentSuccess && !state.isPaymentSuccess) {
+      _isPaymentSuccess = true;
+    }
+
+    if (isPaymentFailure && !state.isPaymentFailure) {
+      _isPaymentFailure = true;
+    }
+
+    setState({
+      ...state,
+      isPaymentFailure: _isPaymentFailure,
+      isPaymentSuccess: _isPaymentSuccess,
+    });
+  }, [router.query]);
+
+  const handlePaynentSuccess = async (res: any) => {
+    setState({
+      ...state,
+      razorpay_payment_id: res.razorpay_payment_id,
+    });
+    router.push({
+      pathname: router.pathname,
+      query: {
+        ...router.query,
+        [QueryParams.paymentSuccess]: true,
+      },
+    });
+  };
 
   const handleSubmit = async (values: IInvestmentFormValues) => {
     let amount = values.amount || values.selected_amount;
@@ -122,8 +159,10 @@ const InvestmentForm = () => {
             success: true,
           };
 
-          const res = await investmentService.addInvestmentRecord(payload);
-          debugger;
+          const [paymentRecordResponse, _] = await Promise.all([
+            investmentService.addInvestmentRecord(payload),
+            handlePaynentSuccess(response),
+          ]);
 
           // alert(response.razorpay_payment_id);
           // alert(response.razorpay_order_id);
@@ -145,7 +184,6 @@ const InvestmentForm = () => {
       const paymentObject = new (window as any).Razorpay(options);
 
       paymentObject.on("payment.failed", function (response: any) {
-        debugger;
         alert(response.error.code);
         alert(response.error.description);
         alert(response.error.source);
@@ -156,8 +194,6 @@ const InvestmentForm = () => {
       });
 
       paymentObject.open();
-
-      debugger;
     }
   };
 
@@ -175,144 +211,199 @@ const InvestmentForm = () => {
       <AppHeader />
 
       <LayoutContainer className={styles.investment_form_content}>
-        <div className={styles.heading}>
-          <h2 className="font-700">
-            <span> Invest </span>with us
-          </h2>
-          <p className="font-400">
-            Please fill your details in form below and we will get back to you
-            shorty
-            <br />
-            Thanks for your interest
-          </p>
+        <div
+          className={`${
+            state.isPaymentFailure || state.isPaymentSuccess
+              ? styles.display_none
+              : ""
+          }`}
+        >
+          <div className={styles.heading}>
+            <h2 className="font-700">
+              <span> Invest </span>with us
+            </h2>
+            <p className="font-400">
+              Please fill your details in form below and we will get back to you
+              shorty
+              <br />
+              Thanks for your interest
+            </p>
+          </div>
+
+          <form onSubmit={formik.handleSubmit}>
+            <div className={styles.investment_form}>
+              <div className={styles.input_container}>
+                <CustomInput
+                  name="first_name"
+                  label="First Name"
+                  placeholder="Enter Your first name"
+                  type="text"
+                  onChange={formik.handleChange}
+                  value={formik.values.first_name}
+                  error={Boolean(
+                    formik.touched.first_name && formik.errors.first_name
+                  )}
+                  helperText={formik.errors.first_name}
+                />
+              </div>
+              <div className={styles.input_container}>
+                <CustomInput
+                  name="last_name"
+                  label="Last Name"
+                  placeholder="Enter Your last name"
+                  type="text"
+                  onChange={formik.handleChange}
+                  value={formik.values.last_name}
+                  error={Boolean(
+                    formik.touched.last_name && formik.errors.last_name
+                  )}
+                  helperText={formik.errors.last_name}
+                />
+              </div>
+
+              <div className={styles.input_container}>
+                <CustomInput
+                  name="email"
+                  label="Email"
+                  placeholder="Enter Your email"
+                  type="text"
+                  onChange={formik.handleChange}
+                  value={formik.values.email}
+                  error={Boolean(formik.touched.email && formik.errors.email)}
+                  helperText={formik.errors.email}
+                />
+              </div>
+
+              <div className={styles.input_container}>
+                <CustomInput
+                  name="phone"
+                  label="Mobile no."
+                  placeholder="Enter Your mobile number"
+                  type="number"
+                  onChange={formik.handleChange}
+                  value={formik.values.phone}
+                  error={Boolean(formik.touched.phone && formik.errors.phone)}
+                  helperText={formik.errors.phone}
+                />
+              </div>
+            </div>
+
+            <div className={styles.amount_input}>
+              <div className={styles.input_container}>
+                <CustomInput
+                  name="amount"
+                  label="Enter amount in rupees you want to invest"
+                  placeholder="Enter amount in rupees you want to invest"
+                  type="text"
+                  onChange={(e) => {
+                    let value = e.target.value;
+                    value = value.slice(1).trim();
+                    formik.setFieldValue("amount", value);
+                  }}
+                  value={`₹ ${formik.values.amount}`}
+                  error={Boolean(formik.touched.amount && formik.errors.amount)}
+                  helperText={formik.errors.amount}
+                />
+              </div>
+            </div>
+
+            <div className={styles.or_seperator}>
+              <div className={`font-500 sub-text ${styles.or}`}>OR</div>
+              <div className={`sub-text ${styles.subtext}`}>
+                Pick one from below options
+              </div>
+            </div>
+
+            <div className={styles.amount_blocks}>
+              {predefinedAmounts.map((amount) => (
+                <div
+                  key={amount.id}
+                  className={`${styles.amount_block} ${
+                    formik.values.selected_amount_id &&
+                    formik.values.selected_amount_id === (amount as any).id
+                      ? styles.selected
+                      : ""
+                  }`}
+                  onClick={() => {
+                    formik.setValues({
+                      ...formik.values,
+                      selected_amount_id: amount.id as unknown as string,
+                      selected_amount: amount.amount as unknown as string,
+                      amount: amount.amount as unknown as string,
+                    });
+                  }}
+                >
+                  ₹ {amount.amount}
+                </div>
+              ))}
+            </div>
+
+            <div className={styles.button_container}>
+              <button
+                type="submit"
+                className={`font-500 ${styles.submit_button} ${
+                  state.isSubmitting ? styles.button_disabled : ""
+                }`}
+              >
+                <div
+                  className={`${styles.loader_container} ${
+                    state.isSubmitting ? "" : styles.display_none
+                  }`}
+                >
+                  <CircularProgress className={styles.loader} />
+                </div>
+                <span>Invest now</span>
+              </button>
+            </div>
+          </form>
         </div>
 
-        <form onSubmit={formik.handleSubmit}>
-          <div className={styles.investment_form}>
-            <div className={styles.input_container}>
-              <CustomInput
-                name="first_name"
-                label="First Name"
-                placeholder="Enter Your first name"
-                type="text"
-                onChange={formik.handleChange}
-                value={formik.values.first_name}
-                error={Boolean(
-                  formik.touched.first_name && formik.errors.first_name
-                )}
-                helperText={formik.errors.first_name}
-              />
-            </div>
-            <div className={styles.input_container}>
-              <CustomInput
-                name="last_name"
-                label="Last Name"
-                placeholder="Enter Your last name"
-                type="text"
-                onChange={formik.handleChange}
-                value={formik.values.last_name}
-                error={Boolean(
-                  formik.touched.last_name && formik.errors.last_name
-                )}
-                helperText={formik.errors.last_name}
-              />
-            </div>
-
-            <div className={styles.input_container}>
-              <CustomInput
-                name="email"
-                label="Email"
-                placeholder="Enter Your email"
-                type="text"
-                onChange={formik.handleChange}
-                value={formik.values.email}
-                error={Boolean(formik.touched.email && formik.errors.email)}
-                helperText={formik.errors.email}
-              />
-            </div>
-
-            <div className={styles.input_container}>
-              <CustomInput
-                name="phone"
-                label="Mobile no."
-                placeholder="Enter Your mobile number"
-                type="number"
-                onChange={formik.handleChange}
-                value={formik.values.phone}
-                error={Boolean(formik.touched.phone && formik.errors.phone)}
-                helperText={formik.errors.phone}
+        <div
+          className={`${styles.success_container} ${
+            !state.isPaymentSuccess ? styles.display_none : ""
+          }`}
+        >
+          <div className={styles.image_container}>
+            <div className={styles.right_tick_img}>
+              <Image
+                src="/images/right-img.svg"
+                alt="banner"
+                layout="fill"
+                objectFit={"cover"}
+                quality={100}
               />
             </div>
           </div>
 
-          <div className={styles.amount_input}>
-            <div className={styles.input_container}>
-              <CustomInput
-                name="amount"
-                label="Enter amount in rupees you want to invest"
-                placeholder="Enter amount in rupees you want to invest"
-                type="text"
-                onChange={(e) => {
-                  let value = e.target.value;
-                  value = value.slice(1).trim();
-                  formik.setFieldValue("amount", value);
-                }}
-                value={`₹ ${formik.values.amount}`}
-                error={Boolean(formik.touched.amount && formik.errors.amount)}
-                helperText={formik.errors.amount}
-              />
-            </div>
-          </div>
+          <h2 className={styles.success_title}>
+            You invested with us successfully
+            <br /> Thanks for your interest
+          </h2>
 
-          <div className={styles.or_seperator}>
-            <div className={`font-500 sub-text ${styles.or}`}>OR</div>
-            <div className={`sub-text ${styles.subtext}`}>
-              Pick one from below options
+          <div className={styles.payment_details}>
+            <div className={styles.details_row}>
+              <p>Amount invested</p>
+              <p>₹ {formik.values.amount}</p>
             </div>
-          </div>
 
-          <div className={styles.amount_blocks}>
-            {predefinedAmounts.map((amount) => (
-              <div
-                key={amount.id}
-                className={`${styles.amount_block} ${
-                  formik.values.selected_amount_id &&
-                  formik.values.selected_amount_id === (amount as any).id
-                    ? styles.selected
-                    : ""
-                }`}
+            <div className={styles.details_row}>
+              <p>Transaction id</p>
+              <p>{state.razorpay_payment_id}</p>
+            </div>
+
+            <div className={styles.buttons_container}>
+              <button className={styles.print_button}>Print receipt</button>
+              <button
+                className={styles.back_button}
                 onClick={() => {
-                  formik.setValues({
-                    ...formik.values,
-                    selected_amount_id: amount.id as unknown as string,
-                    selected_amount: amount.amount as unknown as string,
-                    amount: amount.amount as unknown as string,
-                  });
+                  router.push("/");
                 }}
               >
-                ₹ {amount.amount}
-              </div>
-            ))}
+                Back to home
+              </button>
+            </div>
           </div>
-
-          <div className={styles.button_container}>
-            <button
-              type="submit"
-              className={`font-500 ${styles.submit_button} ${
-                state.isSubmitting ? styles.button_disabled : ""
-              }`}
-            >
-              <div
-                className={`${styles.loader_container} ${
-                  state.isSubmitting ? "" : styles.display_none
-                }`}
-              >
-                <CircularProgress className={styles.loader} />
-              </div>
-              <span>Invest now</span>
-            </button>
-          </div>
-        </form>
+        </div>
       </LayoutContainer>
 
       <Footer />
