@@ -12,13 +12,29 @@ import { IInvestments } from "../services/firebase/models/investments";
 import { CircularProgress } from "@material-ui/core";
 
 function InvesotorList() {
-  const [investorsList, setInvestorsList] = useState<IInvestments[]>([]);
+  // const [investorsList, setInvestorsList] = useState<IInvestments[]>([]);
+  // const [laoding, setLoaind] = useState<IInvestments[]>([]);
+
+  const [state, setState] = useState<{
+    isLoading: boolean, 
+    investorsList: IInvestments[]  
+  }>({
+    investorsList: [],
+    isLoading: true
+  });
 
   const getInvestorsList = async () => {
+    setState({
+      ...state,
+      isLoading: true
+    })
     const res = await investmentService.getInvestorsList();
     debugger;
-    setInvestorsList(res);
-    console.log(res);
+    setState({
+      ...state,
+      isLoading: false,
+      investorsList: res
+    })
   };
 
   useEffect(() => {
@@ -49,7 +65,7 @@ function InvesotorList() {
             </span>
           </div>
         </div>
-        <div className={styles.loader_container}>
+        <div className={`${styles.loader_container} ${state.isLoading ? "" : styles.display_none}`}>
         <div className={styles.loader}>
                     <CircularProgress className={styles.loader} />
          </div>
@@ -57,10 +73,10 @@ function InvesotorList() {
         </div>
 
 
-<div className={styles.investors_list}>
+<div className={`${styles.investors_list} ${state.isLoading ? styles.display_none : "" }`}>
 
         <div className={styles.main_container}>
-          {investorsList.map((data) => (
+          {state.investorsList.map((data) => (
             <div className={styles.investor_list_main_container}>
               <div className={styles.investor_img_container}>
                 <Image
@@ -93,7 +109,7 @@ function InvesotorList() {
                     className={`font-400 ${styles.investor_contain_right_date}`}
                   >
                     <TimeIcon />
-                    <span className={styles.icon}> {data.updated_at} </span>
+                    <span className={styles.icon}> {new Date(data?.created_at as string)?.toDateString()} </span>
                   </p>
                 </div>
                 <div className={styles.investor_contain_left}>
@@ -119,7 +135,7 @@ function InvesotorList() {
         </div>
 
         <div className={styles.mobile_main_container}>
-          {investorsList.map((data) => (
+          {state.investorsList.map((data) => (
             <div className={styles.mobile_investor_list_main_container}>
               <div className={styles.mobile_top_contain_img_container}>
                 <div className={styles.mobile_investor_img_container}>
@@ -171,8 +187,8 @@ function InvesotorList() {
                   className={`font-400 ${styles.mobile_investor_contain_bottom_date}`}
                 >
                   <TimeIcon />
-                  <span className={styles.icon}> {data.updated_at} </span>
-                  {/* <span className={styles.icon}> {data.created_at.toDateString()}, {data.created_at.getHours()} :{data.created_at.getMinutes()} </span> */}
+                  {/* <span className={styles.icon}> {data.updated_at} </span> */}
+                  <span className={styles.icon}> {new Date(data?.created_at as string)?.toDateString()}  </span>
                 </p>
               </div>
             </div>

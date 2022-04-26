@@ -249,7 +249,9 @@ margin-bottom: 60px;
   }
 }
 .investors_list{
-  display: none;
+  // display: none;
+  opacity: 0;
+  animation: fade-in 0.4s ease forwards;
 }
 
 
@@ -260,6 +262,9 @@ margin-bottom: 60px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  opacity: 0;
+  animation: fade-in 0.4s ease forwards;
+
   @media (max-width: 600px) {
   height: 250px;
      
@@ -277,4 +282,15 @@ p{
    
   }
 }
+}
+
+.display_none {
+  display: none !important;
+}
+
+
+@keyframes fade-in {
+  100% {
+    opacity: 1;
+  }
 }
