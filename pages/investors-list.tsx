@@ -132,7 +132,7 @@ function InvesotorList() {
                     <p
                       className={`font-500 ${styles.investor_contain_left_ruppy}`}
                     >
-                      ${data.amount}
+                      ₹ {data.amount}
                     </p>
                     <p
                       className={`font-400 ${styles.investor_contain_left_more}`}
@@ -169,7 +169,7 @@ function InvesotorList() {
                     <p
                       className={`font-500 ${styles.mobile_investor_contain_top_ruppy}`}
                     >
-                      ${data.amount}
+                      ₹ {data.amount}
                     </p>
                     <p
                       className={`font-400 ${styles.mobile_investor_contain_top_more}`}
