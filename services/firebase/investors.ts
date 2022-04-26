@@ -15,6 +15,7 @@ export class InvestorService {
 
       updatedValues.created_at = new Date().toISOString();
       updatedValues.updated_at = new Date().toISOString();
+
       await setDoc(investorRef, updatedValues);
       return true;
     } catch (err) {

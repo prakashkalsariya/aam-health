@@ -8,11 +8,12 @@ export class InvestmentService {
       let updatedValues = { ...values };
 
       const docId = `${updatedValues.first_name.toLowerCase()}_${updatedValues.last_name.toLowerCase()}_${
-        updatedValues.phone
+        updatedValues.razorpay_payment_id
       }`;
 
       const investmentsRef = doc(firebaseFirestore, "investments", docId);
 
+      updatedValues.id = investmentsRef.id;
       updatedValues.created_at = new Date().toISOString();
       updatedValues.updated_at = new Date().toISOString();
       await setDoc(investmentsRef, updatedValues);
