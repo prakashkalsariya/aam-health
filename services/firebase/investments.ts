@@ -1,5 +1,4 @@
 import { collection, doc, getDocs, query, setDoc } from "firebase/firestore";
-import { investorsList } from "../../data/investors";
 import { firebaseFirestore } from "./config";
 import { IInvestments } from "./models/investments";
 
@@ -38,7 +37,7 @@ export class InvestmentService {
         ivestorsList.push(doc.data() as any);
       });
 
-      return investorsList as any;
+      return ivestorsList as any;
     } catch (err) {
       console.log("Something went wrong while getting investors list!");
       return [];
