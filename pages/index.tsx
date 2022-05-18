@@ -13,6 +13,7 @@ import MedicalServices from "../component/MedicalServices";
 import ContactUsForm from "../component/ContactUsForm";
 // import Headerhover from "../component/HeaderHover";
 import Aamhealthbanner from "../component/aam-health-banner/AamHealthBanner";
+import HomeOurServices from "../component/ourServices/HomeOurServices";
 
 const Home: NextPage = () => {
   return (
@@ -24,9 +25,7 @@ const Home: NextPage = () => {
       </Head>
 
       <div className={styles.main_layout_container}>
-        {/* <Header /> */}
         <AppHeader />
-        {/* <Headerhover/> */}
         <div className={styles.banner_container}>
           <div className={styles.banner_img}>
             <Image
@@ -58,6 +57,10 @@ const Home: NextPage = () => {
         </div>
 
         <LayoutContainer>
+          <div className={styles.home_our_services_container}>
+            <HomeOurServices />
+          </div>
+
           <div className={styles.information_item_container}>
             <div className={styles.appointment_item}>
               <div className={styles.item_img}>
