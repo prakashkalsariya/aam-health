@@ -12,13 +12,26 @@
 .our_services_heading {
   display: flex;
   align-items: center;
-  .line {
+  @media only screen and (max-width: 600px) {
+
+    flex-direction: column;
+  }
+  .line1{
     width: 139px;
     height: 4px;
     background-color: orange;
     @media only screen and (max-width: 600px) {
       display: none;
     }
+  }
+  .line2{
+    width: 139px;
+    height: 4px;
+    background-color: orange;
+    @media only screen and (max-width: 600px) {
+  width: 220px;
+    }
+    
   }
   h1 {
     padding: 10px;
@@ -106,5 +119,40 @@ margin-bottom: 80px;
         margin-bottom: 20px;
     
     }
+  }
+}
+
+
+.why_us_heading {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  @media only screen and (max-width: 600px) {
+    margin-top: 0px;
+    flex-direction: column;
+  }
+  .line1{
+    width: 139px;
+    height: 4px;
+    background-color: orange;
+    @media only screen and (max-width: 600px) {
+      display: none;
+
+    }
+  
+  }
+  .line2{
+    width: 139px;
+    height: 4px;
+    background-color: orange;
+    @media only screen and (max-width: 600px) {
+
+
+    }
+  
+  }
+  h1 {
+    padding: 10px;
+    margin: 10px 47px 10px 47px;
   }
 }

@@ -62,9 +62,9 @@ function HomeOurServices() {
   return (
     <div className={styles.our_services_main_container}>
       <div className={styles.our_services_heading}>
-        <p className={styles.line}></p>
+        <p className={styles.line1}></p>
         <h1 className="font-700">Our Services</h1>
-        <p className={styles.line}></p>
+        <p className={styles.line2}></p>
       </div>
       <div className={styles.our_services_main_item_container}>
         {servicesData.map((servicesData) => (
@@ -93,6 +93,12 @@ function HomeOurServices() {
             </div>
           </div>
         ))}
+      </div>
+
+      <div className={styles.why_us_heading}>
+        <p className={styles.line1}></p>
+        <h1 className="font-700">Why Us</h1>
+        <p className={styles.line2} ></p>
       </div>
     </div>
   );
